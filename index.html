@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ristorante Belvedere | Hofstetten</title>
+<meta name="description" content="Ristorante Belvedere in Hofstetten — italienische Küche, Pizza, Pasta.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--primary: #2a6f75;
+--primary-dark: #1d5257;
+--accent: #d4a373;
+--bg-body: #f8f9fa;
+--bg-card: #ffffff;
+--text-main: #2c3e50;
+--text-muted: #6c757d;
+--border: #e9ecef;
+--shadow: 0 10px 30px rgba(0,0,0,0.08);
+--font-heading: 'Playfair Display', serif;
+--font-body: 'Montserrat', sans-serif;
+}
+
+[data-theme="dark"] {
+--primary: #4aa3a8;
+--primary-dark: #2a6f75;
+--accent: #e0b17b;
+--bg-body: #121212;
+--bg-card: #1e1e1e;
+--text-main: #e0e0e0;
+--text-muted: #a0a0a0;
+--border: #333333;
+--shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+font-family: var(--font-body);
+background-color: var(--bg-body);
+color: var(--text-main);
+line-height: 1.6;
+transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-dark); }
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: var(--text-main); }
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.btn {
+display: inline-block;
+padding: 12px 30px;
+background-color: var(--primary);
+color: white !important;
+border-radius: 50px;
+font-weight: 600;
+font-size: 0.9rem;
+border: none;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 1px;
+box-shadow: 0 4px 15px rgba(42, 111, 117, 0.3);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(42, 111, 117, 0.4);
+background-color: var(--primary-dark);
+}
+.btn.secondary {
+background-color: transparent;
+color: var(--text-main) !important;
+border: 1px solid var(--border);
+box-shadow: none;
+}
+.btn.secondary:hover, .btn.secondary.active {
+background-color: var(--primary);
+color: white !important;
+border-color: var(--primary);
+}
+.btn.whatsapp { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+
+header {
+position: fixed; top: 0; width: 100%; z-index: 1000;
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border);
+padding: 15px 0;
+}
+[data-theme="dark"] header { background: rgba(30, 30, 30, 0.95); }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.brand img { height: 50px; }
+nav ul { display: flex; gap: 25px; }
+nav ul li a { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+.controls { display: flex; gap: 15px; align-items: center; }
+select {
+padding: 5px 10px;
+border-radius: 20px;
+border: 1px solid var(--border);
+background: var(--bg-card);
+color: var(--text-main);
+cursor: pointer;
+}
+.gtranslate_wrapper {
+min-width: 150px;
+font-family: var(--font-body);
+}
+.gtranslate_wrapper select {
+max-width: 170px;
+}
+.theme-toggle { cursor: pointer; font-size: 1.2rem; }
+
+/* ✅ HERO: altura controlada para que NO se vea "enorme" */
+.hero-section {
+height: 80vh;
+min-height: 520px;
+max-height: 850px;
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.webp');
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: white;
+margin-top: 80px; /* ✅ deja espacio al header fijo */
+margin-bottom: 60px;
+}
+.hero-content h1 { font-size: 4rem; color: white; margin-bottom: 10px; font-style: italic; }
+.hero-content p { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; }
+
+section { padding: 60px 0; }
+h2.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; width: 100%; }
+
+.card { background: var(--bg-card); border-radius: 15px; padding: 30px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+
+/* IMPORTANTE */
+.alert-box {
+background-color: rgba(212, 163, 115, 0.15);
+border-left: 4px solid var(--accent);
+padding: 20px;
+margin: 20px auto;
+max-width: 900px;
+border-radius: 12px;
+}
+
+.hours-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px; max-width: 400px; margin-top: 20px; font-size: 0.95rem; }
+.highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+/* MENU (Menu.html usa estas clases) */
+.menu-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.menu-section { display: none; animation: fadeIn 0.5s; }
+.menu-section.active { display: block; }
+
+.dish { display: flex; justify-content: space-between; align-items: baseline; padding: 15px 0; border-bottom: 1px dashed var(--border); gap: 20px; }
+.dish-info { flex: 1; min-width: 0; }
+.dish-info h4 { font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; font-family: var(--font-body); }
+.dish-desc { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
+.dish-price { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; color: var(--primary); white-space: nowrap; }
+
+.menu-category-title { color: var(--accent); font-size: 1.5rem; margin: 30px 0 15px; text-align: center; font-style: italic; }
+.menu-note { margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border); color: var(--text-muted); font-size: 0.9rem; font-style: italic; text-align: center; }
+
+/* RESERVA */
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 820px; margin: 0 auto; }
+.form-control {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid var(--border);
+border-radius: 8px;
+background: var(--bg-body);
+color: var(--text-main);
+}
+.iframe-container { width: 100%; height: 400px; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); }
+iframe { width: 100%; height: 100%; border: 0; }
+.reserve-card { max-width: 820px; margin: 0 auto; }
+.reserve-help { color: var(--text-muted); text-align: center; margin-bottom: 22px; }
+.reserve-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 600px) { .reserve-row { grid-template-columns: 1fr; } }
+
+
+footer { background-color: #1a1a1a; color: #888; padding: 40px 0; text-align: center; font-size: 0.9rem; margin-top: 60px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+nav ul { display: none; }
+.hero-content h1 { font-size: 2.5rem; }
+.hero-section { min-height: 480px; }
+.dish { flex-direction: column; align-items: flex-start; }
+.dish-price { margin-top: 8px; }
+.form-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body data-theme="light">
+
+<header>
+<div class="container">
+<nav>
+<div class="brand">
+<img src="img/logo.svg" alt="Belvedere Logo">
+</div>
+
+<ul>
+<li><a href="#about" data-key="nav_about">Über uns</a></li>
+<li><a href="#menu" data-key="nav_menu">Speisekarte</a></li>
+<li><a href="#gallery" data-key="nav_gallery">Galerie</a></li>
+<li><a href="#reserve" data-key="nav_reserve">Reservationen</a></li>
+<li><a href="#contact" data-key="nav_contact">Kontakt</a></li>
+</ul>
+
+<div class="controls">
+<span class="theme-toggle" id="themeToggle">🌙</span>
+<div class="gtranslate_wrapper" aria-label="Language selector"></div>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero-section">
+<div class="hero-content">
+<p data-key="hero_sub">Das italienische Restaurant in Hofstetten</p>
+<h1>Ristorante Belvedere</h1>
+<a href="#reserve" class="btn" data-key="btn_reserve">Tisch reservieren</a>
+</div>
+</section>
+
+<section id="about" class="container">
+<!-- ✅ IMPORTANTE: se carga desde Importante.html -->
+<div id="importanteContent">
+<div class="alert-box">
+<p style="color:var(--text-muted);text-align:center;">Cargando aviso…</p>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center;">
+<div>
+<h2 class="section-title" style="text-align: left;" data-key="about_title">Unsere Philosophie</h2>
+<p data-key="about_text">
+Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.
+</p>
+
+<div class="hours-grid">
+<div data-key="day_mo">Mo</div> <div><span data-key="closed">Geschlossen</span></div>
+<div data-key="day_tu_fr">Di - Fr</div> <div>10:00-14:00 / 17:30-00:00</div>
+<div data-key="day_sa">Sa</div> <div>17:30 - 00:00</div>
+<div data-key="day_su">So</div> <div>11:00 - 23:00</div>
+</div>
+</div>
+
+<div>
+<img src="img/restaurante.webp" style="border-radius: 15px; box-shadow: var(--shadow);" alt="Ristorante Belvedere">
+</div>
+</div>
+</section>
+
+<section class="container" style="margin-top: 40px;">
+<div class="highlight-grid">
+<div class="card" style="text-align: center;">
+<h3 data-key="events_title">Veranstaltungen</h3>
+<p data-key="events_text" style="color:var(--text-muted);">Planen Sie ein Fest? Wir bieten den perfekten Rahmen.</p>
+<br>
+<a href="#reserve" class="btn secondary" data-key="btn_inquiry">Anfrage</a>
+</div>
+<div class="card" style="text-align: center;">
+<h3 data-key="takeaway_title">Take-away</h3>
+<p data-key="takeaway_text" style="color:var(--text-muted);">Alle Gerichte auch zum Mitnehmen.</p>
+<br>
+<a href="https://wa.me/41617314287" class="btn whatsapp" data-key="btn_wa">WhatsApp Bestellung</a>
+</div>
+</div>
+</section>
+
+<section id="menu" class="container">
+<h2 class="section-title" data-key="menu_title">Speisekarte</h2>
+
+<div class="menu-nav">
+<button class="btn secondary active" onclick="filterMenu('antipasti', event)" data-key="menu_btn_antipasti">Antipasti</button>
+<button class="btn secondary" onclick="filterMenu('paste', event)" data-key="menu_btn_pasta">Pasta</button>
+<button class="btn secondary" onclick="filterMenu('pizze', event)" data-key="menu_btn_pizze">Pizze</button>
+<button class="btn secondary" onclick="filterMenu('carne', event)" data-key="menu_btn_fish_meat">Fisch & Fleisch</button>
+</div>
+
+<!-- ✅ MENU: se carga desde Menu.html -->
+<div id="menuContent">
+<div class="card"><p style="text-align:center; color: var(--text-muted);">Cargando menú…</p></div>
+</div>
+</section>
+
+<section id="gallery" class="container">
+<h2 class="section-title" data-key="gallery_title">Galerie & Video</h2>
+
+<!-- ✅ GALERIA: se carga desde Galeria.html -->
+<div id="galeriaContent">
+<div class="card"><p style="text-align:center; color: var(--text-muted);">Cargando galería…</p></div>
+</div>
+</section>
+
+<section id="reserve" class="container">
+<h2 class="section-title" data-key="reserve_title">Reservation</h2>
+
+<div class="form-grid">
+<div class="card reserve-card">
+<p class="reserve-help">Füllen Sie das Formular aus. Die Reservation wird direkt an unser Restaurant gesendet, ohne eine Mail-App zu öffnen.</p>
+
+<form id="reservationForm" action="https://formsubmit.co/ristorante-belvedere@bluewin.ch" method="POST">
+<input type="hidden" name="_subject" value="Neue Reservation - Ristorante Belvedere">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<input id="resName" name="Name" class="form-control" type="text" data-key-ph="ph_name" placeholder="Name" required>
+<input id="resContact" name="Telefon / Kontakt" class="form-control" type="text" data-key-ph="ph_contact" placeholder="Telefon / Kontakt" required>
+
+<div class="reserve-row">
+<input id="resDate" name="Datum" class="form-control" type="date" required>
+<input id="resTime" name="Uhrzeit" class="form-control" type="time" required>
+</div>
+
+<select id="resPersons" name="Personen" class="form-control" required>
+<option value="2 Personen">2 Personen</option>
+<option value="3 Personen">3 Personen</option>
+<option value="4 Personen">4 Personen</option>
+<option value="5+ Personen">5+ Personen</option>
+</select>
+
+<textarea id="resNotes" name="Notizen" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Notizen"></textarea>
+<button type="submit" class="btn" style="width: 100%;" data-key="btn_send">Reservation senden</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+
+<!-- Texto legal -->
+<p data-key="footer_text">
+Ristorante Belvedere © 2025 | Hofstetten-Flüh, Schweiz
+</p>
+
+<!-- Contacto -->
+<div class="footer-contact">
+<p><strong data-key="contact_title">Kontakt</strong></p>
+
+<p data-key="contact_address">
+Ristorante Belvedere<br>
+Hauptstrasse 64<br>
+4114 Hofstetten-Flüh
+</p>
+
+<p>
+<span data-key="contact_phone_label">Tel:</span>
+<a href="tel:+41617214545">+41 61 721 45 45</a>
+</p>
+
+<p>
+<span data-key="contact_email_label">E-Mail:</span>
+<span>ristorante-belvedere@bluewin.ch</span>
+</p>
+</div>
+
+</div>
+</footer>
+
+
+
+<script>
+// ===== Tema =====
+const toggleBtn = document.getElementById('themeToggle');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    const body = document.body;
+    if (body.getAttribute('data-theme') === 'light') {
+      body.setAttribute('data-theme', 'dark');
+      toggleBtn.textContent = '☀️';
+    } else {
+      body.setAttribute('data-theme', 'light');
+      toggleBtn.textContent = '🌙';
+    }
+  });
+}
+
+
+// ===== Reserva por correo directo usando FormSubmit =====
+// El formulario envía los datos a FormSubmit sin abrir la app Mail.
+
+// ===== Filtro menú =====
+function filterMenu(categoryId, event) {
+  document.querySelectorAll(".menu-section").forEach(el => el.classList.remove("active"));
+  document.querySelectorAll(".menu-nav .btn").forEach(el => el.classList.remove("active"));
+  const section = document.getElementById(categoryId);
+  if (section) section.classList.add("active");
+  if (event) event.target.classList.add("active");
+}
+
+// Cargar HTML divididos + ejecutar scripts internos (para Galeria)
+async function loadInto(id, file) {
+  const container = document.getElementById(id);
+  try {
+    const res = await fetch(file, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+
+    container.innerHTML = await res.text();
+
+    const scripts = container.querySelectorAll("script");
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) newScript.src = oldScript.src;
+      else newScript.textContent = oldScript.textContent;
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  } catch (err) {
+    console.error("Error cargando " + file + ":", err);
+    container.innerHTML =
+      '<div class="card"><p style="text-align:center;color:var(--text-muted)">' +
+      'No se pudo cargar <b>' + file + '</b>. (Debe estar en la misma carpeta y abrir con servidor / Live Server)' +
+      '</p></div>';
+  }
+}
+
+// GTranslate se carga después de insertar el menú/galería, así también traduce el contenido que viene de otros archivos.
+function loadGTranslate() {
+  window.gtranslateSettings = {
+    default_language: "de",
+    native_language_names: true,
+    languages: ["de", "it", "fr", "en", "es"],
+    wrapper_selector: ".gtranslate_wrapper",
+    flag_style: "3d"
+  };
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.gtranslate.net/widgets/latest/dropdown.js";
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
+Promise.all([
+  loadInto("importanteContent", "Importante.html"),
+  loadInto("menuContent", "Menu.html"),
+  loadInto("galeriaContent", "Galeria.html")
+]).then(loadGTranslate);
+</script>
+
+</body>
+</html>
