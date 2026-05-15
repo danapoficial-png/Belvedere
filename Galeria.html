@@ -1,4 +1,39 @@
-<div class="gallery-card"><div class="gallery-main"><button class="g-btn g-prev" type="button" aria-label="Anterior">❮</button><img id="gMainImage" src="img/foto.jpeg" alt="Galería Belvedere"><button class="g-btn g-next" type="button" aria-label="Siguiente">❯</button></div><div class="gallery-thumbs" id="gThumbs"></div><div class="gallery-hint" data-key="gallery_hint">Toca la imagen para verla en grande.</div></div><div class="g-lightbox" id="gLightbox" aria-hidden="true"><button class="g-lb-close" id="gLbClose" type="button" aria-label="Cerrar">✕</button><img id="gLbImage" alt="Imagen en grande"></div><style>.gallery-card{background:var(--bg-card,#fff);border-radius:15px;padding:18px;box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));border:1px solid var(--border,#e9ecef);max-width:980px;margin:0 auto}.gallery-main{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--border,#e9ecef);height:420px;background:#000}.gallery-main img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}.g-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;z-index:2}.g-prev{left:12px}.g-next{right:12px}.gallery-thumbs{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px}.g-thumb{border-radius:10px;overflow:hidden;border:1px solid var(--border,#e9ecef);cursor:pointer;height:70px;background:#000}.g-thumb img{width:100%;height:100%;object-fit:cover}.g-thumb.active{outline:2px solid var(--primary,#2a6f75);outline-offset:2px}.gallery-hint{margin-top:12px;text-align:center;color:var(--text-muted,#6c757d);font-size:.9rem;font-style:italic}.g-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}.g-lightbox.open{display:flex}.g-lightbox img{max-width:min(1100px,95vw);max-height:85vh;border-radius:14px}.g-lb-close{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:999px;background:rgba(0,0,0,.35);color:#fff;border:1px solid rgba(255,255,255,.35)}</style><script>const gImages=[
+<div class="gallery-card">
+  <div class="gallery-stage" aria-label="Galerie Belvedere">
+    <button class="g-btn g-prev" type="button" aria-label="Vorheriges Bild">❮</button>
+
+    <div class="g-side g-side-prev" id="gPrevCard" title="Vorheriges Bild öffnen">
+      <img id="gPrevImage" alt="Vorheriges Bild">
+    </div>
+
+    <div class="g-current">
+      <img id="gMainImage" src="img/foto.jpeg" alt="Galerie Belvedere">
+    </div>
+
+    <div class="g-side g-side-next" id="gNextCard" title="Nächstes Bild öffnen">
+      <img id="gNextImage" alt="Nächstes Bild">
+    </div>
+
+    <button class="g-btn g-next" type="button" aria-label="Nächstes Bild">❯</button>
+  </div>
+
+  <div class="gallery-hint" data-key="gallery_hint">Bild antippen, um es zu vergrößern.</div>
+</div>
+
+<div class="g-lightbox" id="gLightbox" aria-hidden="true">
+  <button class="g-lb-close" id="gLbClose" type="button" aria-label="Schließen">✕</button>
+  <button class="g-lb-nav g-lb-prev" id="gLbPrev" type="button" aria-label="Vorheriges Bild">❮</button>
+  <img id="gLbImage" alt="Bild in Großansicht">
+  <button class="g-lb-nav g-lb-next" id="gLbNext" type="button" aria-label="Nächstes Bild">❯</button>
+</div>
+
+<style>
+.gallery-card{background:var(--bg-card,#fff);border-radius:15px;padding:18px;box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));border:1px solid var(--border,#e9ecef);max-width:1060px;margin:0 auto}.gallery-stage{position:relative;display:grid;grid-template-columns:minmax(120px,.65fr) minmax(360px,1.7fr) minmax(120px,.65fr);gap:14px;align-items:center}.g-current,.g-side{border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--border,#e9ecef);box-shadow:0 12px 28px rgba(0,0,0,.12)}.g-current{height:430px}.g-side{height:290px;opacity:.58;filter:saturate(.85);transform:scale(.92);cursor:zoom-in;transition:opacity .2s,transform .2s,filter .2s}.g-side:hover{opacity:.82;filter:saturate(1);transform:scale(.96)}.g-current img,.g-side img{width:100%;height:100%;object-fit:cover;display:block}.g-current img{cursor:zoom-in;transition:transform .25s,opacity .25s}.g-current img:hover{transform:scale(1.015);opacity:.98}.g-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.38);color:#fff;cursor:pointer;display:grid;place-items:center;font-size:18px;user-select:none;transition:background .2s,transform .2s;z-index:3}.g-btn:hover{background:rgba(0,0,0,.58);transform:translateY(-50%) scale(1.04)}.g-prev{left:10px}.g-next{right:10px}.gallery-hint{margin-top:12px;text-align:center;color:var(--text-muted,#6c757d);font-size:.9rem;font-style:italic}.g-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}.g-lightbox.open{display:flex}.g-lightbox img{max-width:min(1100px,92vw);max-height:86vh;border-radius:14px;border:1px solid rgba(255,255,255,.15);box-shadow:0 25px 70px rgba(0,0,0,.55)}.g-lb-close,.g-lb-nav{position:absolute;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;font-size:18px}.g-lb-close{top:16px;right:16px;width:44px;height:44px}.g-lb-nav{top:50%;transform:translateY(-50%);width:48px;height:48px}.g-lb-prev{left:18px}.g-lb-next{right:18px}.g-lb-close:hover,.g-lb-nav:hover{background:rgba(0,0,0,.58)}@media(max-width:900px){.gallery-card{padding:14px}.gallery-stage{display:block}.g-current{height:300px;border-radius:15px}.g-side{display:none}.g-btn{width:42px;height:42px}.g-prev{left:22px}.g-next{right:22px}.g-lb-nav{width:42px;height:42px}.g-lb-prev{left:10px}.g-lb-next{right:10px}}@media(max-width:520px){.g-current{height:240px}.gallery-hint{font-size:.86rem}}
+</style>
+
+<script>
+// Fotos locales. Para poner tus fotos reales: reemplaza los archivos en la carpeta /img.
+const gImages = [
   "img/foto.jpeg",
   "img/foto2.jpeg",
   "img/foto3.jpeg",
@@ -19,4 +54,41 @@
   "img/foto18.jpeg",
   "img/foto19.jpeg",
   "img/foto20.jpeg"
-];let gIndex=0;const mainImg=document.getElementById("gMainImage"),thumbsWrap=document.getElementById("gThumbs"),lb=document.getElementById("gLightbox"),lbImg=document.getElementById("gLbImage"),lbClose=document.getElementById("gLbClose");function renderThumbs(){thumbsWrap.innerHTML="";gImages.forEach((src,i)=>{const t=document.createElement("div");t.className="g-thumb"+(i===gIndex?" active":"");t.innerHTML=`<img src="${src}" alt="Miniatura ${i+1}">`;t.addEventListener("click",()=>setImage(i));thumbsWrap.appendChild(t)})}function setImage(i){gIndex=(i+gImages.length)%gImages.length;mainImg.src=gImages[gIndex];renderThumbs()}function closeLb(){lb.classList.remove("open");lb.setAttribute("aria-hidden","true");lbImg.src=""}document.querySelector(".g-next").addEventListener("click",()=>setImage(gIndex+1));document.querySelector(".g-prev").addEventListener("click",()=>setImage(gIndex-1));mainImg.addEventListener("click",()=>{lbImg.src=gImages[gIndex];lb.classList.add("open");lb.setAttribute("aria-hidden","false")});lbClose.addEventListener("click",closeLb);lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});document.addEventListener("keydown",e=>{if(lb.classList.contains("open")&&e.key==="Escape")closeLb()});renderThumbs();</script>
+];
+
+let gIndex = 0;
+const mainImg = document.getElementById("gMainImage");
+const prevImg = document.getElementById("gPrevImage");
+const nextPreviewImg = document.getElementById("gNextImage");
+const prevCard = document.getElementById("gPrevCard");
+const nextCard = document.getElementById("gNextCard");
+const lb = document.getElementById("gLightbox");
+const lbImg = document.getElementById("gLbImage");
+const lbClose = document.getElementById("gLbClose");
+const lbPrev = document.getElementById("gLbPrev");
+const lbNext = document.getElementById("gLbNext");
+
+function wrapIndex(i){ return (i + gImages.length) % gImages.length; }
+function setImage(i){
+  gIndex = wrapIndex(i);
+  mainImg.src = gImages[gIndex];
+  prevImg.src = gImages[wrapIndex(gIndex - 1)];
+  nextPreviewImg.src = gImages[wrapIndex(gIndex + 1)];
+}
+function nextImg(){ setImage(gIndex + 1); if(lb.classList.contains("open")) lbImg.src = gImages[gIndex]; }
+function prevGalleryImg(){ setImage(gIndex - 1); if(lb.classList.contains("open")) lbImg.src = gImages[gIndex]; }
+function openLb(src){ lbImg.src = src || gImages[gIndex]; lb.classList.add("open"); lb.setAttribute("aria-hidden","false"); }
+function closeLb(){ lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); lbImg.src = ""; }
+
+document.querySelector(".g-next").addEventListener("click",nextImg);
+document.querySelector(".g-prev").addEventListener("click",prevGalleryImg);
+mainImg.addEventListener("click",()=>openLb(gImages[gIndex]));
+prevCard.addEventListener("click",()=>openLb(gImages[wrapIndex(gIndex - 1)]));
+nextCard.addEventListener("click",()=>openLb(gImages[wrapIndex(gIndex + 1)]));
+lbClose.addEventListener("click",closeLb);
+lbPrev.addEventListener("click",prevGalleryImg);
+lbNext.addEventListener("click",nextImg);
+lb.addEventListener("click",e=>{ if(e.target === lb) closeLb(); });
+document.addEventListener("keydown",e=>{ if(lb.classList.contains("open")){ if(e.key === "Escape") closeLb(); if(e.key === "ArrowRight") nextImg(); if(e.key === "ArrowLeft") prevGalleryImg(); }});
+setImage(0);
+</script>
