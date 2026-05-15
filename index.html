@@ -3,345 +3,446 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ristorante Belvedere | Hofstetten</title>
-<meta name="description" content="Ristorante Belvedere in Hofstetten — italienische Küche, Pizza, Pasta.">
-
+<title>Belvedere Admin | Visueller Editor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 <style>
-:root {
---primary: #2a6f75;
---primary-dark: #1d5257;
---accent: #d4a373;
---bg-body: #f8f9fa;
---bg-card: #ffffff;
---text-main: #2c3e50;
---text-muted: #6c757d;
---border: #e9ecef;
---shadow: 0 10px 30px rgba(0,0,0,0.08);
---font-heading: 'Playfair Display', serif;
---font-body: 'Montserrat', sans-serif;
-}
-
-[data-theme="dark"] {
---primary: #4aa3a8;
---primary-dark: #2a6f75;
---accent: #e0b17b;
---bg-body: #121212;
---bg-card: #1e1e1e;
---text-main: #e0e0e0;
---text-muted: #a0a0a0;
---border: #333333;
---shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-font-family: var(--font-body);
-background-color: var(--bg-body);
-color: var(--text-main);
-line-height: 1.6;
-transition: background 0.3s, color 0.3s;
-}
-
-h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--primary-dark); }
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: var(--text-main); }
-
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
-img { max-width: 100%; display: block; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-.btn {
-display: inline-block;
-padding: 12px 30px;
-background-color: var(--primary);
-color: white !important;
-border-radius: 50px;
-font-weight: 600;
-font-size: 0.9rem;
-border: none;
-cursor: pointer;
-text-transform: uppercase;
-letter-spacing: 1px;
-box-shadow: 0 4px 15px rgba(42, 111, 117, 0.3);
-transition: transform 0.2s, box-shadow 0.2s;
-}
-.btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 8px 20px rgba(42, 111, 117, 0.4);
-background-color: var(--primary-dark);
-}
-.btn.secondary {
-background-color: transparent;
-color: var(--text-main) !important;
-border: 1px solid var(--border);
-box-shadow: none;
-}
-.btn.secondary:hover, .btn.secondary.active {
-background-color: var(--primary);
-color: white !important;
-border-color: var(--primary);
-}
-.btn.whatsapp { background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-
-header {
-position: fixed; top: 0; width: 100%; z-index: 1000;
-background: rgba(255, 255, 255, 0.95);
-backdrop-filter: blur(10px);
-border-bottom: 1px solid var(--border);
-padding: 15px 0;
-}
-[data-theme="dark"] header { background: rgba(30, 30, 30, 0.95); }
-nav { display: flex; justify-content: space-between; align-items: center; }
-.brand img { height: 50px; }
-nav ul { display: flex; gap: 25px; }
-nav ul li a { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-
-.controls { display: flex; gap: 15px; align-items: center; }
-select {
-padding: 5px 10px;
-border-radius: 20px;
-border: 1px solid var(--border);
-background: var(--bg-card);
-color: var(--text-main);
-cursor: pointer;
-}
-.gtranslate_wrapper {
-min-width: 150px;
-font-family: var(--font-body);
-}
-.gtranslate_wrapper select {
-max-width: 170px;
-}
-.theme-toggle { cursor: pointer; font-size: 1.2rem; }
-
-/* ✅ HERO: altura controlada para que NO se vea "enorme" */
-.hero-section {
-height: 80vh;
-min-height: 520px;
-max-height: 850px;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg');
-background-size: cover;
-background-position: center;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-color: white;
-margin-top: 80px; /* ✅ deja espacio al header fijo */
-margin-bottom: 60px;
-}
-.hero-content h1 { font-size: 4rem; color: white; margin-bottom: 10px; font-style: italic; }
-.hero-content p { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; }
-
-section { padding: 60px 0; }
-h2.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; width: 100%; }
-
-.card { background: var(--bg-card); border-radius: 15px; padding: 30px; box-shadow: var(--shadow); border: 1px solid var(--border); }
-
-/* IMPORTANTE */
-.alert-box {
-background-color: rgba(212, 163, 115, 0.15);
-border-left: 4px solid var(--accent);
-padding: 20px;
-margin: 20px auto;
-max-width: 900px;
-border-radius: 12px;
-}
-
-.hours-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px; max-width: 400px; margin-top: 20px; font-size: 0.95rem; }
-
-/* ABOUT / PHILOSOPHIE: mejor estructura para móvil */
-.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center; }
-.about-copy .section-title { text-align: left; margin-bottom: 22px; }
-.about-copy p { font-size: 1rem; color: var(--text-main); }
-.about-image img { width: 100%; border-radius: 15px; box-shadow: var(--shadow); object-fit: cover; }
-.about-hours { margin-top: 22px; }
-.about-hours .hours-grid { max-width: 420px; }
-
-.highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-
-/* MENU (Menu.html usa estas clases) */
-.menu-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-.menu-section { display: none; animation: fadeIn 0.5s; }
-.menu-section.active { display: block; }
-
-.dish { display: flex; justify-content: space-between; align-items: baseline; padding: 15px 0; border-bottom: 1px dashed var(--border); gap: 20px; }
-.dish-info { flex: 1; min-width: 0; }
-.dish-info h4 { font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; font-family: var(--font-body); }
-.dish-desc { font-size: 0.85rem; color: var(--text-muted); font-style: italic; }
-.dish-price { font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; color: var(--primary); white-space: nowrap; }
-
-.menu-category-title { color: var(--accent); font-size: 1.5rem; margin: 30px 0 15px; text-align: center; font-style: italic; }
-.menu-note { margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border); color: var(--text-muted); font-size: 0.9rem; font-style: italic; text-align: center; }
-
-/* RESERVA */
-.form-grid { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 820px; margin: 0 auto; }
-.form-control {
-width: 100%;
-padding: 12px;
-margin-bottom: 15px;
-border: 1px solid var(--border);
-border-radius: 8px;
-background: var(--bg-body);
-color: var(--text-main);
-}
-.iframe-container { width: 100%; height: 400px; border-radius: 15px; overflow: hidden; border: 1px solid var(--border); }
-iframe { width: 100%; height: 100%; border: 0; }
-.reserve-card { max-width: 820px; margin: 0 auto; }
-.reserve-help { color: var(--text-muted); text-align: center; margin-bottom: 22px; }
-.reserve-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-@media (max-width: 600px) { .reserve-row { grid-template-columns: 1fr; } }
-
-
-footer { background-color: #1a1a1a; color: #888; padding: 40px 0; text-align: center; font-size: 0.9rem; margin-top: 60px; }
-
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-@media (max-width: 900px) {
-nav ul { display: none; }
-.hero-content h1 { font-size: 2.5rem; }
-.hero-section { min-height: 480px; }
-.dish { flex-direction: column; align-items: flex-start; }
-.dish-price { margin-top: 8px; }
-.form-grid { grid-template-columns: 1fr; }
-.about-layout { grid-template-columns: 1fr; gap: 24px; margin-top: 34px; }
-.about-copy { order: 1; }
-.about-image { order: 2; }
-.about-hours { order: 3; margin-top: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 18px; box-shadow: var(--shadow); }
-.about-copy .section-title { font-size: 2.45rem; line-height: 1.05; margin-bottom: 18px; }
-.about-copy p { font-size: 1rem; line-height: 1.8; }
-.about-image img { height: 230px; object-fit: cover; }
-.about-hours .hours-grid { max-width: none; grid-template-columns: 82px 1fr; gap: 12px 16px; margin-top: 0; font-size: .98rem; }
-.card { padding: 24px; }
-h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
-
-}
+:root{--primary:#2a6f75;--primary-dark:#1d5257;--accent:#d4a373;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#2c3e50;--text-muted:#6c757d;--border:#e9ecef;--shadow:0 10px 30px rgba(0,0,0,.08);--font-heading:'Playfair Display',serif;--font-body:'Montserrat',sans-serif}*{box-sizing:border-box}body{margin:0;font-family:var(--font-body);background:var(--bg-body);color:var(--text-main);line-height:1.6}h1,h2,h3,h4{font-family:var(--font-heading);color:var(--primary-dark)}a{text-decoration:none;color:inherit}.container{max-width:1100px;margin:0 auto;padding:0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 22px;background:var(--primary);color:white!important;border-radius:50px;font-weight:700;font-size:.82rem;border:0;cursor:pointer;text-transform:uppercase;letter-spacing:.6px;box-shadow:0 4px 15px rgba(42,111,117,.22)}.btn:hover{background:var(--primary-dark)}.btn.secondary{background:#fff;color:var(--text-main)!important;border:1px solid var(--border);box-shadow:none}.btn.warn{background:#9d4b35}.btn.small{padding:8px 12px;font-size:.72rem}.card{background:var(--bg-card);border-radius:15px;padding:28px;box-shadow:var(--shadow);border:1px solid var(--border)}.adminbar{position:sticky;top:0;z-index:9999;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.05)}.adminbar-inner{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.status{font-size:.85rem;color:var(--text-muted)}.edit-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;background:rgba(212,163,115,.18);border:1px solid rgba(212,163,115,.45);font-weight:700;color:var(--primary-dark);font-size:.78rem;margin:0 0 12px}.edit-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.hero-section{height:68vh;min-height:460px;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),var(--hero-image,url('img/portada.jpeg'));background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:white;margin-bottom:60px}.hero-content h1{font-size:4rem;color:white;margin:0 0 10px;font-style:italic}.hero-content p{font-size:1.1rem;font-weight:300;letter-spacing:2px;text-transform:uppercase}.fake-header{background:white;border-bottom:1px solid var(--border);padding:15px 0}.fake-nav{display:flex;align-items:center;justify-content:space-between}.brand img{height:50px}.fake-menu{display:flex;gap:25px;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:1px}.section-title{text-align:center;font-size:2.5rem;margin:0 0 35px}.alert-box{background:rgba(212,163,115,.15);border-left:4px solid var(--accent);padding:20px;border-radius:12px;max-width:900px;margin:0 auto 40px}.hours-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:10px;max-width:400px;margin-top:20px;font-size:.95rem}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.menu-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:28px}.dish{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px dashed var(--border);gap:20px}.dish-info{flex:1}.dish-info h4{font-family:var(--font-body);font-size:1rem;margin:0 0 3px}.dish-desc{font-size:.84rem;color:var(--text-muted);font-style:italic}.dish-price{font-family:var(--font-heading);font-weight:700;font-size:1.15rem;color:var(--primary);white-space:nowrap}.menu-category-title{color:var(--accent);font-size:1.5rem;margin:24px 0 12px;text-align:center;font-style:italic}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}.thumb{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#f1f1f1;min-height:90px;position:relative}.thumb img{width:100%;height:100px;object-fit:cover;display:block}.thumb label{display:block;padding:8px;font-size:.75rem;color:var(--text-muted);word-break:break-all}.field{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:#fff;font-family:var(--font-body);margin:5px 0 12px}.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:10000;padding:18px}.modal.open{display:flex}.modal-card{background:white;border-radius:18px;box-shadow:0 25px 70px rgba(0,0,0,.28);max-width:920px;width:100%;max-height:88vh;overflow:auto;padding:24px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.dish-editor-row{display:grid;grid-template-columns:1.2fr 1.8fr .6fr auto;gap:8px;align-items:center;margin-bottom:8px}.img-edit-row{display:grid;grid-template-columns:130px 1fr auto;gap:12px;align-items:center;border:1px solid var(--border);border-radius:14px;padding:12px;margin:12px 0}.preview-img{width:120px;height:78px;object-fit:cover;border-radius:10px;border:1px solid var(--border);background:#f1f1f1}.login{max-width:440px;margin:50px auto}.hidden{display:none!important}.note{color:var(--text-muted);font-size:.9rem}.success{color:#167444;font-weight:700}.error{color:#9d2f2f;font-weight:700}footer{background:#1a1a1a;color:#888;padding:40px 0;text-align:center;font-size:.9rem;margin-top:60px}@media(max-width:850px){.fake-menu{display:none}.two-col,.grid2,.dish-editor-row,.img-edit-row{grid-template-columns:1fr}.hero-content h1{font-size:2.5rem}.hero-section{min-height:390px}.preview-img{width:100%;height:160px}}
 </style>
 </head>
-
-<body data-theme="dark">
-
-<header>
-<div class="container">
-<nav>
-<div class="brand">
-<img src="img/logo.svg" alt="Belvedere Logo">
+<body>
+<div id="loginView" class="login card">
+  <h1 style="margin-top:0">Belvedere Admin</h1>
+  <p class="note">Melden Sie sich an, um die aktuelle Version aus GitHub zu laden und Änderungen direkt zu veröffentlichen.</p>
+  <label>E-Mail</label>
+  <input id="loginEmail" class="field" type="email" autocomplete="username" placeholder="email">
+  <label>Passwort</label>
+  <input id="loginPassword" class="field" type="password" autocomplete="current-password" placeholder="Passwort">
+  <button class="btn" onclick="login()">Einloggen</button>
+  <p id="loginMsg" class="note"></p>
 </div>
 
-<ul>
-<li><a href="#about" data-key="nav_about">Über uns</a></li>
-<li><a href="#menu" data-key="nav_menu">Speisekarte</a></li>
-<li><a href="#gallery" data-key="nav_gallery">Galerie</a></li>
-<li><a href="#reserve" data-key="nav_reserve">Reservationen</a></li>
-<li><a href="#contact" data-key="nav_contact">Kontakt</a></li>
-</ul>
+<div id="appView" class="hidden">
+  <div class="adminbar">
+    <div class="adminbar-inner">
+      <div><strong>Belvedere Bearbeitungsmodus</strong><div id="status" class="status">Noch nicht geladen</div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn secondary small" onclick="loadFromGitHub()">↻ Aktuelle Version laden</button>
+        <button class="btn small" onclick="publishAll()">💾 Speichern & veröffentlichen</button>
+        <button class="btn secondary small" onclick="openThemeModal()">🌗 Hell/Dunkel</button>
+        <button class="btn secondary small" onclick="downloadFiles()">⬇ Kopie herunterladen</button>
+        <button class="btn secondary small" onclick="logout()">Abmelden</button>
+      </div>
+    </div>
+  </div>
 
-<div class="controls">
-<span class="theme-toggle" id="themeToggle">☀️</span>
-<div class="gtranslate_wrapper" aria-label="Language selector"></div>
-</div>
-</nav>
-</div>
-</header>
+  <div class="fake-header"><div class="container fake-nav"><div><span class="edit-chip">🖼️ Logo</span><div class="brand"><img id="logoPreview" src="img/logo.svg" alt="Logo"></div><button class="btn secondary small" onclick="openImagesModal()">Bilder ändern</button></div><div class="fake-menu"><span>Über uns</span><span>Speisekarte</span><span>Galerie</span><span>Reservationen</span><span>Kontakt</span></div></div></div>
 
-<section class="hero-section">
-<div class="hero-content">
-<p data-key="hero_sub">Das italienische Restaurant in Hofstetten</p>
-<h1>Ristorante Belvedere</h1>
-<a href="#reserve" class="btn" data-key="btn_reserve">Tisch reservieren</a>
-</div>
-</section>
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <div class="edit-actions" style="justify-content:center"><button class="btn secondary small" onclick="openHeroModal()">✏️ Startbild/Text bearbeiten</button></div>
+      <p id="heroSub">Das italienische Restaurant in Hofstetten</p>
+      <h1>Ristorante Belvedere</h1>
+      <span class="btn">Tisch reservieren</span>
+    </div>
+  </section>
 
-<section id="about" class="container">
-<!-- ✅ IMPORTANTE: se carga desde Importante.html -->
-<div id="importanteContent">
-<div class="alert-box">
-<p style="color:var(--text-muted);text-align:center;">Cargando aviso…</p>
-</div>
-</div>
+  <section class="container">
+    <div class="edit-actions"><button class="btn secondary small" onclick="openImportantModal()">✏️ Hinweis bearbeiten</button></div>
+    <div id="importantPreview" class="alert-box"></div>
 
-<div class="about-layout">
-<div class="about-copy">
-<h2 class="section-title" data-key="about_title">Unsere Philosophie</h2>
-<p data-key="about_text">
-Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.
-</p>
-</div>
+    <div class="two-col" style="margin-top:50px">
+      <div>
+        <div class="edit-actions"><button class="btn secondary small" onclick="openAboutModal()">✏️ Philosophie bearbeiten (Notfall)</button></div>
+        <h2 id="aboutTitlePreview" class="section-title" style="text-align:left">Unsere Philosophie</h2>
+        <p id="aboutTextPreview">Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.</p>
+        <div class="hours-grid"><div>Mo</div><div>Geschlossen</div><div>Di - Fr</div><div>10:00-14:00 / 17:30-00:00</div><div>Sa</div><div>17:30 - 00:00</div><div>So</div><div>11:00 - 23:00</div></div>
+      </div>
+      <div><span class="edit-chip">🖼️ Hauptfoto</span><img id="restaurantPreview" src="img/restaurante.png" style="border-radius:15px;box-shadow:var(--shadow);width:100%" alt="Restaurante"><button class="btn secondary small" style="margin-top:12px" onclick="openImagesModal()">Hauptfoto ändern</button></div>
+    </div>
+  </section>
 
-<div class="about-image">
-<img src="img/restaurante.jpeg" alt="Ristorante Belvedere">
-</div>
+  <section class="container" style="margin-top:40px">
+    <h2 class="section-title">Speisekarte</h2>
+    <div class="menu-nav" id="menuTabs"></div>
+    <div class="edit-actions" id="menuEditActions"></div>
+    <div id="menuPreview" class="card"></div>
+  </section>
 
-<div class="about-hours">
-<div class="hours-grid">
-<div data-key="day_mo">Mo</div> <div><span data-key="closed">Geschlossen</span></div>
-<div data-key="day_tu_fr">Di - Fr</div> <div>10:00-14:00 / 17:30-00:00</div>
-<div data-key="day_sa">Sa</div> <div>17:30 - 00:00</div>
-<div data-key="day_su">So</div> <div>11:00 - 23:00</div>
-</div>
-</div>
-</div>
-</section>
+  <section class="container" style="margin-top:70px">
+    <h2 class="section-title">Galerie & Video</h2>
+    <div class="edit-actions"><button class="btn secondary small" onclick="openGalleryModal()">🖼️ Galerie bearbeiten</button></div>
+    <div class="card"><div id="galleryPreview" class="gallery-grid"></div></div>
+  </section>
 
-<section class="container" style="margin-top: 40px;">
-<div class="highlight-grid">
-<div class="card" style="text-align: center;">
-<h3 data-key="events_title">Veranstaltungen</h3>
-<p data-key="events_text" style="color:var(--text-muted);">Planen Sie ein Fest? Wir bieten den perfekten Rahmen.</p>
-<br>
-<a href="#reserve" class="btn secondary" data-key="btn_inquiry">Anfrage</a>
-</div>
-<div class="card" style="text-align: center;">
-<h3 data-key="takeaway_title">Take-away</h3>
-<p data-key="takeaway_text" style="color:var(--text-muted);">Alle Gerichte auch zum Mitnehmen.</p>
-<br>
-<a href="https://wa.me/41617314287" class="btn whatsapp" data-key="btn_wa">WhatsApp Bestellung</a>
-</div>
-</div>
-</section>
 
-<section id="menu" class="container">
-<h2 class="section-title" data-key="menu_title">Speisekarte</h2>
 
-<div class="menu-nav">
-<button class="btn secondary active" onclick="filterMenu('antipasti', event)" data-key="menu_btn_antipasti">Antipasti</button>
-<button class="btn secondary" onclick="filterMenu('paste', event)" data-key="menu_btn_pasta">Pasta</button>
-<button class="btn secondary" onclick="filterMenu('pizze', event)" data-key="menu_btn_pizze">Pizze</button>
-<button class="btn secondary" onclick="filterMenu('carne', event)" data-key="menu_btn_fish_meat">Fisch & Fleisch</button>
+  <section class="container" style="margin-top:70px">
+    <h2 class="section-title">Reservation</h2>
+    <div class="edit-actions"><button class="btn secondary small" onclick="openReservationModal()">✏️ Reservation reparieren / Kontakt bearbeiten</button></div>
+    <div class="card reserve-card">
+      <p id="reservationPreview" class="note">WhatsApp-Reservation wird vorbereitet.</p>
+    </div>
+  </section>
+
+  <footer><div class="container">Ristorante Belvedere © 2025 | Flühstrasse 30, 4114 Hofstetten-Flüh</div></footer>
 </div>
 
-<!-- ✅ MENU: se carga desde Menu.html -->
-<div id="menuContent">
-<div class="card"><p style="text-align:center; color: var(--text-muted);">Cargando menú…</p></div>
+<div class="modal" id="modal"><div class="modal-card"><div class="modal-head"><h2 id="modalTitle" style="margin:0">Bearbeiten</h2><button class="btn secondary small" onclick="closeModal()">✕ Schließen</button></div><div id="modalBody"></div></div></div>
+
+<script>
+const API = { login:'/api/login', load:'/api/load-site', publish:'/api/publish-site' };
+const categoryNames = { antipasti:'Antipasti', paste:'Pasta', pizze:'Pizze', carne:'Fisch & Fleisch' };
+let token = localStorage.getItem('belvedere_admin_token') || '';
+let site = { index:'', diseno:'', menu:'', gallery:'', important:'' };
+let state = { importantTitle:'Aktuell', importantText:'', heroSub:'Das italienische Restaurant in Hofstetten', aboutTitle:'Unsere Philosophie', aboutText:'Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.', defaultTheme:'light', reservationPhone:'41617314287', reservationEmail:'ristorante-belvedere@bluewin.ch', reservationEndpoint:(window.location.origin + '/api/reservation'), activeCategory:'antipasti', categories:{antipasti:[], paste:[], pizze:[], carne:[]}, gallery:[], imagePaths:{logo:'img/logo.svg', hero:'img/portada.jpeg', restaurant:'img/restaurante.png'}, pendingImages:{}, rawBaseUrl:'', pagesBaseUrl:'', cacheBust:Date.now() };
+
+function setStatus(text, cls=''){ const el=document.getElementById('status'); if(el){el.textContent=text; el.className='status '+cls;} }
+function b64Text(s){ return btoa(unescape(encodeURIComponent(s))); }
+function b64DataUrl(dataUrl){
+  if(!dataUrl) return '';
+  const s=String(dataUrl);
+  return s.includes(',') ? s.split(',').pop() : s;
+}
+function normalizePath(path){
+  return String(path||'').trim().replace(/^\/+/, '').replace(/\\/g,'/').split('?')[0].split('#')[0];
+}
+function joinUrl(base, path){ return String(base||'').replace(/\/+$/,'') + '/' + String(path||'').replace(/^\/+/, ''); }
+function assetPreview(path){
+  const clean=normalizePath(path);
+  if(!clean) return '';
+  if(state.pendingImages[clean]) return state.pendingImages[clean];
+  if(/^https?:\/\//i.test(String(path))) return path;
+  // Wichtig: Der Admin läuft auf Netlify, die Bilder liegen aber auf GitHub Pages.
+  // Deshalb werden Vorschauen über PUBLIC_SITE_URL/pagesBaseUrl geladen.
+  const base = state.pagesBaseUrl || state.rawBaseUrl;
+  if(base) return joinUrl(base, clean.split('/').map(encodeURIComponent).join('/')) + '?v=' + state.cacheBust;
+  return clean;
+}
+function cssUrlForPreview(path){ return `url('${assetPreview(path)}')`; }
+function safeFileName(name){
+  return String(name||'foto.jpg').trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9._-]+/g,'-');
+}
+function escapeHtml(s=''){ return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+function dataUrlFromFile(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.onerror=rej; r.readAsDataURL(file); }); }
+
+const MAX_IMAGE_MB = 12;
+function galleryPathForIndex(i){ return i === 0 ? 'img/foto.jpeg' : `img/foto${i+1}.jpeg`; }
+function isBitmapImage(file){ return ['image/jpeg','image/jpg','image/png','image/webp'].includes(String(file.type||'').toLowerCase()); }
+function isSvg(file){ return String(file.type||'').toLowerCase()==='image/svg+xml' || String(file.name||'').toLowerCase().endsWith('.svg'); }
+function validateImageFile(file, allowSvg=false){
+  if(!file) throw new Error('No se seleccionó ninguna imagen.');
+  const mb=file.size/1024/1024;
+  if(mb > MAX_IMAGE_MB) throw new Error(`La imagen pesa ${mb.toFixed(1)} MB. Usa una imagen de máximo ${MAX_IMAGE_MB} MB.`);
+  const name=String(file.name||'').toLowerCase();
+  if(name.endsWith('.heic') || name.endsWith('.heif')) throw new Error('El formato HEIC/HEIF de iPhone no es compatible aquí. Exporta la foto como JPG, PNG o WEBP.');
+  if(allowSvg && isSvg(file)) return;
+  if(!isBitmapImage(file)) throw new Error('Formato no compatible. Usa JPG, PNG o WEBP. Para logo también se acepta SVG.');
+}
+async function imageToJpegDataUrl(file, maxWidth=1800, quality=0.86){
+  validateImageFile(file, false);
+  const inputUrl=await dataUrlFromFile(file);
+  const img=await new Promise((resolve,reject)=>{
+    const im=new Image();
+    im.onload=()=>resolve(im);
+    im.onerror=()=>reject(new Error('Das Bild konnte nicht gelesen werden. Bitte JPG, PNG oder WEBP verwenden.'));
+    im.src=inputUrl;
+  });
+  const scale=Math.min(1, maxWidth / img.naturalWidth);
+  const w=Math.max(1, Math.round(img.naturalWidth * scale));
+  const h=Math.max(1, Math.round(img.naturalHeight * scale));
+  const canvas=document.createElement('canvas');
+  canvas.width=w; canvas.height=h;
+  const ctx=canvas.getContext('2d');
+  ctx.fillStyle='#ffffff';
+  ctx.fillRect(0,0,w,h);
+  ctx.drawImage(img,0,0,w,h);
+  return canvas.toDataURL('image/jpeg', quality);
+}
+async function logoDataUrlAndPath(file){
+  validateImageFile(file, true);
+  if(isSvg(file)) return { path:'img/logo.svg', data: await dataUrlFromFile(file) };
+  // Para logos en PNG/JPG/WEBP mantenemos transparencia si viene PNG/WEBP.
+  const inputUrl=await dataUrlFromFile(file);
+  const img=await new Promise((resolve,reject)=>{ const im=new Image(); im.onload=()=>resolve(im); im.onerror=()=>reject(new Error('Das Logo konnte nicht gelesen werden.')); im.src=inputUrl; });
+  const maxWidth=800;
+  const scale=Math.min(1, maxWidth/img.naturalWidth);
+  const w=Math.max(1,Math.round(img.naturalWidth*scale));
+  const h=Math.max(1,Math.round(img.naturalHeight*scale));
+  const canvas=document.createElement('canvas'); canvas.width=w; canvas.height=h;
+  canvas.getContext('2d').drawImage(img,0,0,w,h);
+  return { path:'img/logo.png', data: canvas.toDataURL('image/png') };
+}
+function markChanged(msg){ setStatus(msg || 'Änderung vorbereitet. Klicken Sie auf „Speichern & veröffentlichen“.','success'); }
+
+
+if(token){ document.getElementById('loginView').classList.add('hidden'); document.getElementById('appView').classList.remove('hidden'); loadFromGitHub(); }
+
+async function login(){
+  const msg=document.getElementById('loginMsg'); msg.textContent='Einloggen...';
+  try{
+    const r=await fetch(API.login,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:loginEmail.value.trim(),password:loginPassword.value})});
+    const data=await r.json(); if(!data.ok) throw new Error(data.error||'Login fehlgeschlagen');
+    token=data.token; localStorage.setItem('belvedere_admin_token',token);
+    loginView.classList.add('hidden'); appView.classList.remove('hidden'); await loadFromGitHub();
+  }catch(e){ msg.textContent=e.message; msg.className='error'; }
+}
+function logout(){ localStorage.removeItem('belvedere_admin_token'); location.reload(); }
+async function api(url, opts={}){
+  const r=await fetch(url,{...opts,headers:{...(opts.headers||{}),Authorization:'Bearer '+token}});
+  const text=await r.text();
+  let data;
+  try{ data=text ? JSON.parse(text) : {}; }catch{ throw new Error(text || ('HTTP '+r.status)); }
+  if(!r.ok || !data.ok) throw new Error(data.error || ('HTTP '+r.status));
+  return data;
+}
+
+async function loadFromGitHub(){
+  setStatus('Aktuelle Version wird aus GitHub geladen...');
+  try{
+    const data=await api(API.load);
+    state.rawBaseUrl=data.rawBaseUrl||''; state.pagesBaseUrl=data.pagesBaseUrl||data.publicSiteUrl||''; state.reservationEndpoint=data.reservationEndpoint || state.reservationEndpoint || (window.location.origin + '/api/reservation'); state.cacheBust=Date.now();
+    site.index=data.files['index.html']?.content||''; site.diseno=''; site.menu=data.files['Menu.html']?.content||''; site.gallery=data.files['Galeria.html']?.content||''; site.important=data.files['Importante.html']?.content||'';
+    parseAll(); renderAll(); setStatus('Aktuelle Version aus GitHub geladen.','success');
+  }catch(e){ setStatus('Fehler: '+e.message,'error'); }
+}
+function parseAll(){ parseImagePaths(); parseImportant(); parseHeroText(); parseAbout(); parseTheme(); parseReservation(); parseMenu(); parseGallery(); }
+function parseImagePaths(){
+  const source=site.index||'';
+  state.imagePaths.logo=normalizePath((source.match(/<div class="brand">\s*<img src="([^"]+)"/s)||[])[1]||state.imagePaths.logo);
+  state.imagePaths.hero=normalizePath((source.match(/hero-section[\s\S]*?url\(["']?([^"')]+)["']?\)/)||[])[1]||state.imagePaths.hero);
+  state.imagePaths.restaurant=normalizePath((source.match(/<img src="([^"]+)"[^>]*alt="Ristorante Belvedere"/)||[])[1]||state.imagePaths.restaurant);
+}
+function parseImportant(){
+  const doc=new DOMParser().parseFromString(site.important||'', 'text/html');
+  state.importantTitle=(doc.querySelector('[data-key="important_title"]')?.textContent||'Aktuell').trim();
+  state.importantText=(doc.querySelector('[data-key="important_text"]')?.textContent||'').trim();
+}
+function parseHeroText(){
+  const doc=new DOMParser().parseFromString(site.index||'', 'text/html');
+  state.heroSub=(doc.querySelector('[data-key="hero_sub"]')?.textContent||state.heroSub).trim();
+}
+function parseAbout(){
+  const doc=new DOMParser().parseFromString(site.index||'', 'text/html');
+  state.aboutTitle=(doc.querySelector('[data-key="about_title"]')?.textContent||state.aboutTitle).trim();
+  state.aboutText=(doc.querySelector('[data-key="about_text"]')?.textContent||state.aboutText).trim();
+}
+function parseTheme(){
+  const source=site.index||'';
+  const m=source.match(/<body[^>]*data-theme="(dark|light)"/i);
+  state.defaultTheme=m ? m[1].toLowerCase() : 'light';
+}
+function parseReservation(){
+  const source=site.index||'';
+  const endpoint=(source.match(/const\s+reservationEndpoint\s*=\s*["']([^"']+)["']/)||[])[1];
+  if(endpoint) state.reservationEndpoint=endpoint;
+  const formEmail=(source.match(/formsubmit\.co\/([^"'\s>]+)/)||[])[1];
+  if(formEmail) state.reservationEmail=decodeURIComponent(formEmail);
+  const email=(source.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)||[])[0];
+  if(email) state.reservationEmail=email;
+}
+function parseMenu(){
+  const doc=new DOMParser().parseFromString(site.menu||'', 'text/html');
+  Object.keys(categoryNames).forEach(id=>{
+    const sec=doc.getElementById(id); const dishes=[];
+    if(sec){ sec.querySelectorAll('.dish').forEach(d=>{ dishes.push({ name:(d.querySelector('.dish-info h4')?.textContent||'').trim(), desc:(d.querySelector('.dish-desc')?.textContent||'').trim(), price:(d.querySelector('.dish-price')?.textContent||'').replace('CHF','').trim() }); }); }
+    state.categories[id]=dishes;
+  });
+}
+function parseGallery(){
+  const m=(site.gallery||'').match(/const\s+gImages\s*=\s*\[([\s\S]*?)\]/);
+  if(m){ state.gallery=[...m[1].matchAll(/"([^"]+)"/g)].map(x=>x[1]); }
+}
+function renderAll(){ renderImportant(); renderAbout(); renderImages(); renderMenu(); renderGallery(); renderReservation(); }
+function renderImportant(){ importantPreview.innerHTML=`<h3 style="margin-top:0;color:var(--accent)">⚠️ ${escapeHtml(state.importantTitle)}</h3><p>${escapeHtml(state.importantText)}</p>`; }
+function renderAbout(){ if(document.getElementById("aboutTitlePreview")) aboutTitlePreview.textContent=state.aboutTitle; if(document.getElementById("aboutTextPreview")) aboutTextPreview.textContent=state.aboutText; }
+function renderImages(){ logoPreview.src=assetPreview(state.imagePaths.logo); restaurantPreview.src=assetPreview(state.imagePaths.restaurant); document.getElementById('hero').style.setProperty('--hero-image', cssUrlForPreview(state.imagePaths.hero)); heroSub.textContent=state.heroSub; }
+function renderMenu(){
+  menuTabs.innerHTML=Object.keys(categoryNames).map(id=>`<button class="btn secondary ${state.activeCategory===id?'active':''}" onclick="state.activeCategory='${id}';renderMenu()">${categoryNames[id]}</button>`).join('');
+  menuEditActions.innerHTML=`<button class="btn secondary small" onclick="openCategoryModal('${state.activeCategory}')">✏️ Bearbeiten ${categoryNames[state.activeCategory]}</button><button class="btn secondary small" onclick="openImportModal('${state.activeCategory}')">📄 ${categoryNames[state.activeCategory]} mit PDF/DOCX ersetzen</button>`;
+  const dishes=state.categories[state.activeCategory]||[];
+  menuPreview.innerHTML=`<h3 class="menu-category-title">${categoryNames[state.activeCategory]}</h3>`+dishes.map(d=>`<div class="dish"><div class="dish-info"><h4>${escapeHtml(d.name)}</h4><span class="dish-desc">${escapeHtml(d.desc)}</span></div><div class="dish-price">${escapeHtml(d.price)} <span class="currency">CHF</span></div></div>`).join('');
+}
+function renderGallery(){ galleryPreview.innerHTML=state.gallery.map((src,i)=>`<div class="thumb"><img src="${assetPreview(src)}" onerror="this.style.opacity=.25"><label>Foto ${i+1}<br>${escapeHtml(normalizePath(src))}</label></div>`).join(''); }
+function renderReservation(){
+  const el=document.getElementById('reservationPreview');
+  if(el) el.innerHTML=`Reservation wird direkt aus der Webseite gesendet.<br><strong>Empfänger:</strong> ${escapeHtml(state.reservationEmail)}<br><strong>Endpoint:</strong> ${escapeHtml(state.reservationEndpoint)}`;
+}
+
+function openModal(title, html){ modalTitle.textContent=title; modalBody.innerHTML=html; modal.classList.add('open'); }
+function closeModal(){ modal.classList.remove('open'); modalBody.innerHTML=''; }
+function openThemeModal(){
+  openModal('Darstellung: Hell oder Dunkel', `<p class="note">Wählen Sie, wie die öffentliche Webseite beim Öffnen starten soll.</p>
+  <label><input type="radio" name="themeChoice" value="light" ${state.defaultTheme==='light'?'checked':''}> Hell</label><br>
+  <label><input type="radio" name="themeChoice" value="dark" ${state.defaultTheme==='dark'?'checked':''}> Dunkel</label><br><br>
+  <button class="btn" onclick="saveThemeChoice()">Vorschau speichern</button>`);
+}
+function saveThemeChoice(){
+  const selected=document.querySelector('input[name="themeChoice"]:checked')?.value || 'light';
+  state.defaultTheme=selected;
+  closeModal();
+  markChanged('Darstellung vorbereitet: '+(selected==='dark'?'Dunkel':'Hell')+'.');
+}
+function openImportantModal(){ openModal('Wichtigen Hinweis bearbeiten', `<label>Titel</label><input id="impTitle" class="field" value="${escapeHtml(state.importantTitle)}"><label>Text</label><textarea id="impText" class="field" rows="6">${escapeHtml(state.importantText)}</textarea><button class="btn" onclick="state.importantTitle=impTitle.value;state.importantText=impText.value;renderImportant();closeModal();markChanged('Hinweis vorbereitet.')">Vorschau speichern</button>`); }
+function openHeroModal(){ openModal('Startbild und Untertitel bearbeiten', `<label>Untertitel Startbereich</label><input id="heroSubInput" class="field" value="${escapeHtml(state.heroSub)}"><p class="note">Das Startbild ändern Sie unter „Bilder ändern“.</p><button class="btn" onclick="state.heroSub=heroSubInput.value;renderImages();closeModal();markChanged('Startbereich vorbereitet.')">Vorschau speichern</button>`); }
+function openAboutModal(){ openModal('Philosophie bearbeiten (Notfall)', `<p class="note">Nur ändern, wenn es wirklich nötig ist. Der Text ist die Basis in Deutsch; GTranslate übersetzt ihn danach automatisch.</p><label>Titel</label><input id="aboutTitleInput" class="field" value="${escapeHtml(state.aboutTitle)}"><label>Text</label><textarea id="aboutTextInput" class="field" rows="7">${escapeHtml(state.aboutText)}</textarea><button class="btn" onclick="state.aboutTitle=aboutTitleInput.value.trim();state.aboutText=aboutTextInput.value.trim();renderAbout();closeModal();markChanged('Philosophie vorbereitet.')">Vorschau speichern</button>`); }
+function openReservationModal(){
+  openModal('Reservation bearbeiten', `<p class="note">Die Reservation wird direkt von der Webseite an eine Netlify Function gesendet. Es öffnet sich kein WhatsApp, keine Mail-App und keine neue Seite.</p>
+  <label>Empfänger E-Mail</label>
+  <input id="resEmailInput" class="field" value="${escapeHtml(state.reservationEmail)}" placeholder="ristorante-belvedere@bluewin.ch">
+  <label>Netlify Reservation Endpoint</label>
+  <input id="resEndpointInput" class="field" value="${escapeHtml(state.reservationEndpoint)}" placeholder="https://dein-admin.netlify.app/api/reservation">
+  <p class="note">In Netlify müssen zusätzlich RESEND_API_KEY und RESERVATION_TO_EMAIL gesetzt sein. RESERVATION_TO_EMAIL sollte dieselbe E-Mail sein.</p>
+  <button class="btn" onclick="saveReservationConfig()">Reservation speichern</button>`);
+}
+function saveReservationConfig(){
+  const email=(document.getElementById('resEmailInput').value||'').trim();
+  const endpoint=(document.getElementById('resEndpointInput').value||'').trim();
+  if(!email || !email.includes('@')){ alert('Bitte eine gültige E-Mail eingeben.'); return; }
+  if(!/^https?:\/\//i.test(endpoint)){ alert('Bitte einen gültigen Endpoint mit https:// eingeben.'); return; }
+  state.reservationEmail=email;
+  state.reservationEndpoint=endpoint;
+  renderReservation();
+  closeModal();
+  markChanged('Reservation vorbereitet. Beim Veröffentlichen wird das Formular auf Direktversand umgestellt.');
+}
+function openCategoryModal(id){
+  const rows=(state.categories[id]||[]).map((d,i)=>rowHtml(i,d)).join('');
+  openModal('Bearbeiten '+categoryNames[id], `<div id="dishRows">${rows}</div><button class="btn secondary small" onclick="addDishRow()">+ Gericht hinzufügen</button><hr><button class="btn" onclick="saveDishRows('${id}')">Kategorie speichern</button>`);
+}
+function rowHtml(i,d={name:'',desc:'',price:''}){return `<div class="dish-editor-row"><input class="field dish-name" placeholder="Gericht" value="${escapeHtml(d.name)}"><input class="field dish-desc-in" placeholder="Beschreibung" value="${escapeHtml(d.desc)}"><input class="field dish-price-in" placeholder="Preis" value="${escapeHtml(d.price)}"><button class="btn secondary small" onclick="this.parentElement.remove()">Löschen</button></div>`;}
+function addDishRow(){ dishRows.insertAdjacentHTML('beforeend', rowHtml(0)); }
+function saveDishRows(id){ state.categories[id]=[...document.querySelectorAll('.dish-editor-row')].map(r=>({name:r.querySelector('.dish-name').value.trim(),desc:r.querySelector('.dish-desc-in').value.trim(),price:r.querySelector('.dish-price-in').value.trim()})).filter(d=>d.name); renderMenu(); closeModal(); markChanged(categoryNames[id]+' vorbereitet.'); }
+function openImportModal(id){ openModal('Ersetzen '+categoryNames[id]+' mit PDF/DOCX/TXT', `<p class="note">Laden Sie eine Datei hoch. Das System versucht, Gericht, Beschreibung und Preis zu erkennen. Bitte prüfen Sie die Vorschau vor dem Ersetzen der Kategorie.</p><input id="importFile" class="field" type="file" accept=".pdf,.docx,.txt"><button class="btn secondary" onclick="parseImportFile('${id}')">Datei lesen</button><div id="importPreview" style="margin-top:16px"></div>`); }
+async function parseImportFile(id){
+  const file=importFile.files[0]; if(!file) return;
+  importPreview.innerHTML='<p class="note">Datei wird gelesen...</p>';
+  let text='';
+  if(file.name.toLowerCase().endsWith('.pdf')){
+    const buf=await file.arrayBuffer(); const pdf=await pdfjsLib.getDocument({data:buf}).promise;
+    for(let p=1;p<=pdf.numPages;p++){ const page=await pdf.getPage(p); const tc=await page.getTextContent(); text += tc.items.map(x=>x.str).join(' ')+'\n'; }
+  } else if(file.name.toLowerCase().endsWith('.docx')){
+    const buf=await file.arrayBuffer(); const result=await mammoth.extractRawText({arrayBuffer:buf}); text=result.value;
+  } else text=await file.text();
+  const dishes=parseMenuText(text);
+  importPreview.innerHTML=`<p><strong>${dishes.length}</strong> Gerichte erkannt.</p><div class="card" style="box-shadow:none">${dishes.map(d=>`<div class="dish"><div class="dish-info"><h4>${escapeHtml(d.name)}</h4><span class="dish-desc">${escapeHtml(d.desc)}</span></div><div class="dish-price">${escapeHtml(d.price)} CHF</div></div>`).join('')}</div><br><button class="btn" onclick='state.categories["${id}"]=${JSON.stringify(dishes).replace(/'/g,"&#39;")};renderMenu();closeModal()'>Ersetzen ${categoryNames[id]}</button>`;
+}
+function parseMenuText(text){
+  return text.split(/\n|\r|(?<=CHF)\s+(?=[A-ZÄÖÜ])/).map(x=>x.trim()).filter(Boolean).map(line=>{
+    const priceMatch=line.match(/(\d{1,3}[\.,]\d{2}|\d{1,3})\s*(?:CHF|Fr\.?|SFr\.?)?\s*$/i);
+    if(!priceMatch) return null;
+    const price=priceMatch[1].replace(',', '.'); let rest=line.slice(0, priceMatch.index).replace(/[—–-]+$/,'').trim();
+    let parts=rest.split(/\s+[—–-]\s+|\s{3,}|\t+/).filter(Boolean);
+    if(parts.length<2){ const m=rest.match(/^(.{4,45}?)(?:\s{2,}|,\s+)(.+)$/); parts=m?[m[1],m[2]]:[rest,'']; }
+    return { name:(parts[0]||'').trim(), desc:(parts.slice(1).join(' - ')||'').trim(), price };
+  }).filter(Boolean);
+}
+function openImagesModal(){
+  const rows=[['logo','Logo'],['hero','Startbild'],['restaurant','Hauptfoto']].map(([key,label])=>imageRow(key,label,state.imagePaths[key])).join('');
+  openModal('Hauptbilder', rows+`<p class="note">Bilder werden automatisch sicher umbenannt: Startbild → img/portada.jpeg, Hauptfoto → img/restaurante.jpeg.</p><button class="btn" onclick="renderImages();closeModal()">Vorschau speichern</button>`);
+}
+function imageRow(key,label,path){
+  const accept = key === 'logo' ? 'image/jpeg,image/png,image/webp,image/svg+xml' : 'image/jpeg,image/png,image/webp';
+  return `<div class="img-edit-row"><img class="preview-img" id="prev_${key}" src="${assetPreview(path)}" onerror="this.style.opacity=.35;this.title='Bild konnte nicht geladen werden'"><div><strong>${label}</strong><p class="note">Pfad, den die Webseite nutzt: <span id="path_${key}">${escapeHtml(normalizePath(path))}</span></p><input type="file" accept="${accept}" onchange="selectMainImage(event,'${key}')"></div><button class="btn secondary small" onclick="document.getElementById('prev_${key}').src=assetPreview(state.imagePaths['${key}'])">Vorschau zurücksetzen</button></div>`;
+}
+async function selectMainImage(ev,key){
+  const file=ev.target.files[0]; if(!file) return;
+  try{
+    let path, data;
+    if(key==='logo'){
+      const out=await logoDataUrlAndPath(file); path=out.path; data=out.data;
+    } else if(key==='hero'){
+      path='img/portada.jpeg'; data=await imageToJpegDataUrl(file, 2200, 0.86);
+    } else if(key==='restaurant'){
+      path='img/restaurante.jpeg'; data=await imageToJpegDataUrl(file, 1600, 0.86);
+    } else {
+      path='img/'+safeFileName(file.name); data=await dataUrlFromFile(file);
+    }
+    path=normalizePath(path);
+    state.imagePaths[key]=path;
+    state.pendingImages[path]=data;
+    const pathEl=document.getElementById('path_'+key); if(pathEl) pathEl.textContent=path;
+    const prev=document.getElementById('prev_'+key); if(prev) prev.src=data;
+    renderImages();
+    markChanged(`${labelForImageKey(key)} erfolgreich vorbereitet.`);
+  }catch(err){ setStatus('Bild nicht vorbereitet: '+err.message,'error'); alert(err.message); }
+}
+function labelForImageKey(key){ return key==='hero'?'Startbild':key==='restaurant'?'Hauptfoto':'Logo'; }
+function openGalleryModal(){
+  const rows=state.gallery.map((src,i)=>galleryRow(src,i)).join('');
+  openModal('Galerie bearbeiten', `<p class="note">Neue Galeriebilder werden mit sicheren Namen gespeichert: img/foto.jpeg, img/foto2.jpeg, img/foto3.jpeg...</p><div id="galRows">${rows}</div><button class="btn secondary small" onclick="addGalleryRow()">+ Foto hinzufügen</button><br><br><button class="btn" onclick="saveGalleryRows()">Galerie speichern</button>`);
+}
+function galleryRow(src,i){
+  const fixed=galleryPathForIndex(i);
+  return `<div class="img-edit-row gal-row"><img class="preview-img gal-prev" src="${assetPreview(src)}" onerror="this.style.opacity=.35;this.title='Bild konnte nicht geladen werden'"><div><strong>Foto ${i+1}</strong><input class="field gal-path" value="${escapeHtml(normalizePath(src||fixed))}" placeholder="${fixed}"><input type="file" accept="image/jpeg,image/png,image/webp" onchange="selectGalleryImage(event,this)"><p class="note">Wählen Sie JPG, PNG oder WEBP, um dieses Foto zu ersetzen.</p></div><button class="btn secondary small" onclick="this.closest('.gal-row').remove()">Löschen</button></div>`;
+}
+function addGalleryRow(){ const n=document.querySelectorAll('.gal-row').length; galRows.insertAdjacentHTML('beforeend', galleryRow(galleryPathForIndex(n),n)); }
+async function selectGalleryImage(ev,input){
+  const file=ev.target.files[0]; if(!file) return;
+  const row=input.closest('.gal-row');
+  const index=[...document.querySelectorAll('.gal-row')].indexOf(row);
+  const path=galleryPathForIndex(index);
+  try{
+    const data=await imageToJpegDataUrl(file, 1800, 0.86);
+    row.querySelector('.gal-path').value=path;
+    state.pendingImages[path]=data;
+    row.querySelector('.gal-prev').src=data;
+    markChanged(`Foto ${index+1} erfolgreich vorbereitet.`);
+  }catch(err){ setStatus('Galeriebild nicht vorbereitet: '+err.message,'error'); alert(err.message); }
+}
+function saveGalleryRows(){
+  // Normalizamos las rutas para que no dependan del nombre original de la foto.
+  state.gallery=[...document.querySelectorAll('.gal-path')].map((x,i)=>normalizePath(x.value.trim() || galleryPathForIndex(i))).filter(Boolean);
+  renderGallery(); closeModal(); markChanged('Galerie vorbereitet. Klicken Sie auf „Speichern & veröffentlichen“.');
+}
+function buildImportant(){ return `<div class="card" style="border-left: 5px solid var(--accent);">\n<h3 style="margin-top:0; color: var(--accent);">\n⚠️ <span data-key="important_title">${escapeHtml(state.importantTitle)}</span>\n</h3>\n\n<p data-key="important_text">\n${escapeHtml(state.importantText)}\n</p>\n</div>\n`; }
+function buildMenu(){
+  const titles={antipasti:'Antipasti, Suppen & Salate',paste:'Pasta fresca & Risotto',pizze:'Pizze',carne:'Pesce & Carne'};
+  let html='<div class="card">\n<div class="price-note" style="margin-bottom:18px; padding:12px 14px; border-radius:12px; background:rgba(42,111,117,0.08); border:1px solid var(--border); color:var(--text-muted); font-size:0.95rem;"><strong style="color:var(--primary-dark);">Hinweis:</strong> Alle Preise sind in Schweizer Franken (CHF).</div>\n';
+  Object.keys(categoryNames).forEach(id=>{ html+=`\n<div id="${id}" class="menu-section ${id==='antipasti'?'active':''}">\n<h3 class="menu-category-title">${titles[id]}</h3>\n`; (state.categories[id]||[]).forEach(d=>{ html+=`<div class="dish"><div class="dish-info"><h4>${escapeHtml(d.name)}</h4><span class="dish-desc">${escapeHtml(d.desc)}</span></div><div class="dish-price">${escapeHtml(d.price)} <span class="currency">CHF</span></div></div>\n`; }); html+='</div>\n'; });
+  return html+'</div>\n';
+}
+function buildGallery(){
+  const version=Date.now();
+  const publicGallery=state.gallery.map(s=>publishPath(s, version));
+  const arr=publicGallery.map(s=>`  "${s}"`).join(',\n');
+  const first=publicGallery[0]||'img/foto.jpeg';
+  return `<div class="gallery-card">
+  <div class="gallery-stage" aria-label="Galerie Belvedere">
+    <button class="g-btn g-prev" type="button" aria-label="Vorheriges Bild">❮</button>
+    <div class="g-side g-side-prev" id="gPrevCard" title="Vorheriges Bild öffnen"><img id="gPrevImage" alt="Vorheriges Bild"></div>
+    <div class="g-current"><img id="gMainImage" src="${first}" alt="Galerie Belvedere"></div>
+    <div class="g-side g-side-next" id="gNextCard" title="Nächstes Bild öffnen"><img id="gNextImage" alt="Nächstes Bild"></div>
+    <button class="g-btn g-next" type="button" aria-label="Nächstes Bild">❯</button>
+  </div>
+  <div class="gallery-hint" data-key="gallery_hint">Bild antippen, um es zu vergrößern.</div>
 </div>
-</section>
-
-<section id="gallery" class="container">
-<h2 class="section-title" data-key="gallery_title">Galerie & Video</h2>
-
-<!-- ✅ GALERIA: se carga desde Galeria.html -->
-<div id="galeriaContent">
-<div class="card"><p style="text-align:center; color: var(--text-muted);">Cargando galería…</p></div>
+<div class="g-lightbox" id="gLightbox" aria-hidden="true">
+  <button class="g-lb-close" id="gLbClose" type="button" aria-label="Schließen">✕</button>
+  <button class="g-lb-nav g-lb-prev" id="gLbPrev" type="button" aria-label="Vorheriges Bild">❮</button>
+  <img id="gLbImage" alt="Bild in Großansicht">
+  <button class="g-lb-nav g-lb-next" id="gLbNext" type="button" aria-label="Nächstes Bild">❯</button>
 </div>
-</section>
-
-<section id="reserve" class="container">
+<style>.gallery-card{background:var(--bg-card,#fff);border-radius:15px;padding:18px;box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));border:1px solid var(--border,#e9ecef);max-width:1060px;margin:0 auto}.gallery-stage{position:relative;display:grid;grid-template-columns:minmax(120px,.65fr) minmax(360px,1.7fr) minmax(120px,.65fr);gap:14px;align-items:center}.g-current,.g-side{border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--border,#e9ecef);box-shadow:0 12px 28px rgba(0,0,0,.12)}.g-current{height:430px}.g-side{height:290px;opacity:.58;filter:saturate(.85);transform:scale(.92);cursor:zoom-in;transition:opacity .2s,transform .2s,filter .2s}.g-side:hover{opacity:.82;filter:saturate(1);transform:scale(.96)}.g-current img,.g-side img{width:100%;height:100%;object-fit:cover;display:block}.g-current img{cursor:zoom-in;transition:transform .25s,opacity .25s}.g-current img:hover{transform:scale(1.015);opacity:.98}.g-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.45);background:rgba(0,0,0,.38);color:#fff;cursor:pointer;display:grid;place-items:center;font-size:18px;user-select:none;transition:background .2s,transform .2s;z-index:3}.g-btn:hover{background:rgba(0,0,0,.58);transform:translateY(-50%) scale(1.04)}.g-prev{left:10px}.g-next{right:10px}.gallery-hint{margin-top:12px;text-align:center;color:var(--text-muted,#6c757d);font-size:.9rem;font-style:italic}.g-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}.g-lightbox.open{display:flex}.g-lightbox img{max-width:min(1100px,92vw);max-height:86vh;border-radius:14px;border:1px solid rgba(255,255,255,.15);box-shadow:0 25px 70px rgba(0,0,0,.55)}.g-lb-close,.g-lb-nav{position:absolute;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;font-size:18px}.g-lb-close{top:16px;right:16px;width:44px;height:44px}.g-lb-nav{top:50%;transform:translateY(-50%);width:48px;height:48px}.g-lb-prev{left:18px}.g-lb-next{right:18px}.g-lb-close:hover,.g-lb-nav:hover{background:rgba(0,0,0,.58)}@media(max-width:900px){.gallery-card{padding:14px}.gallery-stage{display:block}.g-current{height:300px;border-radius:15px}.g-side{display:none}.g-btn{width:42px;height:42px}.g-prev{left:22px}.g-next{right:22px}.g-lb-nav{width:42px;height:42px}.g-lb-prev{left:10px}.g-lb-next{right:10px}}@media(max-width:520px){.g-current{height:240px}.gallery-hint{font-size:.86rem}}</style>
+<script>const gImages=[\n${arr}\n];let gIndex=0;const mainImg=document.getElementById("gMainImage"),prevImg=document.getElementById("gPrevImage"),nextImg=document.getElementById("gNextImage"),prevCard=document.getElementById("gPrevCard"),nextCard=document.getElementById("gNextCard"),lb=document.getElementById("gLightbox"),lbImg=document.getElementById("gLbImage"),lbClose=document.getElementById("gLbClose"),lbPrev=document.getElementById("gLbPrev"),lbNext=document.getElementById("gLbNext");function wrap(i){return(i+gImages.length)%gImages.length}function renderGallery(){if(!gImages.length)return;mainImg.src=gImages[gIndex];prevImg.src=gImages[wrap(gIndex-1)];nextImg.src=gImages[wrap(gIndex+1)]}function setImage(i){gIndex=wrap(i);renderGallery()}function openLb(i=gIndex){gIndex=wrap(i);lbImg.src=gImages[gIndex];lb.classList.add("open");lb.setAttribute("aria-hidden","false");renderGallery()}function closeLb(){lb.classList.remove("open");lb.setAttribute("aria-hidden","true");lbImg.src=""}document.querySelector(".g-next").addEventListener("click",()=>setImage(gIndex+1));document.querySelector(".g-prev").addEventListener("click",()=>setImage(gIndex-1));mainImg.addEventListener("click",()=>openLb(gIndex));prevCard.addEventListener("click",()=>openLb(gIndex-1));nextCard.addEventListener("click",()=>openLb(gIndex+1));lbClose.addEventListener("click",closeLb);lbPrev.addEventListener("click",()=>openLb(gIndex-1));lbNext.addEventListener("click",()=>openLb(gIndex+1));lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});document.addEventListener("keydown",e=>{if(lb.classList.contains("open")){if(e.key==="Escape")closeLb();if(e.key==="ArrowLeft")openLb(gIndex-1);if(e.key==="ArrowRight")openLb(gIndex+1)}});renderGallery();<\/script>`;
+}
+function publishPath(path, version){
+  const clean=normalizePath(path);
+  return state.pendingImages[clean] ? `${clean}?v=${version}` : clean;
+}
+function buildReservationSection(){
+  const email=escapeHtml(state.reservationEmail||'ristorante-belvedere@bluewin.ch');
+  return `<section id="reserve" class="container">
 <h2 class="section-title" data-key="reserve_title">Reservation</h2>
 
 <div class="form-grid">
 <div class="card reserve-card">
-<p class="reserve-help">Füllen Sie das Formular aus. Die Reservation wird direkt an unser Restaurant gesendet, ohne eine Mail-App zu öffnen.</p>
+<p class="reserve-help" data-key="reserve_help">Füllen Sie das Formular aus. Die Reservation wird direkt an unser Restaurant gesendet.</p>
 
-<form id="reservationForm" action="https://formsubmit.co/ristorante-belvedere@bluewin.ch" method="POST">
-<input type="hidden" name="_subject" value="Neue Reservation - Ristorante Belvedere">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-
+<form id="reservationForm">
 <input id="resName" name="Name" class="form-control" type="text" data-key-ph="ph_name" placeholder="Name" required>
 <input id="resContact" name="Telefon / Kontakt" class="form-control" type="text" data-key-ph="ph_contact" placeholder="Telefon / Kontakt" required>
 
@@ -357,123 +458,172 @@ Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt
 <option value="5+ Personen">5+ Personen</option>
 </select>
 
-<textarea id="resNotes" name="Notizen" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Notizen"></textarea>
-<button type="submit" class="btn" style="width: 100%;" data-key="btn_send">Reservation senden</button>
+<textarea id="resNotes" name="Notizen" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Notizen, Allergien, Gluten, Kinder"></textarea>
+<button type="submit" class="btn" style="width:100%;" data-key="btn_send">Reservation senden</button>
+<p id="reservationStatus" style="margin-top:12px;color:var(--text-muted);font-size:.9rem;text-align:center;"></p>
+<p style="margin-top:8px;color:var(--text-muted);font-size:.86rem;text-align:center;">Kontakt: <a href="mailto:${email}">${email}</a></p>
 </form>
 </div>
 </div>
-</section>
-
-<footer id="contact">
-<div class="container">
-
-<!-- Texto legal -->
-<p data-key="footer_text">
-Ristorante Belvedere © 2025 | Hofstetten-Flüh, Schweiz
-</p>
-
-<!-- Contacto -->
-<div class="footer-contact">
-<p><strong data-key="contact_title">Kontakt</strong></p>
-
-<p data-key="contact_address">
-Ristorante Belvedere<br>
-Flühstrasse 30<br>
-4114 Hofstetten-Flüh
-</p>
-
-<p>
-<span data-key="contact_phone_label">Tel:</span>
-<a href="tel:+41617214545">+41 61 721 45 45</a>
-</p>
-
-<p>
-<span data-key="contact_email_label">E-Mail:</span>
-<span>ristorante-belvedere@bluewin.ch</span>
-</p>
-</div>
-
-</div>
-</footer>
-
-
-
-<script>
-// ===== Tema =====
-const toggleBtn = document.getElementById('themeToggle');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    const body = document.body;
-    if (body.getAttribute('data-theme') === 'light') {
-      body.setAttribute('data-theme', 'dark');
-      toggleBtn.textContent = '☀️';
-    } else {
-      body.setAttribute('data-theme', 'light');
-      toggleBtn.textContent = '🌙';
+</section>`;
+}
+function buildReservationScript(){
+  const email=String(state.reservationEmail||'ristorante-belvedere@bluewin.ch').replace(/`/g,'');
+  const endpoint=String(state.reservationEndpoint||'').replace(/`/g,'');
+  return `<script id="belvedereReservationScript">
+(function(){
+  const reservationEndpoint="${endpoint}";
+  const fallbackEmail="${email}";
+  function byId(id){return document.getElementById(id)}
+  function initReservation(){
+    const form=byId("reservationForm");
+    if(!form || form.dataset.directReservationReady==="1") return;
+    form.dataset.directReservationReady="1";
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      const status=byId("reservationStatus");
+      const payload={
+        name: byId("resName")?.value.trim()||"",
+        contact: byId("resContact")?.value.trim()||"",
+        date: byId("resDate")?.value||"",
+        time: byId("resTime")?.value||"",
+        persons: byId("resPersons")?.value||"",
+        notes: byId("resNotes")?.value.trim()||""
+      };
+      if(status){ status.style.color="var(--text-muted)"; status.textContent="Reservation wird gesendet..."; }
+      try{
+        const res=await fetch(reservationEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+        const data=await res.json().catch(()=>({}));
+        if(!res.ok || !data.ok) throw new Error(data.error || "Die Reservation konnte nicht gesendet werden.");
+        form.reset();
+        if(status){ status.style.color="var(--primary)"; status.textContent="Danke! Ihre Reservation wurde gesendet."; }
+      }catch(err){
+        if(status){ status.style.color="#b00020"; status.innerHTML='Fehler beim Senden. Bitte telefonisch reservieren oder per E-Mail: <a href="mailto:'+fallbackEmail+'">'+fallbackEmail+'</a><br><small>'+String(err.message||err)+'</small>'; }
+      }
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", initReservation); else initReservation();
+})();
+<\/script>`;
+}
+function injectReservationFix(html){
+  if(!html) return html;
+  const reserve=buildReservationSection();
+  if(/<section\s+id=["']reserve["'][\s\S]*?<\/section>/i.test(html)){
+    html=html.replace(/<section\s+id=["']reserve["'][\s\S]*?<\/section>/i, reserve);
+  } else if(/<footer\s+id=["']contact["']/i.test(html)){
+    html=html.replace(/<footer\s+id=["']contact["']/i, reserve+'\n\n<footer id="contact"');
+  }
+  html=html.replace(/<script\s+id=["']belvedereReservationScript["'][\s\S]*?<\/script>/i,'');
+  html=html.replace(/<\/body>/i, buildReservationScript()+'\n</body>');
+  return html;
+}
+function protectBrandAndAddress(html){
+  if(!html) return html;
+  html = html.replace(/Hauptstrasse\s*64/g, 'Flühstrasse 30');
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const tokens = ['Ristorante Belvedere', 'Flühstrasse 30', 'Hofstetten-Flüh'];
+  const skipTags = new Set(['SCRIPT','STYLE','TEXTAREA','INPUT','SELECT','OPTION']);
+  function alreadyProtected(node){
+    let p=node.parentElement;
+    while(p){ if(p.classList && p.classList.contains('notranslate')) return true; p=p.parentElement; }
+    return false;
+  }
+  const walker = doc.createTreeWalker(doc.body || doc.documentElement, NodeFilter.SHOW_TEXT, {
+    acceptNode(node){
+      if(!node.nodeValue || !tokens.some(t=>node.nodeValue.includes(t))) return NodeFilter.FILTER_REJECT;
+      if(!node.parentElement || skipTags.has(node.parentElement.tagName) || alreadyProtected(node)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
     }
   });
-}
-
-
-// ===== Reserva por correo directo usando FormSubmit =====
-// El formulario envía los datos a FormSubmit sin abrir la app Mail.
-
-// ===== Filtro menú =====
-function filterMenu(categoryId, event) {
-  document.querySelectorAll(".menu-section").forEach(el => el.classList.remove("active"));
-  document.querySelectorAll(".menu-nav .btn").forEach(el => el.classList.remove("active"));
-  const section = document.getElementById(categoryId);
-  if (section) section.classList.add("active");
-  if (event) event.target.classList.add("active");
-}
-
-// Cargar HTML divididos + ejecutar scripts internos (para Galeria)
-async function loadInto(id, file) {
-  const container = document.getElementById(id);
-  try {
-    const res = await fetch(file, { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-
-    container.innerHTML = await res.text();
-
-    const scripts = container.querySelectorAll("script");
-    scripts.forEach(oldScript => {
-      const newScript = document.createElement("script");
-      if (oldScript.src) newScript.src = oldScript.src;
-      else newScript.textContent = oldScript.textContent;
-      oldScript.parentNode.replaceChild(newScript, oldScript);
+  const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const text=node.nodeValue;
+    const parts=[]; let i=0;
+    while(i<text.length){
+      let match=null, idx=-1;
+      for(const t of tokens){ const pos=text.indexOf(t,i); if(pos!==-1 && (idx===-1 || pos<idx)){ idx=pos; match=t; } }
+      if(match===null){ parts.push({text:text.slice(i)}); break; }
+      if(idx>i) parts.push({text:text.slice(i,idx)});
+      parts.push({text:match, protect:true});
+      i=idx+match.length;
+    }
+    const frag=doc.createDocumentFragment();
+    parts.forEach(part=>{
+      if(!part.text) return;
+      if(part.protect){ const span=doc.createElement('span'); span.className='notranslate'; span.setAttribute('translate','no'); span.textContent=part.text; frag.appendChild(span); }
+      else frag.appendChild(doc.createTextNode(part.text));
     });
-  } catch (err) {
-    console.error("Error cargando " + file + ":", err);
-    container.innerHTML =
-      '<div class="card"><p style="text-align:center;color:var(--text-muted)">' +
-      'No se pudo cargar <b>' + file + '</b>. (Debe estar en la misma carpeta y abrir con servidor / Live Server)' +
-      '</p></div>';
+    node.parentNode.replaceChild(frag,node);
+  });
+  return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+}
+function updateMainHtml(html){
+  if(!html) return html;
+  const version=Date.now();
+  const logoPath=publishPath(state.imagePaths.logo, version);
+  const heroPath=publishPath(state.imagePaths.hero, version);
+  const restaurantPath=publishPath(state.imagePaths.restaurant, version);
+  const logoClean=normalizePath(state.imagePaths.logo);
+  const heroClean=normalizePath(state.imagePaths.hero);
+  const restaurantClean=normalizePath(state.imagePaths.restaurant);
+  html=html.replace(/(<div class="brand">\s*<img\s+src=")[^"]+("\s+alt="Belvedere Logo"\s*>)/s, `$1${logoPath}$2`);
+  // Robuster Austausch der Startbild-URL innerhalb der .hero-section CSS-Regel.
+  const beforeHero=html;
+  html=html.replace(/(\.hero-section\s*\{[\s\S]*?(?:background|background-image)\s*:\s*[^;]*?url\()["']?[^"')]+["']?(\)[^;]*;)/s, `$1'${heroPath}'$2`);
+  if(html===beforeHero){
+    html=html.replace(/url\(["']?img\/portada\.(?:jpeg|jpg|png|webp)(?:\?[^"')]+)?["']?\)/i, `url('${heroPath}')`);
   }
+  html=html.replace(/(<p data-key="hero_sub">)[\s\S]*?(<\/p>)/, `$1${escapeHtml(state.heroSub)}$2`);
+  html=html.replace(/(<h2[^>]*data-key="about_title"[^>]*>)[\s\S]*?(<\/h2>)/, `$1${escapeHtml(state.aboutTitle)}$2`);
+  html=html.replace(/(<p[^>]*data-key="about_text"[^>]*>)[\s\S]*?(<\/p>)/, `$1
+${escapeHtml(state.aboutText)}
+$2`);
+  html=html.replace(/(<img\s+src=")[^"]+("[^>]*alt="Ristorante Belvedere"[^>]*>)/s, `$1${restaurantPath}$2`);
+  if(/<body[^>]*data-theme="(dark|light)"/i.test(html)) html=html.replace(/(<body[^>]*data-theme=")(dark|light)(")/i, `$1${state.defaultTheme}$3`);
+  else html=html.replace(/<body([^>]*)>/i, `<body$1 data-theme="${state.defaultTheme}">`);
+  html=html.replace(/(<span class="theme-toggle" id="themeToggle">)[\s\S]*?(<\/span>)/, `$1${state.defaultTheme==='dark'?'☀️':'🌙'}$2`);
+  html=injectReservationFix(html);
+  html=protectBrandAndAddress(html);
+  return html;
 }
+function buildFiles(){
+  const important=buildImportant(), menu=buildMenu(), gallery=buildGallery();
+  const files = [
+    {path:'Importante.html', contentBase64:b64Text(important)},
+    {path:'Menu.html', contentBase64:b64Text(menu)},
+    {path:'Galeria.html', contentBase64:b64Text(gallery)},
+    {path:'index.html', contentBase64:b64Text(updateMainHtml(site.index))}
+  ];
 
-// GTranslate se carga después de insertar el menú/galería, así también traduce el contenido que viene de otros archivos.
-function loadGTranslate() {
-  window.gtranslateSettings = {
-    default_language: "de",
-    native_language_names: true,
-    languages: ["de", "it", "fr", "en", "es"],
-    wrapper_selector: ".gtranslate_wrapper",
-    flag_style: "3d"
-  };
+  Object.entries(state.pendingImages).forEach(([rawPath,data])=>{
+    const path=normalizePath(rawPath);
+    const contentBase64=b64DataUrl(data);
+    if(path && contentBase64) files.push({path, contentBase64});
+    else throw new Error(`Unvollständiges Bild: ${path || '(sin ruta)'}. Bitte erneut auswählen.`);
+  });
 
-  const script = document.createElement("script");
-  script.src = "https://cdn.gtranslate.net/widgets/latest/dropdown.js";
-  script.defer = true;
-  document.body.appendChild(script);
+  const clean=files.map(f=>({path:normalizePath(f.path), contentBase64:String(f.contentBase64||'')}));
+  const bad=clean.find(f=>!f.path || !f.contentBase64);
+  if(bad) throw new Error(`Unvollständige Datei vor dem Veröffentlichen: ${bad.path || '(sin ruta)'}`);
+  const seen=new Set();
+  return clean.filter(f=>{ if(seen.has(f.path)) return false; seen.add(f.path); return true; });
 }
-
-Promise.all([
-  loadInto("importanteContent", "Importante.html"),
-  loadInto("menuContent", "Menu.html"),
-  loadInto("galeriaContent", "Galeria.html")
-]).then(loadGTranslate);
+async function publishAll(){
+  setStatus('Änderungen werden auf GitHub veröffentlicht...');
+  try{
+    const files=buildFiles();
+    const data=await api(API.publish,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:'Webseite über Belvedere Admin aktualisieren',files})});
+    setStatus(`Erfolgreich veröffentlicht (${data.results?.length || files.length} Dateien). GitHub Pages kann einige Sekunden brauchen, bis die Änderung sichtbar ist.`,'success');
+    state.pendingImages={};
+    await loadFromGitHub();
+  }
+  catch(e){ setStatus('Fehler beim Veröffentlichen: '+(e.message||String(e)),'error'); }
+}
+function downloadFiles(){
+  const files=buildFiles().filter(f=>!f.path.startsWith('img/'));
+  files.forEach(f=>{ const a=document.createElement('a'); a.href='data:application/octet-stream;base64,'+f.contentBase64; a.download=f.path.split('/').pop(); a.click(); });
+}
 </script>
-
 </body>
 </html>
