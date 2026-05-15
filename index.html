@@ -124,7 +124,7 @@ max-width: 170px;
 height: 80vh;
 min-height: 520px;
 max-height: 850px;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg');
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.webp');
 background-size: cover;
 background-position: center;
 display: flex;
@@ -154,6 +154,15 @@ border-radius: 12px;
 }
 
 .hours-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 10px; max-width: 400px; margin-top: 20px; font-size: 0.95rem; }
+
+/* ABOUT / PHILOSOPHIE: mejor estructura para móvil */
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center; }
+.about-copy .section-title { text-align: left; margin-bottom: 22px; }
+.about-copy p { font-size: 1rem; color: var(--text-main); }
+.about-image img { width: 100%; border-radius: 15px; box-shadow: var(--shadow); object-fit: cover; }
+.about-hours { margin-top: 22px; }
+.about-hours .hours-grid { max-width: 420px; }
+
 .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
 /* MENU (Menu.html usa estas clases) */
@@ -200,6 +209,17 @@ nav ul { display: none; }
 .dish { flex-direction: column; align-items: flex-start; }
 .dish-price { margin-top: 8px; }
 .form-grid { grid-template-columns: 1fr; }
+.about-layout { grid-template-columns: 1fr; gap: 24px; margin-top: 34px; }
+.about-copy { order: 1; }
+.about-image { order: 2; }
+.about-hours { order: 3; margin-top: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 15px; padding: 18px; box-shadow: var(--shadow); }
+.about-copy .section-title { font-size: 2.45rem; line-height: 1.05; margin-bottom: 18px; }
+.about-copy p { font-size: 1rem; line-height: 1.8; }
+.about-image img { height: 230px; object-fit: cover; }
+.about-hours .hours-grid { max-width: none; grid-template-columns: 82px 1fr; gap: 12px 16px; margin-top: 0; font-size: .98rem; }
+.card { padding: 24px; }
+h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
+
 }
 </style>
 </head>
@@ -245,23 +265,25 @@ nav ul { display: none; }
 </div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 50px; align-items: center;">
-<div>
-<h2 class="section-title" style="text-align: left;" data-key="about_title">Unsere Philosophie</h2>
+<div class="about-layout">
+<div class="about-copy">
+<h2 class="section-title" data-key="about_title">Unsere Philosophie</h2>
 <p data-key="about_text">
 Im Ristorante Belvedere steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.
 </p>
+</div>
 
+<div class="about-image">
+<img src="img/restaurante.webp" alt="Ristorante Belvedere">
+</div>
+
+<div class="about-hours">
 <div class="hours-grid">
 <div data-key="day_mo">Mo</div> <div><span data-key="closed">Geschlossen</span></div>
 <div data-key="day_tu_fr">Di - Fr</div> <div>10:00-14:00 / 17:30-00:00</div>
 <div data-key="day_sa">Sa</div> <div>17:30 - 00:00</div>
 <div data-key="day_su">So</div> <div>11:00 - 23:00</div>
 </div>
-</div>
-
-<div>
-<img src="img/restaurante.png" style="border-radius: 15px; box-shadow: var(--shadow);" alt="Ristorante Belvedere">
 </div>
 </div>
 </section>
@@ -356,7 +378,7 @@ Ristorante Belvedere © 2025 | Hofstetten-Flüh, Schweiz
 
 <p data-key="contact_address">
 Ristorante Belvedere<br>
-Hauptstrasse 64<br>
+Flühstrasse 30<br>
 4114 Hofstetten-Flüh
 </p>
 
