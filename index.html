@@ -124,7 +124,7 @@ max-width: 170px;
 height: 80vh;
 min-height: 520px;
 max-height: 850px;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg');
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.webp');
 background-size: cover;
 background-position: center;
 display: flex;
@@ -179,6 +179,21 @@ border-radius: 12px;
 .menu-category-title { color: var(--accent); font-size: 1.5rem; margin: 30px 0 15px; text-align: center; font-style: italic; }
 .menu-note { margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border); color: var(--text-muted); font-size: 0.9rem; font-style: italic; text-align: center; }
 
+
+
+/* AKTUELL + SPEZIALMENÜ */
+[data-visible="false"], [hidden] { display: none !important; }
+.special-teaser { padding-top: 10px; padding-bottom: 10px; }
+.special-card { position: relative; overflow: hidden; text-align: center; border-left: 5px solid var(--accent); }
+.special-kicker { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: .78rem; margin-bottom: 8px; }
+.special-card h3 { font-size: 2rem; margin-bottom: 10px; }
+.special-card p { max-width: 720px; margin: 0 auto 22px; color: var(--text-muted); }
+.special-menu-control[hidden] { display: none !important; }
+@media (max-width: 900px) {
+  .special-card h3 { font-size: 1.55rem; }
+  .special-card p { font-size: .95rem; }
+}
+
 /* RESERVA */
 .form-grid { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 820px; margin: 0 auto; }
 .form-control {
@@ -227,7 +242,7 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 </style>
 </head>
 
-<body data-theme="dark">
+<body data-theme="light">
 
 <header>
 <div class="container">
@@ -245,7 +260,7 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 </ul>
 
 <div class="controls">
-<span class="theme-toggle" id="themeToggle">☀️</span>
+<span class="theme-toggle" id="themeToggle">🌙</span>
 <div class="gtranslate_wrapper" aria-label="Language selector"></div>
 </div>
 </nav>
@@ -277,7 +292,7 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 </div>
 
 <div class="about-image">
-<img src="img/restaurante.jpeg" alt="Ristorante Belvedere">
+<img src="img/restaurante.webp" alt="Ristorante Belvedere">
 </div>
 
 <div class="about-hours">
@@ -308,6 +323,18 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 </div>
 </section>
 
+
+
+<!-- ✅ SPEZIALMENÜ: aparece solo cuando está activado desde el Admin -->
+<section id="specialMenuTeaser" class="container special-teaser" data-visible="false" hidden>
+  <div class="card special-card">
+    <div class="special-kicker" data-key="special_kicker">Spezialmenü</div>
+    <h3 id="specialMenuTitle" data-key="special_title">Wintermenü</h3>
+    <p id="specialMenuText" data-key="special_text">Entdecken Sie unsere saisonalen Spezialitäten.</p>
+    <a href="#menu" class="btn" id="specialMenuJump" data-key="special_button">Zum Spezialmenü</a>
+  </div>
+</section>
+
 <section id="menu" class="container">
 <h2 class="section-title" data-key="menu_title">Speisekarte</h2>
 
@@ -316,6 +343,7 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 <button class="btn secondary" onclick="filterMenu('paste', event)" data-key="menu_btn_pasta">Pasta</button>
 <button class="btn secondary" onclick="filterMenu('pizze', event)" data-key="menu_btn_pizze">Pizze</button>
 <button class="btn secondary" onclick="filterMenu('carne', event)" data-key="menu_btn_fish_meat">Fisch & Fleisch</button>
+<button id="specialMenuNavButton" class="btn secondary special-menu-control" onclick="filterMenu('spezial', event)" data-key="menu_btn_special" hidden>Spezialmenü</button>
 </div>
 
 <!-- ✅ MENU: se carga desde Menu.html -->
@@ -358,7 +386,7 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 <option value="5+ Personen">5+ Personen</option>
 </select>
 
-<textarea id="resNotes" name="Notizen" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Notizen"></textarea>
+<textarea id="resNotes" name="Genaue Personenanzahl, Allergien oder Anlass" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Genaue Personenanzahl, Allergien oder Anfrage für einen Anlass"></textarea>
 <button type="submit" class="btn" style="width: 100%;" data-key="btn_send">Reservation senden</button>
 </form>
 </div>
@@ -459,6 +487,30 @@ if (reservationForm) {
 }
 
 
+
+
+function syncSpecialMenuVisibility(){
+  const specialSection = document.getElementById('spezial');
+  const navButton = document.getElementById('specialMenuNavButton');
+  const teaser = document.getElementById('specialMenuTeaser');
+  const isVisible = !!specialSection && specialSection.getAttribute('data-visible') === 'true';
+  if (navButton) navButton.hidden = !isVisible;
+  if (teaser) {
+    teaser.hidden = !isVisible;
+    teaser.setAttribute('data-visible', isVisible ? 'true' : 'false');
+  }
+}
+
+const specialJump = document.getElementById('specialMenuJump');
+if (specialJump) {
+  specialJump.addEventListener('click', (event) => {
+    setTimeout(() => {
+      const btn = document.getElementById('specialMenuNavButton');
+      filterMenu('spezial', btn ? { target: btn } : null);
+    }, 50);
+  });
+}
+
 // ===== Filtro menú =====
 function filterMenu(categoryId, event) {
   document.querySelectorAll(".menu-section").forEach(el => el.classList.remove("active"));
@@ -513,7 +565,7 @@ Promise.all([
   loadInto("importanteContent", "Importante.html"),
   loadInto("menuContent", "Menu.html"),
   loadInto("galeriaContent", "Galeria.html")
-]).then(loadGTranslate);
+]).then(() => { syncSpecialMenuVisibility(); loadGTranslate(); });
 </script>
 
 </body>
