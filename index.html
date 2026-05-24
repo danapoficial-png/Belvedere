@@ -123,7 +123,7 @@ max-width: 170px;
 height: 80vh;
 min-height: 520px;
 max-height: 850px;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg?v=1779660561642');
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg');
 background-size: cover;
 background-position: center;
 display: flex;
@@ -289,7 +289,7 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 </div>
 
 <div class="about-image">
-<img src="img/restaurante.jpeg?v=1779660561642" alt="Ristorante Belvedere">
+<img src="img/restaurante.jpeg" alt="Ristorante Belvedere">
 </div>
 
 <div class="about-hours">
@@ -528,6 +528,9 @@ Promise.all([
 ]).then(() => { syncSpecialMenuVisibility(); loadGTranslate(); });
 </script>
 
+
+
+
 <script id="belvedereReservationScript">
 (function(){
   const reservationEndpoint="https://transcendent-treacle-3a6653.netlify.app/api/reservation";
@@ -563,6 +566,4 @@ Promise.all([
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", initReservation); else initReservation();
 })();
 </script>
-
-
 </body></html>
