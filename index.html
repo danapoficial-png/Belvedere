@@ -1,2 +1,37 @@
 <!DOCTYPE html>
-<html><head></head><body><section id="specialMenuTeaser" class="container special-teaser" data-visible="false" hidden=""><div class="card special-card"><div class="special-kicker" data-key="special_kicker">Spezialmenü</div><h3 id="specialMenuTitle" data-key="special_title">Wintermenü</h3><p id="specialMenuText" data-key="special_text">Entdecken Sie unsere saisonalen Spezialitäten.</p><a href="#menu" class="btn" id="specialMenuJump" data-key="special_button">Zum Spezialmenü</a></div></section></body></html>
+<html><head></head><body data-theme="light"><section id="specialMenuTeaser" class="container special-teaser" data-visible="false" hidden=""><div class="card special-card"><div class="special-kicker" data-key="special_kicker">Spezialmenü</div><h3 id="specialMenuTitle" data-key="special_title">Wintermenü</h3><p id="specialMenuText" data-key="special_text">Entdecken Sie unsere saisonalen Spezialitäten.</p><a href="#menu" class="btn" id="specialMenuJump" data-key="special_button">Zum Spezialmenü</a></div></section><script id="belvedereReservationScript">
+(function(){
+  const reservationEndpoint="https://transcendent-treacle-3a6653.netlify.app/api/reservation";
+  const fallbackEmail="ristorante-belvedere@bluewin.ch";
+  function byId(id){return document.getElementById(id)}
+  function initReservation(){
+    const form=byId("reservationForm");
+    if(!form || form.dataset.directReservationReady==="1") return;
+    form.dataset.directReservationReady="1";
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      const status=byId("reservationStatus");
+      const payload={
+        name: byId("resName")?.value.trim()||"",
+        contact: byId("resContact")?.value.trim()||"",
+        date: byId("resDate")?.value||"",
+        time: byId("resTime")?.value||"",
+        persons: byId("resPersons")?.value||"",
+        notes: byId("resNotes")?.value.trim()||""
+      };
+      if(status){ status.style.color="var(--text-muted)"; status.textContent="Reservation wird gesendet..."; }
+      try{
+        const res=await fetch(reservationEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+        const data=await res.json().catch(()=>({}));
+        if(!res.ok || !data.ok) throw new Error(data.error || "Die Reservation konnte nicht gesendet werden.");
+        form.reset();
+        if(status){ status.style.color="var(--primary)"; status.textContent="Danke! Ihre Reservation wurde gesendet."; }
+      }catch(err){
+        if(status){ status.style.color="#b00020"; status.innerHTML='Fehler beim Senden. Bitte telefonisch reservieren oder per E-Mail: <a href="mailto:'+fallbackEmail+'">'+fallbackEmail+'</a><br><small>'+String(err.message||err)+'</small>'; }
+      }
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", initReservation); else initReservation();
+})();
+</script>
+</body></html>
