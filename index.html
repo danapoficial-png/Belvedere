@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
+<html lang="de"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ristorante Belvedere | Hofstetten</title>
 <meta name="description" content="Ristorante Belvedere in Hofstetten — italienische Küche, Pizza, Pasta.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -124,7 +123,7 @@ max-width: 170px;
 height: 80vh;
 min-height: 520px;
 max-height: 850px;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.webp');
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/portada.jpeg?v=1779660561642');
 background-size: cover;
 background-position: center;
 display: flex;
@@ -242,7 +241,7 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 </style>
 </head>
 
-<body data-theme="light">
+<body data-theme="dark">
 
 <header>
 <div class="container">
@@ -260,7 +259,7 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 </ul>
 
 <div class="controls">
-<span class="theme-toggle" id="themeToggle">🌙</span>
+<span class="theme-toggle" id="themeToggle">☀️</span>
 <div class="gtranslate_wrapper" aria-label="Language selector"></div>
 </div>
 </nav>
@@ -286,22 +285,15 @@ h2.section-title { font-size: 2.1rem; margin-bottom: 26px; }
 <div class="about-layout">
 <div class="about-copy">
 <h2 class="section-title" data-key="about_title">Unsere Philosophie</h2>
-<p data-key="about_text">
-Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.
-</p>
+<p data-key="about_text">Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht echte italienische Gastfreundschaft im Mittelpunkt. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische Rezepte und legen Wert auf Qualität.</p>
 </div>
 
 <div class="about-image">
-<img src="img/restaurante.webp" alt="Ristorante Belvedere">
+<img src="img/restaurante.jpeg?v=1779660561642" alt="Ristorante Belvedere">
 </div>
 
 <div class="about-hours">
-<div class="hours-grid">
-<div data-key="day_mo">Mo</div> <div><span data-key="closed">Geschlossen</span></div>
-<div data-key="day_tu_fr">Di - Fr</div> <div>10:00-14:00 / 17:30-00:00</div>
-<div data-key="day_sa">Sa</div> <div>17:30 - 00:00</div>
-<div data-key="day_su">So</div> <div>11:00 - 23:00</div>
-</div>
+<div class="hours-grid"><div>Mo</div><div>Geschlossen</div><div>Di - Fr</div><div>10:00-14:00 / 17:30-00:00</div><div>Sa</div><div>17:30 - 00:00</div><div>So</div><div>11:00 - 23:00</div></div>
 </div>
 </div>
 </section>
@@ -326,7 +318,7 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 
 
 <!-- ✅ SPEZIALMENÜ: aparece solo cuando está activado desde el Admin -->
-<section id="specialMenuTeaser" class="container special-teaser" data-visible="false" hidden>
+<section id="specialMenuTeaser" class="container special-teaser" data-visible="false" hidden="">
   <div class="card special-card">
     <div class="special-kicker" data-key="special_kicker">Spezialmenü</div>
     <h3 id="specialMenuTitle" data-key="special_title">Wintermenü</h3>
@@ -342,8 +334,8 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 <button class="btn secondary active" onclick="filterMenu('antipasti', event)" data-key="menu_btn_antipasti">Antipasti</button>
 <button class="btn secondary" onclick="filterMenu('paste', event)" data-key="menu_btn_pasta">Pasta</button>
 <button class="btn secondary" onclick="filterMenu('pizze', event)" data-key="menu_btn_pizze">Pizze</button>
-<button class="btn secondary" onclick="filterMenu('carne', event)" data-key="menu_btn_fish_meat">Fisch & Fleisch</button>
-<button id="specialMenuNavButton" class="btn secondary special-menu-control" onclick="filterMenu('spezial', event)" data-key="menu_btn_special" hidden>Spezialmenü</button>
+<button class="btn secondary" onclick="filterMenu('carne', event)" data-key="menu_btn_fish_meat">Fisch &amp; Fleisch</button>
+<button id="specialMenuNavButton" class="btn secondary special-menu-control" onclick="filterMenu('spezial', event)" data-key="menu_btn_special" hidden="">Spezialmenü</button>
 </div>
 
 <!-- ✅ MENU: se carga desde Menu.html -->
@@ -353,7 +345,7 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 </section>
 
 <section id="gallery" class="container">
-<h2 class="section-title" data-key="gallery_title">Galerie & Video</h2>
+<h2 class="section-title" data-key="gallery_title">Galerie &amp; Video</h2>
 
 <!-- ✅ GALERIA: se carga desde Galeria.html -->
 <div id="galeriaContent">
@@ -363,53 +355,21 @@ Im <span class="notranslate" translate="no">Ristorante Belvedere</span> steht ec
 
 <section id="reserve" class="container">
 <h2 class="section-title" data-key="reserve_title">Reservation</h2>
-
-<div class="form-grid">
-<div class="card reserve-card">
-<p class="reserve-help">Füllen Sie das Formular aus. Die Reservation wird direkt an unser Restaurant gesendet.</p>
-<div id="reservationStatus" class="reserve-status" aria-live="polite"></div>
-
-<form id="reservationForm" data-endpoint="https://transcendent-treacle-3a6653.netlify.app/api/reservation">
-
-<input id="resName" name="Name" class="form-control" type="text" data-key-ph="ph_name" placeholder="Name" required>
-<input id="resContact" name="Telefon / Kontakt" class="form-control" type="text" data-key-ph="ph_contact" placeholder="Telefon / Kontakt" required>
-
-<div class="reserve-row">
-<input id="resDate" name="Datum" class="form-control" type="date" required>
-<input id="resTime" name="Uhrzeit" class="form-control" type="time" required>
-</div>
-
-<select id="resPersons" name="Personen" class="form-control" required>
-<option value="2 Personen">2 Personen</option>
-<option value="3 Personen">3 Personen</option>
-<option value="4 Personen">4 Personen</option>
-<option value="5+ Personen">5+ Personen</option>
-</select>
-
-<textarea id="resNotes" name="Genaue Personenanzahl, Allergien oder Anlass" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Genaue Personenanzahl, Allergien oder Anfrage für einen Anlass"></textarea>
-<button type="submit" class="btn" style="width: 100%;" data-key="btn_send">Reservation senden</button>
-</form>
-</div>
-</div>
-</section>
+<div class="form-grid"><div class="card reserve-card"><p class="reserve-help" data-key="reserve_help">Füllen Sie das Formular aus. Die Reservation wird direkt an unser Restaurant gesendet.</p><form id="reservationForm"><input id="resName" name="Name" class="form-control" type="text" data-key-ph="ph_name" placeholder="Name" required=""><input id="resContact" name="Telefon / Kontakt" class="form-control" type="text" data-key-ph="ph_contact" placeholder="Telefon / Kontakt" required=""><div class="reserve-row"><input id="resDate" name="Datum" class="form-control" type="date" required=""><input id="resTime" name="Uhrzeit" class="form-control" type="time" required=""></div><select id="resPersons" name="Personen" class="form-control" required=""><option value="2 Personen">2 Personen</option><option value="3 Personen">3 Personen</option><option value="4 Personen">4 Personen</option><option value="5+ Personen">5+ Personen</option></select><textarea id="resNotes" name="Genaue Personenanzahl, Allergien oder Anlass" class="form-control" rows="4" data-key-ph="ph_notes" placeholder="Genaue Personenanzahl, Allergien oder Anfrage für einen Anlass"></textarea><button type="submit" class="btn" style="width:100%;" data-key="btn_send">Reservation senden</button><p id="reservationStatus" style="margin-top:12px;color:var(--text-muted);font-size:.9rem;text-align:center;"></p><p style="margin-top:8px;color:var(--text-muted);font-size:.86rem;text-align:center;">Kontakt: <a href="mailto:ristorante-belvedere@bluewin.ch">ristorante-belvedere@bluewin.ch</a></p></form></div></div></section>
 
 <footer id="contact">
 <div class="container">
 
 <!-- Texto legal -->
-<p data-key="footer_text">
-<span class="notranslate" translate="no">Ristorante Belvedere</span> © 2025 | <span class="notranslate" translate="no">Hofstetten-Flüh</span>, Schweiz
-</p>
+<p data-key="footer_text"><span class="notranslate" translate="no">Ristorante Belvedere</span> © 2025 | <span class="notranslate" translate="no">Hofstetten-Flüh</span>, Schweiz</p>
 
 <!-- Contacto -->
 <div class="footer-contact">
 <p><strong data-key="contact_title">Kontakt</strong></p>
 
-<p data-key="contact_address">
-<span class="notranslate" translate="no">Ristorante Belvedere</span><br>
-Flühstrasse 30<br>
-<span class="notranslate" translate="no">4114 Hofstetten-Flüh</span>
-</p>
+<p data-key="contact_address"><span class="notranslate" translate="no">Ristorante Belvedere</span>
+<span class="notranslate" translate="no">Flühstrasse 30</span>
+4114 <span class="notranslate" translate="no">Hofstetten-Flüh</span></p>
 
 <p>
 <span data-key="contact_phone_label">Tel:</span>
@@ -568,5 +528,41 @@ Promise.all([
 ]).then(() => { syncSpecialMenuVisibility(); loadGTranslate(); });
 </script>
 
-</body>
-</html>
+<script id="belvedereReservationScript">
+(function(){
+  const reservationEndpoint="https://transcendent-treacle-3a6653.netlify.app/api/reservation";
+  const fallbackEmail="ristorante-belvedere@bluewin.ch";
+  function byId(id){return document.getElementById(id)}
+  function initReservation(){
+    const form=byId("reservationForm");
+    if(!form || form.dataset.directReservationReady==="1") return;
+    form.dataset.directReservationReady="1";
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      const status=byId("reservationStatus");
+      const payload={
+        name: byId("resName")?.value.trim()||"",
+        contact: byId("resContact")?.value.trim()||"",
+        date: byId("resDate")?.value||"",
+        time: byId("resTime")?.value||"",
+        persons: byId("resPersons")?.value||"",
+        notes: byId("resNotes")?.value.trim()||""
+      };
+      if(status){ status.style.color="var(--text-muted)"; status.textContent="Reservation wird gesendet..."; }
+      try{
+        const res=await fetch(reservationEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+        const data=await res.json().catch(()=>({}));
+        if(!res.ok || !data.ok) throw new Error(data.error || "Die Reservation konnte nicht gesendet werden.");
+        form.reset();
+        if(status){ status.style.color="var(--primary)"; status.textContent="Danke! Ihre Reservation wurde gesendet."; }
+      }catch(err){
+        if(status){ status.style.color="#b00020"; status.innerHTML='Fehler beim Senden. Bitte telefonisch reservieren oder per E-Mail: <a href="mailto:'+fallbackEmail+'">'+fallbackEmail+'</a><br><small>'+String(err.message||err)+'</small>'; }
+      }
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", initReservation); else initReservation();
+})();
+</script>
+
+
+</body></html>
