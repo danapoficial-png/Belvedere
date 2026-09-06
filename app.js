@@ -9,7 +9,7 @@
   const compactScreen = window.matchMedia('(max-width: 700px)');
   const readPreference = key => { try { return localStorage.getItem(key); } catch { return null; } };
   const savePreference = (key, value) => { try { localStorage.setItem(key, value); } catch { /* Las preferencias son opcionales. */ } };
-  let language = readPreference('belvedere-language') || config.defaultLanguage || 'de';
+  let language = window.BELVEDERE_EDITOR_LANGUAGE || readPreference('belvedere-language') || config.defaultLanguage || 'de';
   if (!translations[language]) language = 'de';
   let motionPaused = readPreference('belvedere-motion') === 'paused' || reducedMotion.matches;
   const text = (key, values = {}) => {
@@ -57,6 +57,7 @@
       const i = Number(el.dataset.dishDescription);
       el.textContent = window.BELVEDERE_DISH_TRANSLATIONS?.[language]?.[i] || window.BELVEDERE_MENU[i].description;
     });
+    if(window.BelvedereRenderExtras) window.BelvedereRenderExtras(language);
     updateMotion();
     if (lightbox.open) renderLightbox();
     if (statusState) renderStatus();
@@ -286,12 +287,12 @@
   const submit = form.querySelector('[type="submit"]');
   const dateInput = document.getElementById('resDate');
   const previewMode = config.previewMode !== false;
-  document.getElementById('previewNotice').hidden = !previewMode;
+
   const zurichNow = () => {
     const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Zurich', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23' }).formatToParts(new Date()).map(part => [part.type,part.value]));
     return { date:`${parts.year}-${parts.month}-${parts.day}`, minutes:Number(parts.hour)*60+Number(parts.minute) };
   };
-  const openingHours = { 0:[[660,1380]], 1:[], 2:[[600,840],[1050,1440]], 3:[[600,840],[1050,1440]], 4:[[600,840],[1050,1440]], 5:[[600,840],[1050,1440]], 6:[[1050,1440]] };
+  const openingHours = config.openingHours || { 0:[[660,1380]], 1:[], 2:[[600,840],[1050,1440]], 3:[[600,840],[1050,1440]], 4:[[600,840],[1050,1440]], 5:[[600,840],[1050,1440]], 6:[[1050,1440]] };
   function renderStatus() {
     status.hidden = !statusState;
     if (!statusState) return;

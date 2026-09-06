@@ -6,13 +6,16 @@
   <meta name="theme-color" content="#461622">
   <meta name="description" content="Ristorante Belvedere in Hofstetten-Flüh. Italienische Küche, Pasta, Pizza und herzliche Gastfreundschaft. Speisekarte entdecken und einen Tisch anfragen.">
   <title>Belvedere — Un po’ d’Italia, a Hofstetten.</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" as="image" href="assets/hero.webp">
   <script src="config.js" defer></script>
   <script src="content.js" defer></script>
   <script src="translations.js" defer></script>
+  <script src="data-model.js" defer></script>
+  <script src="site-data.js" defer></script>
+  <script src="site-render.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -29,7 +32,7 @@
   </defs></svg>
   <div class="reading-progress" aria-hidden="true"></div>
   <header class="header" id="header">
-    <a class="wordmark" href="#" aria-label="Belvedere — Startseite">belvedere<span>RISTORANTE · HOFSTETTEN</span></a>
+    <a class="wordmark" href="#" aria-label="Belvedere — Startseite"><img class="brand-logo brand-logo-gold" src="assets/logo-gold.svg" alt="Belvedere Ristorante" width="194" height="66"><img class="brand-logo brand-logo-wine" src="assets/logo-wine.svg" alt="Belvedere Ristorante" width="194" height="66"></a>
     <nav class="desktop-nav" aria-label="Hauptnavigation" data-i18n-aria="navigation">
       <a href="#about" data-i18n="navAbout">La casa</a>
       <a href="#menu" data-i18n="navMenu">Speisekarte</a>
@@ -65,11 +68,14 @@
       </div>
     </section>
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>BUON CIBO <b>✳</b> BELLA COMPAGNIA <b>✳</b> BELVEDERE <b>✳</b> LA DOLCE VITA <b>✳</b> </span><span>BUON CIBO <b>✳</b> BELLA COMPAGNIA <b>✳</b> BELVEDERE <b>✳</b> LA DOLCE VITA <b>✳</b> </span></div></div>
+    <section class="special-feature section" id="specialFeature" aria-labelledby="specialName" hidden>
+      <div class="special-copy"><span class="eyebrow" id="specialKicker"></span><h2 id="specialName"></h2><p id="specialDescription"></p><div class="special-meta"><span id="specialDate"></span><span id="specialPrice"></span></div><a class="button" id="specialAction" href="#reserve"></a></div><img id="specialImage" width="900" height="700" alt="" loading="lazy" hidden>
+    </section>
     <section id="about" class="section about">
       <div class="section-label reveal"><span>01 / LA CASA</span><span>Benvenuti al Belvedere</span></div>
       <div class="about-grid">
         <div class="about-copy reveal"><h2 data-i18n="aboutTitle">Italien im Herzen.<br><em>Sie am Tisch.</em></h2><p data-i18n="aboutText">Bei uns gehört beides zusammen: die Freude am guten Essen und die Freude, es zu teilen. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische italienische Rezepte und nehmen uns Zeit für unsere Gäste.</p><p class="about-signature">Ci vediamo a tavola.</p><a href="#reserve" class="text-link"><span data-i18n="yourEvening">Ihr Abend bei uns</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div>
-        <div class="about-photos reveal"><figure class="about-main-photo"><img src="assets/table.webp" alt="Liebevoll gedeckter Tisch im Belvedere" width="800" height="1067" loading="lazy" data-i18n-alt="tableAlt"><figcaption data-i18n="photoCaption">Ein Platz zum Bleiben.</figcaption></figure><figure class="about-food-photo"><img src="assets/pasta.webp" alt="Ein Pastagericht aus der Küche des Belvedere" width="620" height="620" loading="lazy" data-i18n-alt="pastaAlt"><figcaption>Fatto con amore.</figcaption></figure><span class="photo-word" aria-hidden="true">insieme.</span></div>
+        <div class="about-photos reveal"><figure class="about-main-photo"><img src="assets/table.webp" alt="Liebevoll gedeckter Tisch im Belvedere" width="800" height="1067" loading="lazy" data-i18n-alt="tableAlt"><figcaption data-i18n="photoCaption">Ein Platz zum Bleiben.</figcaption></figure><figure class="about-food-photo"><img src="assets/pasta.webp" alt="Ein Pastagericht aus der Küche des Belvedere" width="620" height="620" loading="lazy" data-i18n-alt="pastaAlt"><figcaption>Fatto con amore.</figcaption></figure></div>
       </div>
       <aside class="notice" id="notice"><span class="notice-label" data-i18n="noticeLabel">GUT ZU WISSEN</span><p data-i18n="noticeText">Aufgrund technischer Probleme sind derzeit keine Zahlungen mit PostFinance-Karten möglich. Bitte nutzen Sie andere Karten oder Barzahlung.</p></aside>
     </section>
@@ -178,7 +184,7 @@
       <div class="reserve-layout"><div class="reserve-copy reveal"><h2 data-i18n="reserveTitle">Ihr Platz.<br><em>Unser Vergnügen.</em></h2><p data-i18n="reserveText">Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.</p><a class="reservation-phone" href="tel:+41617214545">+41 61 721 45 45</a><span class="eyebrow" data-i18n="phoneReserve">GERNE AUCH TELEFONISCH</span><div class="hours"><h3 data-i18n="hoursTitle">Öffnungszeiten</h3><dl><div><dt data-i18n="monday">Montag</dt><dd data-i18n="closed">Geschlossen</dd></div><div><dt data-i18n="weekdays">Dienstag – Freitag</dt><dd>10:00 – 14:00<br>17:30 – 00:00</dd></div><div><dt data-i18n="saturday">Samstag</dt><dd>17:30 – 00:00</dd></div><div><dt data-i18n="sunday">Sonntag</dt><dd>11:00 – 23:00</dd></div></dl></div></div>
       <form id="reservationForm" class="reservation-form reveal">
         <div class="form-title"><span>Prego, si accomodi.</span><span aria-hidden="true">✳</span></div>
-        <p class="preview-notice" id="previewNotice" data-i18n="previewNote">Lokale Vorschau: Sie können das Formular testen. Es wird keine Anfrage versendet.</p>
+        
         <div class="form-field"><label for="resName" data-i18n="name">Ihr Name</label><input id="resName" name="name" autocomplete="name" required maxlength="100" placeholder="Anna Rossi" data-i18n-ph="namePlaceholder"></div>
         <div class="form-field"><label for="resContact" data-i18n="contactField">Telefon oder E-Mail</label><input id="resContact" name="contact" autocomplete="email" required maxlength="160" placeholder="+41 … / name@example.ch"></div>
         <div class="form-row"><div class="form-field"><label for="resDate" data-i18n="date">Wunschdatum</label><input id="resDate" name="date" type="date" required></div><div class="form-field"><label for="resTime" data-i18n="time">Uhrzeit</label><input id="resTime" name="time" type="time" required step="900" value="19:00"></div></div>
@@ -187,11 +193,12 @@
         <button class="button form-submit" type="submit" disabled><span data-i18n="send">Tisch anfragen</span><svg class="icon"><use href="#icon-diagonal"/></svg></button>
         <p class="form-disclaimer" data-i18n="confirmationNote">Ihre Anfrage ist erst nach unserer Bestätigung verbindlich.</p>
         <p id="reservationStatus" class="form-status" role="status" aria-live="polite" hidden></p>
-        <noscript><p>Bitte aktivieren Sie JavaScript oder reservieren Sie telefonisch: <a href="tel:+41617214545">+41 61 721 45 45</a>.</p></noscript>
+        <noscript><p>Bitte aktivieren Sie JavaScript oder reservieren Sie telefonisch: <a href="tel:+41617314287">+41 61 731 42 87</a>.</p></noscript>
       </form></div>
     </section>
   </main>
-  <footer class="footer section" id="contact"><div class="footer-top"><div><span class="eyebrow">ARRIVEDERCI, A PRESTO.</span><h2 data-i18n="footerTitle">Bis bald<br><em>im Belvedere.</em></h2></div><div class="footer-address"><h3 data-i18n="findUs">Sie finden uns hier</h3><address>Ristorante Belvedere<br>Flühstrasse 30<br>4114 Hofstetten-Flüh, Schweiz</address><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante%20Belvedere%20Fl%C3%BChstrasse%2030%204114%20Hofstetten-Fl%C3%BCh" target="_blank" rel="noopener noreferrer"><span data-i18n="directions">Route planen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div><div class="footer-contact"><h3 data-i18n="navContact">Kontakt</h3><a href="tel:+41617214545">+41 61 721 45 45</a><a href="mailto:ristorante-belvedere@bluewin.ch">ristorante-belvedere@bluewin.ch</a><a href="#reserve" class="text-link"><span data-i18n="reserveTable">Tisch reservieren</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div></div><div class="footer-word" aria-hidden="true">Belvedere.</div><div class="footer-bottom"><p>© <span id="year">2026</span> Ristorante Belvedere</p><button id="motionToggle" class="motion-toggle" aria-pressed="false"><svg class="icon"><use href="#icon-pause"/></svg><span data-i18n="pauseMotion">Animationen pausieren</span></button><a href="#" class="back-top"><span data-i18n="backTop">Nach oben</span><span aria-hidden="true">↑</span></a></div></footer>
+  <footer class="footer section" id="contact"><div class="footer-top"><div><span class="eyebrow">ARRIVEDERCI, A PRESTO.</span><h2 data-i18n="footerTitle">Bis bald<br><em>im Belvedere.</em></h2></div><div class="footer-address"><h3 data-i18n="findUs">Sie finden uns hier</h3><address>Ristorante Belvedere<br>Flühstrasse 30<br>4114 Hofstetten-Flüh, Schweiz</address><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante%20Belvedere%20Fl%C3%BChstrasse%2030%204114%20Hofstetten-Fl%C3%BCh" target="_blank" rel="noopener noreferrer"><span data-i18n="directions">Route planen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div><div class="footer-contact"><h3 data-i18n="navContact">Kontakt</h3><a href="tel:+41617214545">+41 61 721 45 45</a><a href="mailto:ristorante-belvedere@bluewin.ch">ristorante-belvedere@bluewin.ch</a><a href="#reserve" class="text-link"><span data-i18n="reserveTable">Tisch reservieren</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div></div><div class="footer-brand"><img class="brand-logo-gold" src="assets/logo-gold.svg" alt="Belvedere Ristorante" width="582" height="198"><img class="brand-logo-wine" src="assets/logo-wine.svg" alt="Belvedere Ristorante" width="582" height="198"></div><div class="footer-bottom"><p>© <span id="year">2026</span> Ristorante Belvedere</p><button id="motionToggle" class="motion-toggle" aria-pressed="false"><svg class="icon"><use href="#icon-pause"/></svg><span data-i18n="pauseMotion">Animationen pausieren</span></button><a href="#" class="back-top"><span data-i18n="backTop">Nach oben</span><span aria-hidden="true">↑</span></a></div></footer>
+  <dialog class="special-dialog" id="specialDialog" aria-labelledby="specialDialogTitle"><button class="icon-button" id="specialDialogClose" aria-label="Schliessen" data-i18n-aria="close">×</button><h2 id="specialDialogTitle"></h2><p id="specialDialogText"></p><div id="specialDishes"></div><a class="button" id="specialDialogReserve" href="#reserve"></a></dialog>
   <dialog class="lightbox" id="lightbox" aria-label="Bild in Grossansicht" data-i18n-aria="largeImage"><div class="lightbox-top"><span id="lightboxCount" aria-live="polite">01 / 20</span><button class="icon-button" id="lightboxClose" autofocus aria-label="Schliessen" data-i18n-aria="close"><svg class="icon"><use href="#icon-close"/></svg></button></div><div class="lightbox-stage"><button class="round-button previous" id="lightboxPrev" aria-label="Vorheriges Bild" data-i18n-aria="previous"><svg class="icon"><use href="#icon-arrow"/></svg></button><img id="lightboxImage" alt=""><button class="round-button" id="lightboxNext" aria-label="Nächstes Bild" data-i18n-aria="next"><svg class="icon"><use href="#icon-arrow"/></svg></button></div><p id="lightboxCaption"></p></dialog>
 </body>
 </html>
