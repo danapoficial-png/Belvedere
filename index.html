@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de" data-theme="wine">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#461622">
+  <meta name="description" content="Ristorante Belvedere in Hofstetten-Flüh. Italienische Küche, Pasta, Pizza und herzliche Gastfreundschaft. Speisekarte entdecken und einen Tisch anfragen.">
+  <title>Belvedere — Un po’ d’Italia, a Hofstetten.</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="assets/hero.webp">
+  <script src="config.js" defer></script>
+  <script src="content.js" defer></script>
+  <script src="translations.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Zum Inhalt</a>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="icon-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+  </defs></svg>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <header class="header" id="header">
+    <a class="wordmark" href="#" aria-label="Belvedere — Startseite">belvedere<span>RISTORANTE · HOFSTETTEN</span></a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation" data-i18n-aria="navigation">
+      <a href="#about" data-i18n="navAbout">La casa</a>
+      <a href="#menu" data-i18n="navMenu">Speisekarte</a>
+      <a href="#gallery" data-i18n="navGallery">Momente</a>
+      <a href="#contact" data-i18n="navContact">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-control"><span class="sr-only" data-i18n="language">Sprache</span><select id="language"><option value="de">DE</option><option value="it">IT</option><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
+      <button class="icon-button theme-toggle" id="themeToggle" aria-label="Darstellung wechseln" data-i18n-aria="theme"><svg class="icon"><use href="#icon-sun"/></svg></button>
+      <a href="#reserve" class="button header-reserve"><span data-i18n="reserveShort">Reservieren</span><svg class="icon"><use href="#icon-diagonal"/></svg></a>
+      <button class="mobile-toggle icon-button" id="mobileToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav" data-i18n-aria="openNav"><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation" hidden>
+    <a href="#about"><span>01</span><span data-i18n="navAbout">La casa</span></a>
+    <a href="#menu"><span>02</span><span data-i18n="navMenu">Speisekarte</span></a>
+    <a href="#gallery"><span>03</span><span data-i18n="navGallery">Momente</span></a>
+    <a href="#reserve"><span>04</span><span data-i18n="reserveShort">Reservieren</span></a>
+    <a href="#contact"><span>05</span><span data-i18n="navContact">Kontakt</span></a>
+  </nav>
+  <main id="main">
+    <section class="hero" aria-labelledby="heroTitle">
+      <img class="hero-image" src="assets/hero.webp" alt="Die Terrasse des Belvedere im warmen Licht am Abend" width="1182" height="665" fetchpriority="high" data-i18n-alt="heroAlt">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow"><span data-i18n="heroEyebrow">EIN STÜCK ITALIEN IN HOFSTETTEN-FLÜH</span><span class="hero-side-note">Cucina italiana, con amore.</span></div>
+        <h1 id="heroTitle">Belvedere<span class="hero-period">.</span></h1>
+        <div class="hero-bottom">
+          <div class="hero-intro"><p class="hero-script">La dolce vita.</p><p data-i18n="heroText">Gutes Essen. Ein Glas Wein.<br>Und Zeit füreinander.</p><a class="text-link hero-menu" href="#menu"><span data-i18n="discoverMenu">Speisekarte entdecken</span><svg class="icon"><use href="#icon-arrow"/></svg></a></div>
+          <a href="#reserve" class="reservation-orbit"><span class="orbit-top">BENVENUTI A TAVOLA</span><svg class="icon"><use href="#icon-diagonal"/></svg><span data-i18n="reserveTable">Tisch reservieren</span></a>
+        </div>
+        <a class="scroll-cue" href="#about"><span data-i18n="scroll">Ein wenig weiter</span><span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>BUON CIBO <b>✳</b> BELLA COMPAGNIA <b>✳</b> BELVEDERE <b>✳</b> LA DOLCE VITA <b>✳</b> </span><span>BUON CIBO <b>✳</b> BELLA COMPAGNIA <b>✳</b> BELVEDERE <b>✳</b> LA DOLCE VITA <b>✳</b> </span></div></div>
+    <section id="about" class="section about">
+      <div class="section-label reveal"><span>01 / LA CASA</span><span>Benvenuti al Belvedere</span></div>
+      <div class="about-grid">
+        <div class="about-copy reveal"><h2 data-i18n="aboutTitle">Italien im Herzen.<br><em>Sie am Tisch.</em></h2><p data-i18n="aboutText">Bei uns gehört beides zusammen: die Freude am guten Essen und die Freude, es zu teilen. Wir kochen mit frischen, saisonalen Zutaten, pflegen klassische italienische Rezepte und nehmen uns Zeit für unsere Gäste.</p><p class="about-signature">Ci vediamo a tavola.</p><a href="#reserve" class="text-link"><span data-i18n="yourEvening">Ihr Abend bei uns</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div>
+        <div class="about-photos reveal"><figure class="about-main-photo"><img src="assets/table.webp" alt="Liebevoll gedeckter Tisch im Belvedere" width="800" height="1067" loading="lazy" data-i18n-alt="tableAlt"><figcaption data-i18n="photoCaption">Ein Platz zum Bleiben.</figcaption></figure><figure class="about-food-photo"><img src="assets/pasta.webp" alt="Ein Pastagericht aus der Küche des Belvedere" width="620" height="620" loading="lazy" data-i18n-alt="pastaAlt"><figcaption>Fatto con amore.</figcaption></figure><span class="photo-word" aria-hidden="true">insieme.</span></div>
+      </div>
+      <aside class="notice" id="notice"><span class="notice-label" data-i18n="noticeLabel">GUT ZU WISSEN</span><p data-i18n="noticeText">Aufgrund technischer Probleme sind derzeit keine Zahlungen mit PostFinance-Karten möglich. Bitte nutzen Sie andere Karten oder Barzahlung.</p></aside>
+    </section>
+    <section id="menu" class="section menu">
+      <div class="section-label reveal"><span>02 / LA CUCINA</span><span data-i18n="menuOrigin">Klassische Rezepte. Mit Liebe gekocht.</span></div>
+      <div class="menu-heading reveal"><h2 data-i18n="menuTitle">Einfach gut.<br><em>Typisch italiano.</em></h2><div><p data-i18n="menuText">Von der ersten Bruschetta bis zum letzten Bissen. Finden Sie Ihr Lieblingsgericht.</p><span class="price-note" data-i18n="priceNote">Alle Preise in Schweizer Franken (CHF).</span></div></div>
+      <div class="menu-layout">
+        <div class="menu-sidebar"><div class="menu-tabs" role="tablist" aria-label="Speisekategorien" data-i18n-aria="categories" aria-orientation="vertical">
+          <button role="tab" id="tab-antipasti" aria-controls="panel-antipasti" aria-selected="true" data-category="antipasti"><span class="tab-number">01</span><span data-i18n="catAntipasti">Antipasti</span><svg class="icon"><use href="#icon-arrow"/></svg></button>
+          <button role="tab" id="tab-paste" aria-controls="panel-paste" aria-selected="false" tabindex="-1" data-category="paste"><span class="tab-number">02</span><span data-i18n="catPasta">Pasta & Risotto</span><svg class="icon"><use href="#icon-arrow"/></svg></button>
+          <button role="tab" id="tab-pizze" aria-controls="panel-pizze" aria-selected="false" tabindex="-1" data-category="pizze"><span class="tab-number">03</span><span data-i18n="catPizza">Pizze</span><svg class="icon"><use href="#icon-arrow"/></svg></button>
+          <button role="tab" id="tab-carne" aria-controls="panel-carne" aria-selected="false" tabindex="-1" data-category="carne"><span class="tab-number">04</span><span data-i18n="catMeat">Fisch & Fleisch</span><svg class="icon"><use href="#icon-arrow"/></svg></button>
+          <button role="tab" id="tab-spezial" aria-controls="panel-spezial" aria-selected="false" tabindex="-1" data-category="spezial" hidden><span class="tab-number">05</span><span id="specialTitle">Spezialmenü</span><svg class="icon"><use href="#icon-arrow"/></svg></button>
+        </div><div class="menu-side-note"><span aria-hidden="true">Buon<br><em>appetito!</em></span><p data-i18n="takeawaySmall">Alle Gerichte auch zum Mitnehmen.</p><a class="text-link" href="https://wa.me/41617314287" target="_blank" rel="noopener noreferrer" data-whatsapp><span data-i18n="order">Bestellen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div></div>
+        <div class="menu-panels" id="menuPanels"><div class="menu-panel" id="panel-antipasti" role="tabpanel" aria-labelledby="tab-antipasti" tabindex="0"><h3 data-i18n="headingAntipasti">Antipasti, Suppen &amp; Salate</h3>
+<article class="dish"><div class="dish-info"><h4>Antipasti misti</h4><p data-dish-description="0">Verschiedene italienische Vorspeisen</p></div><div class="dish-price">26.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Bruschette</h4><p data-dish-description="1">Geröstete Brotscheiben mit marinierten Tomaten</p></div><div class="dish-price">9.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Melanzana Gratinata</h4><p data-dish-description="2">Gratinierte Auberginen</p></div><div class="dish-price">16.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Carpaccio di Manzo</h4><p data-dish-description="3">Rinds-Carpaccio</p></div><div class="dish-price">21.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Crema di Pomodoro</h4><p data-dish-description="4">Tomatencremesuppe</p></div><div class="dish-price">8.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Crema di Zucca</h4><p data-dish-description="5">Kürbiscremesuppe</p></div><div class="dish-price">8.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Insalata verde</h4><p data-dish-description="6">Grüner Salat</p></div><div class="dish-price">8.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Insalata mista</h4><p data-dish-description="7">Gemischter Salat</p></div><div class="dish-price">9.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Insalata Caprese</h4><p data-dish-description="8">Tomaten mit Mozzarella</p></div><div class="dish-price">14.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Insalata Valeriana con Uovo</h4><p data-dish-description="9">Nüsslisalat mit Ei</p></div><div class="dish-price">15.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Insalata Valeriana con Uovo e Speck</h4><p data-dish-description="10">Nüsslisalat mit Ei und Speck</p></div><div class="dish-price">17.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Wurstkäsesalat (einfach)</h4><p data-dish-description="11">Wurstkäsesalat</p></div><div class="dish-price">14.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Wurstkäsesalat (garniert)</h4><p data-dish-description="12">Wurstkäsesalat garniert</p></div><div class="dish-price">16.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Wurstkäsesalat mit Pommes frites</h4><p data-dish-description="13">Wurstkäsesalat mit Pommes frites</p></div><div class="dish-price">18.50 <span>CHF</span></div></article>
+</div>
+<div class="menu-panel" id="panel-paste" role="tabpanel" aria-labelledby="tab-paste" tabindex="0"><h3 data-i18n="headingPasta">Pasta fresca &amp; Risotto</h3>
+<article class="dish"><div class="dish-info"><h4>Spaghetti al Pomodoro</h4><p data-dish-description="14">Mit Tomatensauce</p></div><div class="dish-price">19.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Spaghetti del Marinaio</h4><p data-dish-description="15">Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini</p></div><div class="dish-price">22.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Fagottini di Tartufo con salsa al Tartufo</h4><p data-dish-description="16">Mit Trüffel gefüllte Teigtaschen mit Trüffelsauce</p></div><div class="dish-price">29.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Orecchiette con Cime di rape e Salsiccia Piccante</h4><p data-dish-description="17">Teigwaren mit Stängelkohl und pikanter Schweinswurst</p></div><div class="dish-price">27.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Risotto ai Porcini</h4><p data-dish-description="18">Risotto mit Steinpilzen</p></div><div class="dish-price">29.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Panciotti Ripieni di Capesante e Gambero Rosso con salsa allo Zafferano</h4><p data-dish-description="19">Ravioli mit Jakobs Muscheln und roter Krevette-Füllung an Safran-Sauce</p></div><div class="dish-price">34.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Trofie al Profumo di mare</h4><p data-dish-description="20">Hausgemachte Teigwaren mit Krevetten, Spinat und Tomatensauce</p></div><div class="dish-price">29.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Rosette della Casa</h4><p data-dish-description="21">Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Parmesan überbacken</p></div><div class="dish-price">28.50 <span>CHF</span></div></article>
+</div>
+<div class="menu-panel" id="panel-pizze" role="tabpanel" aria-labelledby="tab-pizze" tabindex="0"><h3 data-i18n="headingPizza">Le nostre pizze</h3>
+<article class="dish"><div class="dish-info"><h4>Pizza Margherita</h4><p data-dish-description="22">Tomatensauce, Mozzarella</p></div><div class="dish-price">19.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Prosciutto</h4><p data-dish-description="23">Tomatensauce, Mozzarella, Schinken</p></div><div class="dish-price">21.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza ai Funghi</h4><p data-dish-description="24">Tomatensauce, Mozzarella, Pilzen</p></div><div class="dish-price">21.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Prosciutto e funghi</h4><p data-dish-description="25">Tomatensauce, Mozzarella, Schinken und Pilzen</p></div><div class="dish-price">23.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Napoli</h4><p data-dish-description="26">Tomatensauce, Mozzarella, Sardellen, Kapern</p></div><div class="dish-price">23.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Capricciosa</h4><p data-dish-description="27">Tomatensauce, Mozzarella, Schinken, Pilzen, Parmesan</p></div><div class="dish-price">24.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Fiorentina</h4><p data-dish-description="28">Tomatensauce, Mozzarella, Spinat</p></div><div class="dish-price">22.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Salame</h4><p data-dish-description="29">Tomatensauce, Mozzarella, Salami</p></div><div class="dish-price">23.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Calabrese</h4><p data-dish-description="30">Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami</p></div><div class="dish-price">25.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Calzone</h4><p data-dish-description="31">Tomatensauce, Mozzarella, Schinken, Spinat und Ei</p></div><div class="dish-price">25.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza quattro Stagioni</h4><p data-dish-description="32">Tomatensauce, Mozzarella, Schinken, Pilzen, Auberginen, Artischocken</p></div><div class="dish-price">26.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Gorgonzola</h4><p data-dish-description="33">Tomatensauce, Mozzarella, Gorgonzola</p></div><div class="dish-price">24.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Hawaii</h4><p data-dish-description="34">Tomatensauce, Mozzarella, Schinken, Ananas</p></div><div class="dish-price">24.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Belvedere</h4><p data-dish-description="35">Tomatensauce, Mozzarella, Rucola, Parmesan</p></div><div class="dish-price">25.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Crudo</h4><p data-dish-description="36">Tomatensauce, Mozzarella, Rohschinken</p></div><div class="dish-price">25.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza della Casa</h4><p data-dish-description="37">Tomatensauce, Mozzarella, Rohschinken, Rucola, Parmesan</p></div><div class="dish-price">27.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza al Tonno</h4><p data-dish-description="38">Tomatensauce, Mozzarella, Thon</p></div><div class="dish-price">24.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Sennmatt</h4><p data-dish-description="39">Tomatensauce, Mozzarella, Schinken, Speck, Zwiebeln, Knoblauch, Peperoncini</p></div><div class="dish-price">25.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Pizza Bambini / Kinder Pizza</h4><p data-dish-description="40">Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)</p></div><div class="dish-price">14.00 <span>CHF</span></div></article>
+</div>
+<div class="menu-panel" id="panel-carne" role="tabpanel" aria-labelledby="tab-carne" tabindex="0"><h3 data-i18n="headingMeat">Pesce &amp; Carne</h3>
+<article class="dish"><div class="dish-info"><h4>Gamberetti al Prosecco</h4><p data-dish-description="41">Krevetten an Prosecco-Sauce</p></div><div class="dish-price">32.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Calamari Fritti</h4><p data-dish-description="42">Frittierte Calamares-Ringe</p></div><div class="dish-price">28.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Scaloppine di Maiale Impanate</h4><p data-dish-description="43">Panierte Schweinsschnitzel</p></div><div class="dish-price">26.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Cordon Bleu di Maiale</h4><p data-dish-description="44">Schweins-Cordon bleu</p></div><div class="dish-price">29.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Scaloppine di Maiale con salsa alla Panna</h4><p data-dish-description="45">Schweinsschnitzel mit Rahmsauce</p></div><div class="dish-price">28.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Fegato di Vitello alla Veneziana</h4><p data-dish-description="46">Kalbsleber mit Zwiebelsauce</p></div><div class="dish-price">29.50 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Bistecca di Vitello con salsa alle Spugnole</h4><p data-dish-description="47">Kalbsteak mit Morchelsauce</p></div><div class="dish-price">43.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Filetto di Manzo alla Griglia</h4><p data-dish-description="48">Rindsfilet vom Grill</p></div><div class="dish-price">48.00 <span>CHF</span></div></article>
+<article class="dish"><div class="dish-info"><h4>Ossobuco di Vitello</h4><p data-dish-description="49">Kalbs-Ossobuco</p></div><div class="dish-price">33.00 <span>CHF</span></div></article>
+</div></div>
+      </div>
+    </section>
+    <section id="gallery" class="section gallery">
+      <div class="section-label reveal"><span>03 / MOMENTI</span><span data-i18n="galleryOrigin">Ein kleiner Einblick in unser Zuhause.</span></div>
+      <div class="gallery-heading reveal"><h2 data-i18n="galleryTitle">Hier lässt es sich<br><em>gut sein.</em></h2><div class="gallery-controls"><span class="gallery-count" id="galleryCount" aria-live="polite">01 / 20</span><button class="round-button previous" id="galleryPrev" aria-label="Vorheriges Bild" data-i18n-aria="previous"><svg class="icon"><use href="#icon-arrow"/></svg></button><button class="round-button" id="galleryNext" aria-label="Nächstes Bild" data-i18n-aria="next"><svg class="icon"><use href="#icon-arrow"/></svg></button></div></div>
+      <div class="gallery-track" id="galleryTrack" aria-label="Fotogalerie" data-i18n-aria="galleryLabel"><button class="gallery-item" type="button" data-full="assets/gallery/foto14.webp" data-caption-key="photoTerrace"><span class="gallery-photo"><img src="assets/gallery/foto14.webp" width="1182" height="665" alt="Abende auf der Terrasse" data-i18n-alt="photoTerrace" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTerrace">Abende auf der Terrasse</span><span aria-hidden="true">01</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto10.webp" data-caption-key="photoPasta"><span class="gallery-photo"><img src="assets/gallery/foto10.webp" width="886" height="886" alt="Aus unserer Küche" data-i18n-alt="photoPasta" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoPasta">Aus unserer Küche</span><span aria-hidden="true">02</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto3.webp" data-caption-key="photoDining"><span class="gallery-photo"><img src="assets/gallery/foto3.webp" width="1600" height="900" alt="Unser Restaurant" data-i18n-alt="photoDining" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDining">Unser Restaurant</span><span aria-hidden="true">03</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto.webp" data-caption-key="photoDessert"><span class="gallery-photo"><img src="assets/gallery/foto.webp" width="1600" height="1200" alt="Ein süsser Abschluss" data-i18n-alt="photoDessert" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDessert">Ein süsser Abschluss</span><span aria-hidden="true">04</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto16.webp" data-caption-key="photoSunset"><span class="gallery-photo"><img src="assets/gallery/foto16.webp" width="1600" height="1200" alt="Ein Moment im Freien" data-i18n-alt="photoSunset" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoSunset">Ein Moment im Freien</span><span aria-hidden="true">05</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto9.webp" data-caption-key="photoTable"><span class="gallery-photo"><img src="assets/gallery/foto9.webp" width="1200" height="1600" alt="Ihr Tisch wartet" data-i18n-alt="photoTable" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTable">Ihr Tisch wartet</span><span aria-hidden="true">06</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto2.webp" data-caption-key="photoPasta"><span class="gallery-photo"><img src="assets/gallery/foto2.webp" width="768" height="1024" alt="Aus unserer Küche" data-i18n-alt="photoPasta" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoPasta">Aus unserer Küche</span><span aria-hidden="true">07</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto20.webp" data-caption-key="photoTerrace"><span class="gallery-photo"><img src="assets/gallery/foto20.webp" width="665" height="1182" alt="Abende auf der Terrasse" data-i18n-alt="photoTerrace" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTerrace">Abende auf der Terrasse</span><span aria-hidden="true">08</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto8.webp" data-caption-key="photoPasta"><span class="gallery-photo"><img src="assets/gallery/foto8.webp" width="768" height="1024" alt="Aus unserer Küche" data-i18n-alt="photoPasta" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoPasta">Aus unserer Küche</span><span aria-hidden="true">09</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto4.webp" data-caption-key="photoDessert"><span class="gallery-photo"><img src="assets/gallery/foto4.webp" width="665" height="1182" alt="Ein süsser Abschluss" data-i18n-alt="photoDessert" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDessert">Ein süsser Abschluss</span><span aria-hidden="true">10</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto7.webp" data-caption-key="photoTerrace"><span class="gallery-photo"><img src="assets/gallery/foto7.webp" width="1600" height="900" alt="Abende auf der Terrasse" data-i18n-alt="photoTerrace" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTerrace">Abende auf der Terrasse</span><span aria-hidden="true">11</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto11.webp" data-caption-key="photoDining"><span class="gallery-photo"><img src="assets/gallery/foto11.webp" width="1600" height="900" alt="Unser Restaurant" data-i18n-alt="photoDining" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDining">Unser Restaurant</span><span aria-hidden="true">12</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto12.webp" data-caption-key="photoDining"><span class="gallery-photo"><img src="assets/gallery/foto12.webp" width="1182" height="665" alt="Unser Restaurant" data-i18n-alt="photoDining" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDining">Unser Restaurant</span><span aria-hidden="true">13</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto13.webp" data-caption-key="photoTerrace"><span class="gallery-photo"><img src="assets/gallery/foto13.webp" width="665" height="1182" alt="Abende auf der Terrasse" data-i18n-alt="photoTerrace" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTerrace">Abende auf der Terrasse</span><span aria-hidden="true">14</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto15.webp" data-caption-key="photoTerrace"><span class="gallery-photo"><img src="assets/gallery/foto15.webp" width="1182" height="665" alt="Abende auf der Terrasse" data-i18n-alt="photoTerrace" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoTerrace">Abende auf der Terrasse</span><span aria-hidden="true">15</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto5.webp" data-caption-key="photoFestive"><span class="gallery-photo"><img src="assets/gallery/foto5.webp" width="1600" height="900" alt="Festliche Momente" data-i18n-alt="photoFestive" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoFestive">Festliche Momente</span><span aria-hidden="true">16</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto6.webp" data-caption-key="photoDetail"><span class="gallery-photo"><img src="assets/gallery/foto6.webp" width="886" height="886" alt="Die kleinen Details" data-i18n-alt="photoDetail" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDetail">Die kleinen Details</span><span aria-hidden="true">17</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto17.webp" data-caption-key="photoFestive"><span class="gallery-photo"><img src="assets/gallery/foto17.webp" width="1024" height="768" alt="Festliche Momente" data-i18n-alt="photoFestive" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoFestive">Festliche Momente</span><span aria-hidden="true">18</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto18.webp" data-caption-key="photoFestive"><span class="gallery-photo"><img src="assets/gallery/foto18.webp" width="1182" height="665" alt="Festliche Momente" data-i18n-alt="photoFestive" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoFestive">Festliche Momente</span><span aria-hidden="true">19</span></span></button>
+<button class="gallery-item" type="button" data-full="assets/gallery/foto19.webp" data-caption-key="photoDetail"><span class="gallery-photo"><img src="assets/gallery/foto19.webp" width="900" height="1600" alt="Die kleinen Details" data-i18n-alt="photoDetail" loading="lazy"><span class="gallery-zoom" aria-hidden="true"><svg class="icon"><use href="#icon-plus"/></svg></span></span><span class="gallery-caption"><span data-i18n="photoDetail">Die kleinen Details</span><span aria-hidden="true">20</span></span></button></div>
+      <p class="gallery-hint" data-i18n="galleryHint">Ein Bild anklicken und einen Moment länger bleiben.</p>
+    </section>
+    <section class="occasions section">
+      <div class="occasion reveal"><span class="eyebrow">INSIEME</span><h2 data-i18n="eventsTitle">Ein Anlass.<br><em>Viele schöne Momente.</em></h2><p data-i18n="eventsText">Ein Geburtstag, ein Wiedersehen oder ein Fest mit Ihren Liebsten. Erzählen Sie uns, was Sie planen.</p><a class="text-link" href="#reserve"><span data-i18n="eventInquiry">Anlass anfragen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div>
+      <div class="occasion takeaway reveal"><span class="eyebrow">DA PORTARE VIA</span><h2 data-i18n="takeawayTitle">Ein Stück Belvedere.<br><em>Für zu Hause.</em></h2><p data-i18n="takeawayText">Heute lieber auf dem eigenen Sofa? Alle unsere Gerichte gibt es auch zum Mitnehmen.</p><a class="text-link" href="https://wa.me/41617314287" target="_blank" rel="noopener noreferrer" data-whatsapp><span data-i18n="whatsappOrder">Über WhatsApp bestellen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div>
+    </section>
+    <section id="reserve" class="section reserve">
+      <div class="section-label reveal"><span>04 / A TAVOLA</span><span data-i18n="reserveOrigin">Wir freuen uns auf Sie.</span></div>
+      <div class="reserve-layout"><div class="reserve-copy reveal"><h2 data-i18n="reserveTitle">Ihr Platz.<br><em>Unser Vergnügen.</em></h2><p data-i18n="reserveText">Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.</p><a class="reservation-phone" href="tel:+41617214545">+41 61 721 45 45</a><span class="eyebrow" data-i18n="phoneReserve">GERNE AUCH TELEFONISCH</span><div class="hours"><h3 data-i18n="hoursTitle">Öffnungszeiten</h3><dl><div><dt data-i18n="monday">Montag</dt><dd data-i18n="closed">Geschlossen</dd></div><div><dt data-i18n="weekdays">Dienstag – Freitag</dt><dd>10:00 – 14:00<br>17:30 – 00:00</dd></div><div><dt data-i18n="saturday">Samstag</dt><dd>17:30 – 00:00</dd></div><div><dt data-i18n="sunday">Sonntag</dt><dd>11:00 – 23:00</dd></div></dl></div></div>
+      <form id="reservationForm" class="reservation-form reveal">
+        <div class="form-title"><span>Prego, si accomodi.</span><span aria-hidden="true">✳</span></div>
+        <p class="preview-notice" id="previewNotice" data-i18n="previewNote">Lokale Vorschau: Sie können das Formular testen. Es wird keine Anfrage versendet.</p>
+        <div class="form-field"><label for="resName" data-i18n="name">Ihr Name</label><input id="resName" name="name" autocomplete="name" required maxlength="100" placeholder="Anna Rossi" data-i18n-ph="namePlaceholder"></div>
+        <div class="form-field"><label for="resContact" data-i18n="contactField">Telefon oder E-Mail</label><input id="resContact" name="contact" autocomplete="email" required maxlength="160" placeholder="+41 … / name@example.ch"></div>
+        <div class="form-row"><div class="form-field"><label for="resDate" data-i18n="date">Wunschdatum</label><input id="resDate" name="date" type="date" required></div><div class="form-field"><label for="resTime" data-i18n="time">Uhrzeit</label><input id="resTime" name="time" type="time" required step="900" value="19:00"></div></div>
+        <div class="form-field"><label for="resPersons" data-i18n="guests">Anzahl Personen</label><select id="resPersons" name="persons" required><option value="1" data-i18n="guest1">1 Person</option><option value="2" selected data-i18n="guest2">2 Personen</option><option value="3" data-i18n="guest3">3 Personen</option><option value="4" data-i18n="guest4">4 Personen</option><option value="5+" data-i18n="guest5">5+ Personen — bitte Anzahl unten angeben</option></select></div>
+        <div class="form-field"><label for="resNotes"><span data-i18n="notes">Wünsche, Allergien oder Anlass</span> <small data-i18n="optional">(optional)</small></label><textarea id="resNotes" name="notes" rows="3" maxlength="2000" data-i18n-ph="notesPlaceholder" placeholder="Was dürfen wir für Sie wissen?"></textarea></div>
+        <button class="button form-submit" type="submit" disabled><span data-i18n="send">Tisch anfragen</span><svg class="icon"><use href="#icon-diagonal"/></svg></button>
+        <p class="form-disclaimer" data-i18n="confirmationNote">Ihre Anfrage ist erst nach unserer Bestätigung verbindlich.</p>
+        <p id="reservationStatus" class="form-status" role="status" aria-live="polite" hidden></p>
+        <noscript><p>Bitte aktivieren Sie JavaScript oder reservieren Sie telefonisch: <a href="tel:+41617214545">+41 61 721 45 45</a>.</p></noscript>
+      </form></div>
+    </section>
+  </main>
+  <footer class="footer section" id="contact"><div class="footer-top"><div><span class="eyebrow">ARRIVEDERCI, A PRESTO.</span><h2 data-i18n="footerTitle">Bis bald<br><em>im Belvedere.</em></h2></div><div class="footer-address"><h3 data-i18n="findUs">Sie finden uns hier</h3><address>Ristorante Belvedere<br>Flühstrasse 30<br>4114 Hofstetten-Flüh, Schweiz</address><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante%20Belvedere%20Fl%C3%BChstrasse%2030%204114%20Hofstetten-Fl%C3%BCh" target="_blank" rel="noopener noreferrer"><span data-i18n="directions">Route planen</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div><div class="footer-contact"><h3 data-i18n="navContact">Kontakt</h3><a href="tel:+41617214545">+41 61 721 45 45</a><a href="mailto:ristorante-belvedere@bluewin.ch">ristorante-belvedere@bluewin.ch</a><a href="#reserve" class="text-link"><span data-i18n="reserveTable">Tisch reservieren</span><svg class="icon"><use href="#icon-diagonal"/></svg></a></div></div><div class="footer-word" aria-hidden="true">Belvedere.</div><div class="footer-bottom"><p>© <span id="year">2026</span> Ristorante Belvedere</p><button id="motionToggle" class="motion-toggle" aria-pressed="false"><svg class="icon"><use href="#icon-pause"/></svg><span data-i18n="pauseMotion">Animationen pausieren</span></button><a href="#" class="back-top"><span data-i18n="backTop">Nach oben</span><span aria-hidden="true">↑</span></a></div></footer>
+  <dialog class="lightbox" id="lightbox" aria-label="Bild in Grossansicht" data-i18n-aria="largeImage"><div class="lightbox-top"><span id="lightboxCount" aria-live="polite">01 / 20</span><button class="icon-button" id="lightboxClose" autofocus aria-label="Schliessen" data-i18n-aria="close"><svg class="icon"><use href="#icon-close"/></svg></button></div><div class="lightbox-stage"><button class="round-button previous" id="lightboxPrev" aria-label="Vorheriges Bild" data-i18n-aria="previous"><svg class="icon"><use href="#icon-arrow"/></svg></button><img id="lightboxImage" alt=""><button class="round-button" id="lightboxNext" aria-label="Nächstes Bild" data-i18n-aria="next"><svg class="icon"><use href="#icon-arrow"/></svg></button></div><p id="lightboxCaption"></p></dialog>
+</body>
+</html>
