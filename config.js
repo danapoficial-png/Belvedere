@@ -5,7 +5,7 @@ window.BELVEDERE_CONFIG = {
   previewMode: false,
   reservationEndpoint: 'https://transcendent-treacle-3a6653.netlify.app/api/reservation',
   email: 'ristorante-belvedere@bluewin.ch',
-  phone: '+41617214545',
+  phone: '+41617314287',
   // La web original usa este número, distinto del teléfono de contacto.
   whatsapp: '41617314287',
   defaultLanguage: 'de',

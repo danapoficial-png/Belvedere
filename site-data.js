@@ -12,7 +12,7 @@ window.BELVEDERE_SITE = {
   },
   "text": {},
   "contact": {
-    "phone": "+41617214545",
+    "phone": "+41617314287",
     "email": "ristorante-belvedere@bluewin.ch",
     "whatsapp": "41617314287"
   },
