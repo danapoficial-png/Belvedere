@@ -281,71 +281,110 @@
     }
   });
 
-  // Reservas: una única escucha. El ZIP arranca en modo de prueba sin tráfico de red.
+  // Reservas: envío directo con Netlify Forms, sin abrir el cliente de correo.
   const form = document.getElementById('reservationForm');
   const status = document.getElementById('reservationStatus');
   const submit = form.querySelector('[type="submit"]');
   const dateInput = document.getElementById('resDate');
-  const previewMode = config.previewMode !== false;
 
   const zurichNow = () => {
     const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Zurich', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', hourCycle:'h23' }).formatToParts(new Date()).map(part => [part.type,part.value]));
     return { date:`${parts.year}-${parts.month}-${parts.day}`, minutes:Number(parts.hour)*60+Number(parts.minute) };
   };
+
   const openingHours = config.openingHours || { 0:[[660,1380]], 1:[], 2:[[600,840],[1050,1440]], 3:[[600,840],[1050,1440]], 4:[[600,840],[1050,1440]], 5:[[600,840],[1050,1440]], 6:[[1050,1440]] };
+
   function renderStatus() {
     status.hidden = !statusState;
     if (!statusState) return;
     status.dataset.kind = statusState.kind;
     status.textContent = text(statusState.key, statusState.values);
-    if (statusState.kind === 'error' && statusState.key === 'sendError') {
-      const link = document.createElement('a');
-      link.href = `mailto:${config.email || 'ristorante-belvedere@bluewin.ch'}`;
-      link.textContent = config.email || 'ristorante-belvedere@bluewin.ch';
-      link.style.textDecoration = 'underline';
-      status.append(document.createElement('br'), link);
-    }
   }
-  function showStatus(kind, key, values = {}) { statusState = { kind,key,values }; renderStatus(); }
+
+  function showStatus(kind, key, values = {}) {
+    statusState = { kind, key, values };
+    renderStatus();
+  }
+
   dateInput.min = zurichNow().date;
   dateInput.addEventListener('focus', () => { dateInput.min = zurichNow().date; });
+
   let submitting = false;
+
   form.addEventListener('submit', async event => {
     event.preventDefault();
+
     if (submitting) return;
     if (!form.reportValidity()) return;
-    const payload = Object.fromEntries(new FormData(form));
-    Object.keys(payload).forEach(key => { payload[key] = String(payload[key]).trim(); });
-    if (!payload.name) { showStatus('error','nameError'); document.getElementById('resName').focus(); return; }
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData);
+
+    Object.keys(payload).forEach(key => {
+      payload[key] = String(payload[key]).trim();
+    });
+
+    if (!payload.name) {
+      showStatus('error','nameError');
+      document.getElementById('resName').focus();
+      return;
+    }
+
     const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.contact);
     const hasPhone = /^[+\d\s()./-]+$/.test(payload.contact) && payload.contact.replace(/\D/g,'').length >= 6;
-    if (!hasEmail && !hasPhone) { showStatus('error','contactError'); document.getElementById('resContact').focus(); return; }
+
+    if (!hasEmail && !hasPhone) {
+      showStatus('error','contactError');
+      document.getElementById('resContact').focus();
+      return;
+    }
+
     const now = zurichNow();
     const [hours, minutes] = payload.time.split(':').map(Number);
     const requestedMinutes = hours * 60 + minutes;
-    if (payload.date < now.date || (payload.date === now.date && requestedMinutes <= now.minutes)) { showStatus('error','pastError'); dateInput.focus(); return; }
-    const day = new Date(`${payload.date}T12:00:00Z`).getUTCDay();
-    if (!openingHours[day]?.some(([from,to]) => requestedMinutes >= from && requestedMinutes < to)) { showStatus('error','hoursError'); document.getElementById('resTime').focus(); return; }
-    // Conserva el formato que esperaba el servicio original.
-    payload.persons = `${payload.persons} Personen`;
-    if (previewMode) {
-      showStatus('success','previewSuccess',{ name:payload.name, date:payload.date, time:payload.time });
+
+    if (payload.date < now.date || (payload.date === now.date && requestedMinutes <= now.minutes)) {
+      showStatus('error','pastError');
+      dateInput.focus();
       return;
     }
+
+    const day = new Date(`${payload.date}T12:00:00Z`).getUTCDay();
+
+    if (!openingHours[day]?.some(([from,to]) => requestedMinutes >= from && requestedMinutes < to)) {
+      showStatus('error','hoursError');
+      document.getElementById('resTime').focus();
+      return;
+    }
+
     submitting = true;
     submit.disabled = true;
     submit.setAttribute('aria-busy','true');
     showStatus('pending','sending');
+
+    formData.set('form-name', 'reservation');
+
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
+
     try {
-      const response = await fetch(config.reservationEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload), signal:controller.signal });
-      const result = await response.json();
-      if (!response.ok || result.ok !== true) throw new Error('Unconfirmed submission');
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+        signal: controller.signal
+      });
+
+      if (!response.ok) throw new Error(`Netlify form submission failed: ${response.status}`);
+
       showStatus('success','sent');
       form.reset();
+
+      const timeField = document.getElementById('resTime');
+      const personsField = document.getElementById('resPersons');
+      if (timeField) timeField.value = '19:00';
+      if (personsField) personsField.value = '2';
     } catch {
-      // Un timeout no demuestra que el servidor no haya recibido la solicitud.
       showStatus('error','sendError');
     } finally {
       clearTimeout(timeout);
@@ -354,14 +393,17 @@
       submit.removeAttribute('aria-busy');
     }
   });
-  // El botón HTML comienza deshabilitado: sin JS no hay envíos GET accidentales.
+
   submit.disabled = false;
+
   document.getElementById('notice').hidden = config.noticeVisible === false;
   document.querySelectorAll('[data-whatsapp]').forEach(link => { if (config.whatsapp) link.href = `https://wa.me/${config.whatsapp.replace(/\D/g,'')}`; });
-  if (config.phone) {
-    const readablePhone = config.phone.replace(/^(\+41)(\d{2})(\d{3})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5');
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => { link.href = `tel:${config.phone}`; link.textContent = readablePhone; });
-  }
+  const contactPhone = '+41617314287';
+  const readablePhone = '+41 61 731 42 87';
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.href = `tel:${contactPhone}`;
+    link.textContent = readablePhone;
+  });
   if (config.email) document.querySelectorAll('a[href^="mailto:"]').forEach(link => { link.href = `mailto:${config.email}`; link.textContent = config.email; });
   document.getElementById('year').textContent = new Date().getFullYear();
 

@@ -182,8 +182,16 @@
     <section id="reserve" class="section reserve">
       <div class="section-label reveal"><span>04 / A TAVOLA</span><span data-i18n="reserveOrigin">Wir freuen uns auf Sie.</span></div>
       <div class="reserve-layout"><div class="reserve-copy reveal"><h2 data-i18n="reserveTitle">Ihr Platz.<br><em>Unser Vergnügen.</em></h2><p data-i18n="reserveText">Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.</p><a class="reservation-phone" href="tel:+41617314287">+41 61 731 42 87</a><span class="eyebrow" data-i18n="phoneReserve">GERNE AUCH TELEFONISCH</span><div class="hours"><h3 data-i18n="hoursTitle">Öffnungszeiten</h3><dl><div><dt data-i18n="monday">Montag</dt><dd data-i18n="closed">Geschlossen</dd></div><div><dt data-i18n="weekdays">Dienstag – Freitag</dt><dd>10:00 – 14:00<br>17:30 – 00:00</dd></div><div><dt data-i18n="saturday">Samstag</dt><dd>17:30 – 00:00</dd></div><div><dt data-i18n="sunday">Sonntag</dt><dd>11:00 – 23:00</dd></div></dl></div></div>
-      <form id="reservationForm" class="reservation-form reveal">
+      <form id="reservationForm" class="reservation-form reveal"
+            name="reservation"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field">
         <div class="form-title"><span>Prego, si accomodi.</span><span aria-hidden="true">✳</span></div>
+        <input type="hidden" name="form-name" value="reservation">
+        <p hidden>
+          <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
+        </p>
         
         <div class="form-field"><label for="resName" data-i18n="name">Ihr Name</label><input id="resName" name="name" autocomplete="name" required maxlength="100" placeholder="Anna Rossi" data-i18n-ph="namePlaceholder"></div>
         <div class="form-field"><label for="resContact" data-i18n="contactField">Telefon oder E-Mail</label><input id="resContact" name="contact" autocomplete="email" required maxlength="160" placeholder="+41 … / name@example.ch"></div>
