@@ -17,7 +17,7 @@
   }
   for (const language of M.languages) window.BELVEDERE_TRANSLATIONS[language].noticeText=M.escape(M.local(site.notice.text,language)).replace(/\n/g,'<br>');
   for (const [selector,key] of [['.hero-image','hero'],['.about-main-photo img','table'],['.about-food-photo img','pasta'],['.brand-logo-gold','logoGold'],['.brand-logo-wine','logoWine']]) {
-    document.querySelectorAll(selector).forEach(img=>{img.src=asset(site.media[key]);});
+    document.querySelectorAll(selector).forEach(img=>{const original=site.media[key];const path=img.classList.contains('brand-logo')&&['assets/logo-gold.svg','assets/logo-wine.svg'].includes(original)?original.replace('logo-','logo-header-').replace('.svg','.png'):original;img.src=asset(path);});
   }
   const track=document.getElementById('galleryTrack');track.replaceChildren();
   site.gallery.forEach((photo,index)=>{

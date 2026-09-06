@@ -60,7 +60,7 @@ h2 em { font-weight: 500; }
 .wordmark { font-family: var(--serif); font-size: 2.25rem; line-height: 1.05; letter-spacing: -.065em; font-weight: 600; flex-shrink: 0; }
 .wordmark span { display: block; font-family: var(--sans); font-size: 0.75rem; letter-spacing: .15em; line-height: 1.5; margin-top: 7px; }
 .wordmark { display:flex; align-items:center; width:194px; max-width:31vw; }
-.brand-logo { width:100%; height:auto; animation:text-arrive .8s both; }
+.brand-logo { display:block; width:100%; height:auto; aspect-ratio:97/33; object-fit:contain; flex:none; opacity:1; transform:none; }
 .brand-logo-wine { display:none; }
 :root[data-theme='day'] .brand-logo-gold { display:none; }
 :root[data-theme='day'] .brand-logo-wine { display:block; }

@@ -1,0 +1,9 @@
+WEB OFICIAL · Reemplazo para danapoficial-png/Belvedere
+
+Copia todo el contenido de esta carpeta en la raíz del repositorio Belvedere, donde ya está index.html. No crees una carpeta dist. Conserva archivos propios que no estén en este paquete.
+
+Esta entrega contiene SOLO la web pública. No la subas al proyecto del editor.
+
+Logo de cabecera con PNG transparente compatible con tamaños pequeños; original vectorial conservado. Icono de pestaña en SVG, PNG e ICO.
+
+Se conserva el contenido que estaba publicado al preparar esta copia. No se ha publicado nada desde aquí.
