@@ -22,13 +22,43 @@
     for (const language of languages) result[language] = string(value[language] ?? '',limit,name);
     return result;
   }
-  function dish(value, special = false) {
+  const defaultCategoryNames={
+    antipasti:['Antipasti','Antipasti','Antipasti','Antipasti','Entrantes'],
+    paste:['Pasta & Risotto','Pasta & Risotto','Pâtes & Risotto','Pasta & Risotto','Pasta'],
+    pizze:['Pizze','Pizze','Pizzas','Pizzas','Pizza'],
+    carne:['Fisch & Fleisch','Pesce & Carne','Poissons & Viandes','Fish & Meat','Carne']
+  };
+  function categoryList(input) {
+    if(input.categories===undefined)return categories.map(id=>({id,label:Object.fromEntries(languages.map((l,i)=>[l,defaultCategoryNames[id][i]]))}));
+    if(!Array.isArray(input.categories)||input.categories.length<1||input.categories.length>40)fail('La carta admite entre 1 y 40 categorías.');
+    const list=input.categories.map(c=>{
+      if(!c||typeof c.id!=='string'||!/^[a-z][a-z0-9-]{0,59}$/.test(c.id)||['special','spezial','constructor','prototype'].includes(c.id))fail('Categoría inválida.');
+      const label=localized(c.label,100,'el nombre de la categoría');if(!label.de.trim())fail('Escribe el nombre principal de la categoría.');
+      return {id:c.id,label};
+    });
+    if(new Set(list.map(c=>c.id)).size!==list.length)fail('Hay categorías repetidas.');return list;
+  }
+  const categoryIds=input=>categoryList(input).map(c=>c.id);
+  function addCategory(input,name) {
+    name=String(name||'').trim();if(!name||name.length>100)fail('Escribe un nombre de hasta 100 caracteres.');
+    const next=clone(input),list=categoryList(input);
+    if(list.some(c=>Object.values(c.label).some(v=>v.trim().toLocaleLowerCase()===name.toLocaleLowerCase())))fail('Ya existe una categoría con ese nombre.');
+    const base='cat-'+(name.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'menu');
+    let id=base,n=2;while(list.some(c=>c.id===id))id=base+'-'+n++;
+    list.push({id,label:Object.fromEntries(languages.map(l=>[l,name]))});next.categories=list;categoryList(next);return {data:next,id};
+  }
+  function menuSections(input) {
+    const list=categoryList(input).map(c=>({...c,special:false}));
+    if(input.special?.visible)list.unshift({id:'special',label:clone(input.special.title),special:true});
+    return list;
+  }
+  function dish(value, special = false, allowed = categories) {
     if (!value || typeof value !== 'object') fail('Plato inválido.');
     const id = string(value.id,80,'el identificador',true);
     if (!/^[a-z0-9-]+$/.test(id)) fail('Identificador de plato inválido.');
     const price = String(value.price ?? '').trim().replace(',','.');
     if (!(special && price === '') && !/^\d{1,4}(?:\.\d{1,2})?$/.test(price)) fail('El precio debe ser un número válido en CHF.');
-    if (!special && !categories.includes(value.category)) fail('Categoría inválida.');
+    if (!special && !allowed.includes(value.category)) fail('Categoría inválida.');
     return {id,category:special?'special':value.category,name:string(value.name,180,'el nombre del plato',true),price:price===''?'':Number(price).toFixed(2),description:localized(value.description,1400,'la descripción')};
   }
   function validate(input) {
@@ -62,7 +92,8 @@
     }
     result.notice = {visible:input.notice?.visible===true,text:localized(input.notice?.text,4000,'el aviso')};
     if (!Array.isArray(input.menu) || input.menu.length>400) fail('Carta inválida o demasiado grande.');
-    result.menu=input.menu.map(value=>dish(value));
+    result.categories=categoryList(input);
+    result.menu=input.menu.map(value=>dish(value,false,result.categories.map(c=>c.id)));
     const special=input.special;
     if (!special || !['reserve','menu','info'].includes(special.button)) fail('Propuesta especial inválida.');
     result.special={visible:special.visible===true,title:localized(special.title,180,'el título'),description:localized(special.description,7000,'la propuesta'),date:string(special.date||'',10,'la fecha'),price:string(special.price||'',120,'el precio de la propuesta'),image:string(special.image||'',180,'la imagen'),button:special.button,menu:[]};
@@ -102,9 +133,9 @@
     return {dishes:rows,unmatched:pending.join('\n')};
   }
   function replaceMenuCategory(input,category,incoming) {
-    if(!categories.includes(category)&&category!=='special')fail('Selecciona un menú válido.');
+    if(!categoryIds(input).includes(category)&&category!=='special')fail('Selecciona un menú válido.');
     if(!Array.isArray(incoming)||!incoming.length)fail('No se reconocieron platos. El menú anterior se conserva.');
-    const next=clone(input),items=incoming.map(item=>dish({...item,category},category==='special'));
+    const next=clone(input),items=incoming.map(item=>dish({...item,category},category==='special',categoryIds(input)));
     if(category==='special')next.special.menu=items;
     else {
       const first=next.menu.findIndex(d=>d.category===category);
@@ -115,5 +146,5 @@
     if(new Set(items.map(d=>d.id)).size!==items.length)fail('Hay identificadores repetidos.');
     return next;
   }
-  return {languages,categories,clone,escape,local,assetPath,uploadPath,validate,serialize,parse,parseMenuText,replaceMenuCategory};
+  return {languages,categories,clone,escape,local,assetPath,uploadPath,validate,serialize,parse,parseMenuText,replaceMenuCategory,categoryList,categoryIds,addCategory,menuSections};
 });

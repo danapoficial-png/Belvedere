@@ -82,12 +82,6 @@ h2 em { font-weight: 500; }
 .special-dialog > p { white-space:pre-line; margin-bottom:25px; }
 .special-dialog > .button { margin-top:25px; }
 .special-dialog .dish p { color:var(--muted); }
-.inline-edit-button { position:relative; display:inline-flex; align-items:center; z-index:5; padding:10px 18px; margin-bottom:16px; border:1px solid #f2cd7e; border-radius:4px; background:#461622; color:#f2cd7e; font:500 14px var(--sans); cursor:pointer; }
-.editor-preview .hero > .inline-edit-button { position:absolute; top:75px; right:30px; }
-.editor-preview .special-feature > .inline-edit-button { grid-column:1/-1; justify-self:start; }
-.editor-preview .editor-special-empty { display:block!important; padding:30px var(--gutter); }
-.editor-preview .notice[hidden] { display:flex!important; opacity:.65; }
-.editor-preview .reveal { opacity:1!important; transform:none!important; }
 @media(max-width:700px) { .wordmark { width:165px; max-width:43vw; } .special-feature { grid-template-columns:1fr; gap:30px; } .special-feature > img { height:280px; } .special-dialog { padding:22px; } }
 .desktop-nav { display: flex; align-items: center; gap: clamp(18px,2.4vw,40px); }
 .desktop-nav a { font-size: 0.875rem; position: relative; padding: 9px 0; }
@@ -426,3 +420,4 @@ html.motion-paused .reveal { opacity: 1 !important; transform: none !important; 
   .js .reveal { opacity: 1; transform: none; }
   h2 { font-size: 2.125rem; }
 }
+.menu-tabs .special-menu-tab{background:#f2cd7e24;border-left:3px solid #b58036}.menu-tabs .special-menu-tab .tab-number{color:#a57727;opacity:1;font-size:1.1rem}.menu-recommendation{font-size:.875rem;font-weight:600;letter-spacing:.06em;color:#77551e;margin-bottom:13px}.special-menu-summary{white-space:pre-line;padding:20px 0 8px;line-height:1.7}.special-menu-meta{font-size:.95rem;font-weight:500;padding:8px 0 18px}.menu-special-reserve{margin-top:25px}.menu-tabs button>span:not(.tab-number){min-width:0;overflow-wrap:anywhere}@media(max-width:700px){.menu-tabs .special-menu-tab{border-left:0;border-top:3px solid #b58036}}

@@ -59,7 +59,6 @@ whatsappOrder|Über WhatsApp bestellen|Ordina su WhatsApp|Commander sur WhatsApp
 reserveOrigin|Wir freuen uns auf Sie.|Vi aspettiamo.|Au plaisir de vous accueillir.|We look forward to welcoming you.|Te esperamos.
 reserveTitle|Ihr Platz.<br><em>Unser Vergnügen.</em>|Il vostro tavolo.<br><em>Il nostro piacere.</em>|Votre table.<br><em>Notre plaisir.</em>|Your table.<br><em>Our pleasure.</em>|Tu mesa.<br><em>Un placer para nosotros.</em>
 reserveText|Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.|Una serata in due o una bella tavolata? Richiedete il vostro tavolo. Confermeremo personalmente la prenotazione.|Un dîner à deux ou une grande tablée ? Demandez votre table. Nous vous confirmerons personnellement la réservation.|Dinner for two or a table for everyone? Request your table. We’ll confirm your reservation personally.|¿Una cena para dos o una mesa para todos? Solicita tu reserva. Te la confirmaremos personalmente.
-phoneReserve|GERNE AUCH TELEFONISCH|ANCHE PER TELEFONO|ÉGALEMENT PAR TÉLÉPHONE|YOU CAN ALSO CALL US|TAMBIÉN POR TELÉFONO
 hoursTitle|Öffnungszeiten|Orari di apertura|Horaires d’ouverture|Opening hours|Horarios de apertura
 monday|Montag|Lunedì|Lundi|Monday|Lunes
 closed|Geschlossen|Chiuso|Fermé|Closed|Cerrado
@@ -69,7 +68,8 @@ sunday|Sonntag|Domenica|Dimanche|Sunday|Domingo
 previewNote|Lokale Vorschau: Sie können das Formular testen. Es wird keine Anfrage versendet.|Anteprima locale: potete provare il modulo. Non verrà inviata alcuna richiesta.|Aperçu local : vous pouvez tester le formulaire. Aucune demande ne sera envoyée.|Local preview: you can try the form. No reservation request will be sent.|Vista local de prueba: puedes probar el formulario. No se enviará ninguna solicitud.
 name|Ihr Name|Il vostro nome|Votre nom|Your name|Tu nombre
 namePlaceholder|Anna Rossi|Anna Rossi|Anna Rossi|Anna Rossi|Anna Rossi
-contactField|Telefon oder E-Mail|Telefono o e-mail|Téléphone ou e-mail|Phone or email|Teléfono o correo electrónico
+emailField|E-Mail (Pflichtfeld)|E-mail (obbligatoria)|E-mail (obligatoire)|Email (required)|Correo electrónico (obligatorio)
+phoneField|Telefon|Telefono|Téléphone|Phone|Teléfono
 date|Wunschdatum|Data desiderata|Date souhaitée|Preferred date|Fecha deseada
 time|Uhrzeit|Orario|Heure|Time|Hora
 guests|Anzahl Personen|Numero di persone|Nombre de personnes|Number of guests|Número de personas
@@ -82,7 +82,7 @@ notes|Wünsche, Allergien oder Anlass|Preferenze, allergie o occasione|Souhaits,
 optional|(optional)|(facoltativo)|(facultatif)|(optional)|(opcional)
 notesPlaceholder|Was dürfen wir für Sie wissen?|Cosa possiamo sapere per accogliervi al meglio?|Que souhaitez-vous nous préciser ?|Anything you’d like us to know?|¿Algo que debamos saber?
 send|Tisch anfragen|Richiedi un tavolo|Demander une table|Request a table|Solicitar mesa
-confirmationNote|Ihre Anfrage ist erst nach unserer Bestätigung verbindlich.|La prenotazione è valida solo dopo la nostra conferma.|Votre réservation est effective après notre confirmation.|Your reservation is only final once we confirm it.|La reserva será válida cuando recibas nuestra confirmación.
+confirmationNote|Ihre Anfrage ist erst nach unserer Bestätigung per E-Mail verbindlich.|La prenotazione è valida solo dopo la nostra conferma via e-mail.|Votre réservation est effective après notre confirmation par e-mail.|Your reservation is only final once we confirm it by email.|La reserva será válida cuando recibas nuestra confirmación por correo.
 footerTitle|Bis bald<br><em>im Belvedere.</em>|A presto<br><em>al Belvedere.</em>|À bientôt<br><em>au Belvedere.</em>|See you soon<br><em>at Belvedere.</em>|Hasta pronto<br><em>en Belvedere.</em>
 findUs|Sie finden uns hier|Ci trovate qui|Retrouvez-nous ici|Find us here|Aquí nos encontrarás
 directions|Route planen|Come arrivare|Itinéraire|Get directions|Cómo llegar
@@ -92,7 +92,7 @@ backTop|Nach oben|Torna su|Retour en haut|Back to top|Volver arriba
 largeImage|Bild in Grossansicht|Immagine ingrandita|Image agrandie|Full-size image|Imagen ampliada
 close|Schliessen|Chiudi|Fermer|Close|Cerrar
 nameError|Bitte geben Sie Ihren Namen ein.|Inserite il vostro nome.|Veuillez indiquer votre nom.|Please enter your name.|Escribe tu nombre.
-contactError|Bitte geben Sie eine gültige Telefonnummer oder E-Mail-Adresse ein.|Inserite un numero di telefono o un indirizzo e-mail valido.|Veuillez indiquer un téléphone ou une adresse e-mail valide.|Please enter a valid phone number or email address.|Introduce un teléfono o correo electrónico válido.
+emailError|Bitte geben Sie eine gültige E-Mail-Adresse ein.|Inserite un indirizzo e-mail valido.|Veuillez indiquer une adresse e-mail valide.|Please enter a valid email address.|Introduce un correo electrónico válido.
 pastError|Bitte wählen Sie ein Datum und eine Uhrzeit in der Zukunft.|Scegliete una data e un orario futuri.|Veuillez choisir une date et une heure futures.|Please choose a future date and time.|Elige una fecha y una hora futuras.
 hoursError|Bitte wählen Sie eine Zeit innerhalb unserer Öffnungszeiten.|Scegliete un orario entro i nostri orari di apertura.|Veuillez choisir une heure pendant nos horaires d’ouverture.|Please choose a time within our opening hours.|Elige una hora dentro de nuestro horario.
 previewSuccess|Test erfolgreich, {name}. Ihre Anfrage für {date} um {time} wurde geprüft, aber nicht versendet.|Prova riuscita, {name}. La richiesta per il {date} alle {time} è stata verificata, ma non inviata.|Test réussi, {name}. Votre demande pour le {date} à {time} a été vérifiée, mais n’a pas été envoyée.|Test complete, {name}. Your request for {date} at {time} was checked but has not been sent.|Prueba completada, {name}. La solicitud para el {date} a las {time} se ha comprobado, pero no se ha enviado.

@@ -57,6 +57,7 @@
       const i = Number(el.dataset.dishDescription);
       el.textContent = window.BELVEDERE_DISH_TRANSLATIONS?.[language]?.[i] || window.BELVEDERE_MENU[i].description;
     });
+    updateMenuLabels();
     if(window.BelvedereRenderExtras) window.BelvedereRenderExtras(language);
     updateMotion();
     if (lightbox.open) renderLightbox();
@@ -111,51 +112,40 @@
     updateHeaderHeight();
   });
 
-  // Carta editable desde content.js. El HTML conserva la carta original como respaldo.
-  const categoryHeadings = { antipasti:'headingAntipasti', paste:'headingPasta', pizze:'headingPizza', carne:'headingMeat' };
-  Object.entries(categoryHeadings).forEach(([category, headingKey]) => {
-    const panel = document.getElementById(`panel-${category}`);
-    panel.replaceChildren();
-    const heading = document.createElement('h3');
-    heading.dataset.i18n = headingKey;
-    heading.textContent = text(headingKey);
-    panel.append(heading);
-    window.BELVEDERE_MENU.forEach((dish, index) => {
-      if (dish.category !== category) return;
-      const row = document.createElement('article'); row.className = 'dish';
-      const info = document.createElement('div'); info.className = 'dish-info';
-      const name = document.createElement('h4'); name.textContent = dish.name;
-      const description = document.createElement('p'); description.textContent = dish.description;
-      description.dataset.dishDescription = index;
-      const price = document.createElement('div'); price.className = 'dish-price';
-      price.append(document.createTextNode(dish.price + ' '));
-      const currency = document.createElement('span'); currency.textContent = 'CHF';
-      price.append(currency); info.append(name,description); row.append(info,price); panel.append(row);
+  // La carta se construye desde las categorías editables; la propuesta va primero.
+  const model=window.BelvedereModel,site=window.BELVEDERE_SITE;
+  const sections=model.menuSections(site),tabsContainer=document.querySelector('.menu-tabs'),panelsContainer=document.getElementById('menuPanels');
+  tabsContainer.replaceChildren();panelsContainer.replaceChildren();
+  const recommendation={de:'Besonders empfohlen',it:'Consigliato',fr:'Notre recommandation',en:'Our recommendation',es:'Te lo recomendamos'};
+  sections.forEach((category,position)=>{
+    const tab=document.createElement('button');tab.type='button';tab.id='tab-'+category.id;tab.dataset.category=category.id;tab.setAttribute('role','tab');tab.setAttribute('aria-controls','panel-'+category.id);tab.setAttribute('aria-selected',String(position===0));tab.tabIndex=position===0?0:-1;
+    const number=document.createElement('span');number.className='tab-number';number.textContent=category.special?'★':String(position+(sections[0].special?0:1)).padStart(2,'0');
+    const label=document.createElement('span');label.dataset.menuCategoryLabel=category.id;
+    tab.append(number,label);if(category.special)tab.classList.add('special-menu-tab');tabsContainer.append(tab);
+    const panel=document.createElement('div');panel.id='panel-'+category.id;panel.className='menu-panel';panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',tab.id);panel.tabIndex=0;panel.hidden=position!==0;
+    if(category.special){const badge=document.createElement('p');badge.className='menu-recommendation';badge.dataset.menuRecommendation='';panel.append(badge);}
+    const heading=document.createElement('h3');heading.dataset.menuCategoryLabel=category.id;panel.append(heading);
+    if(category.special){
+      const summary=document.createElement('p');summary.dataset.specialMenuSummary='';summary.className='special-menu-summary';panel.append(summary);
+      const details=document.createElement('p');details.className='special-menu-meta';details.dataset.specialMenuMeta='';panel.append(details);
+    }
+    const entries=category.special?site.special.menu:site.menu.filter(d=>d.category===category.id);
+    entries.forEach((dish,index)=>{
+      const row=document.createElement('article');row.className='dish';
+      const info=document.createElement('div');info.className='dish-info';const name=document.createElement('h4');name.textContent=dish.name;
+      const description=document.createElement('p');if(category.special)description.dataset.specialDishDescription=index;else description.dataset.dishDescription=site.menu.findIndex(d=>d.id===dish.id);
+      const price=document.createElement('div');price.className='dish-price';price.textContent=dish.price?dish.price+' CHF':'';
+      info.append(name,description);row.append(info,price);panel.append(row);
     });
+    if(category.special){const link=document.createElement('a');link.className='button menu-special-reserve';link.href='#reserve';link.dataset.i18n='reserveTable';link.addEventListener('click',()=>{const notes=document.getElementById('resNotes');if(notes&&!notes.value.trim())notes.value=model.local(site.special.title,language);});panel.append(link);}
+    panelsContainer.append(panel);
   });
-  const special = config.specialMenu;
-  if (special?.visible && Array.isArray(special.dishes) && special.dishes.length) {
-    const panel = document.createElement('div');
-    panel.id = 'panel-spezial';
-    panel.className = 'menu-panel';
-    panel.setAttribute('role', 'tabpanel');
-    panel.setAttribute('aria-labelledby', 'tab-spezial');
-    panel.tabIndex = 0;
-    const heading = document.createElement('h3');
-    heading.textContent = special.title || text('special');
-    panel.append(heading);
-    if (special.description) { const p = document.createElement('p'); p.textContent = special.description; panel.append(p); }
-    special.dishes.forEach(dish => {
-      const row = document.createElement('article'); row.className = 'dish';
-      const info = document.createElement('div'); info.className = 'dish-info';
-      const name = document.createElement('h4'); name.textContent = dish.name;
-      const description = document.createElement('p'); description.textContent = dish.description || '';
-      const price = document.createElement('div'); price.className = 'dish-price'; price.textContent = `${dish.price} CHF`;
-      info.append(name, description); row.append(info, price); panel.append(row);
-    });
-    document.getElementById('menuPanels').append(panel);
-    document.getElementById('tab-spezial').hidden = false;
-    document.getElementById('specialTitle').textContent = special.title || text('special');
+  function updateMenuLabels(){
+    document.querySelectorAll('[data-menu-category-label]').forEach(el=>{const category=sections.find(c=>c.id===el.dataset.menuCategoryLabel);el.textContent=model.local(category.label,language);});
+    document.querySelectorAll('[data-menu-recommendation]').forEach(el=>{el.textContent=recommendation[language];});
+    document.querySelectorAll('[data-special-dish-description]').forEach(el=>{el.textContent=model.local(site.special.menu[Number(el.dataset.specialDishDescription)].description,language);});
+    document.querySelectorAll('[data-special-menu-summary]').forEach(el=>{el.textContent=model.local(site.special.description,language);el.hidden=!el.textContent;});
+    document.querySelectorAll('[data-special-menu-meta]').forEach(el=>{const date=site.special.date?new Intl.DateTimeFormat(language,{dateStyle:'long'}).format(new Date(site.special.date+'T12:00:00')):'';el.textContent=[date,site.special.price].filter(Boolean).join(' · ');el.hidden=!el.textContent;});
   }
   const menuTabs = [...document.querySelectorAll('[data-category]')].filter(tab => !tab.hidden);
   const panels = [...document.querySelectorAll('.menu-panel')];
@@ -189,7 +179,7 @@
   function syncTabOrientation() { document.querySelector('.menu-tabs').setAttribute('aria-orientation', compactScreen.matches ? 'horizontal' : 'vertical'); }
   compactScreen.addEventListener('change', syncTabOrientation);
   syncTabOrientation();
-  selectCategory('antipasti');
+  selectCategory(sections[0].id);
 
   // Galería con desplazamiento táctil y ampliación nativa accesible.
   const wrap = index => (index + galleryItems.length) % galleryItems.length;
@@ -314,6 +304,7 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
 
+    if (window.BELVEDERE_EDITOR_PREVIEW) {showStatus('success','previewSuccess',{name:'',date:'',time:''});return;}
     if (submitting) return;
     if (!form.reportValidity()) return;
 
@@ -322,6 +313,7 @@
 
     Object.keys(payload).forEach(key => {
       payload[key] = String(payload[key]).trim();
+      formData.set(key, payload[key]);
     });
 
     if (!payload.name) {
@@ -330,12 +322,11 @@
       return;
     }
 
-    const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.contact);
-    const hasPhone = /^[+\d\s()./-]+$/.test(payload.contact) && payload.contact.replace(/\D/g,'').length >= 6;
+    const hasEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email || '');
 
-    if (!hasEmail && !hasPhone) {
-      showStatus('error','contactError');
-      document.getElementById('resContact').focus();
+    if (!hasEmail) {
+      showStatus('error','emailError');
+      document.getElementById('resEmail').focus();
       return;
     }
 

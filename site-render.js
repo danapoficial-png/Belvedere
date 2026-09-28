@@ -86,15 +86,4 @@
   document.getElementById('specialDialogClose').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('close',()=>document.body.classList.remove('scroll-locked'));
   document.getElementById('specialDialogReserve').addEventListener('click',()=>{reserve();dialog.close();});
-  if(window.BELVEDERE_EDITOR_PREVIEW){
-    document.documentElement.classList.add('editor-preview');
-    const buttons=[['.hero','hero'],['#specialFeature','special'],['.about-copy','texts'],['#notice','notice'],['#menu','menu'],['#gallery','gallery'],['.hours','hours'],['#contact','contact']];
-    buttons.forEach(([selector,key])=>{
-      const target=document.querySelector(selector);if(!target)return;
-      if(key==='special'&&!site.special.visible){target.hidden=false;target.classList.add('editor-special-empty');target.innerHTML='<p>Propuesta especial · Oculta</p>';}
-      const button=document.createElement('button');button.type='button';button.className='inline-edit-button';button.textContent='✎ Editar';target.prepend(button);
-      button.addEventListener('click',()=>window.parent.postMessage({type:'belvedere-edit',section:key,category:key==='menu'?document.querySelector('[data-category][aria-selected="true"]')?.dataset.category:undefined,nonce:window.BELVEDERE_EDITOR_NONCE},'*'));
-    });
-    document.addEventListener('click',event=>{const link=event.target.closest('a');if(link && !link.getAttribute('href')?.startsWith('#'))event.preventDefault();});
-  }
 })();

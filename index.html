@@ -181,7 +181,7 @@
     </section>
     <section id="reserve" class="section reserve">
       <div class="section-label reveal"><span>04 / A TAVOLA</span><span data-i18n="reserveOrigin">Wir freuen uns auf Sie.</span></div>
-      <div class="reserve-layout"><div class="reserve-copy reveal"><h2 data-i18n="reserveTitle">Ihr Platz.<br><em>Unser Vergnügen.</em></h2><p data-i18n="reserveText">Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.</p><a class="reservation-phone" href="tel:+41617314287">+41 61 731 42 87</a><span class="eyebrow" data-i18n="phoneReserve">GERNE AUCH TELEFONISCH</span><div class="hours"><h3 data-i18n="hoursTitle">Öffnungszeiten</h3><dl><div><dt data-i18n="monday">Montag</dt><dd data-i18n="closed">Geschlossen</dd></div><div><dt data-i18n="weekdays">Dienstag – Freitag</dt><dd>10:00 – 14:00<br>17:30 – 00:00</dd></div><div><dt data-i18n="saturday">Samstag</dt><dd>17:30 – 00:00</dd></div><div><dt data-i18n="sunday">Sonntag</dt><dd>11:00 – 23:00</dd></div></dl></div></div>
+      <div class="reserve-layout"><div class="reserve-copy reveal"><h2 data-i18n="reserveTitle">Ihr Platz.<br><em>Unser Vergnügen.</em></h2><p data-i18n="reserveText">Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.</p><div class="hours"><h3 data-i18n="hoursTitle">Öffnungszeiten</h3><dl><div><dt data-i18n="monday">Montag</dt><dd data-i18n="closed">Geschlossen</dd></div><div><dt data-i18n="weekdays">Dienstag – Freitag</dt><dd>10:00 – 14:00<br>17:30 – 00:00</dd></div><div><dt data-i18n="saturday">Samstag</dt><dd>17:30 – 00:00</dd></div><div><dt data-i18n="sunday">Sonntag</dt><dd>11:00 – 23:00</dd></div></dl></div></div>
       <form id="reservationForm" class="reservation-form reveal"
             name="reservation"
             method="POST"
@@ -194,14 +194,15 @@
         </p>
         
         <div class="form-field"><label for="resName" data-i18n="name">Ihr Name</label><input id="resName" name="name" autocomplete="name" required maxlength="100" placeholder="Anna Rossi" data-i18n-ph="namePlaceholder"></div>
-        <div class="form-field"><label for="resContact" data-i18n="contactField">Telefon oder E-Mail</label><input id="resContact" name="contact" autocomplete="email" required maxlength="160" placeholder="+41 … / name@example.ch"></div>
+        <div class="form-field"><label for="resEmail" data-i18n="emailField">E-Mail (Pflichtfeld)</label><input id="resEmail" name="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" required maxlength="160" placeholder="name@example.ch"></div>
+        <div class="form-field"><label for="resPhone"><span data-i18n="phoneField">Telefon</span> <small data-i18n="optional">(optional)</small></label><input id="resPhone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+41 …"></div>
         <div class="form-row"><div class="form-field"><label for="resDate" data-i18n="date">Wunschdatum</label><input id="resDate" name="date" type="date" required></div><div class="form-field"><label for="resTime" data-i18n="time">Uhrzeit</label><input id="resTime" name="time" type="time" required step="900" value="19:00"></div></div>
         <div class="form-field"><label for="resPersons" data-i18n="guests">Anzahl Personen</label><select id="resPersons" name="persons" required><option value="1" data-i18n="guest1">1 Person</option><option value="2" selected data-i18n="guest2">2 Personen</option><option value="3" data-i18n="guest3">3 Personen</option><option value="4" data-i18n="guest4">4 Personen</option><option value="5+" data-i18n="guest5">5+ Personen — bitte Anzahl unten angeben</option></select></div>
         <div class="form-field"><label for="resNotes"><span data-i18n="notes">Wünsche, Allergien oder Anlass</span> <small data-i18n="optional">(optional)</small></label><textarea id="resNotes" name="notes" rows="3" maxlength="2000" data-i18n-ph="notesPlaceholder" placeholder="Was dürfen wir für Sie wissen?"></textarea></div>
         <button class="button form-submit" type="submit" disabled><span data-i18n="send">Tisch anfragen</span><svg class="icon"><use href="#icon-diagonal"/></svg></button>
-        <p class="form-disclaimer" data-i18n="confirmationNote">Ihre Anfrage ist erst nach unserer Bestätigung verbindlich.</p>
+        <p class="form-disclaimer" data-i18n="confirmationNote">Ihre Anfrage ist erst nach unserer Bestätigung per E-Mail verbindlich.</p>
         <p id="reservationStatus" class="form-status" role="status" aria-live="polite" hidden></p>
-        <noscript><p>Bitte aktivieren Sie JavaScript oder reservieren Sie telefonisch: <a href="tel:+41617314287">+41 61 731 42 87</a>.</p></noscript>
+        <noscript><p>Bitte aktivieren Sie JavaScript, um das Reservierungsformular zu verwenden.</p></noscript>
       </form></div>
     </section>
   </main>
