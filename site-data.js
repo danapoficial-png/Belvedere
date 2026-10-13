@@ -1,7 +1,7 @@
-/* Carta transcrita de los cuatro PDF facilitados. */
+/* Carta de Belvedere, descripciones en cinco idiomas. */
 window.BELVEDERE_SITE = {
   "schemaVersion": 2,
-  "revision": "belvedere-herbst-2026-10-13",
+  "revision": "belvedere-herbst-2026-10-13-i18n",
   "defaultLanguage": "de",
   "media": {
     "hero": "assets/hero.webp",
@@ -89,10 +89,10 @@ window.BELVEDERE_SITE = {
       "price": "29.00",
       "description": {
         "de": "Verschiedene italienische Vorspeisen",
-        "it": "Verschiedene italienische Vorspeisen",
-        "fr": "Verschiedene italienische Vorspeisen",
-        "en": "Verschiedene italienische Vorspeisen",
-        "es": "Verschiedene italienische Vorspeisen"
+        "it": "Antipasti italiani misti",
+        "fr": "Assortiment d’entrées italiennes",
+        "en": "Assorted Italian starters",
+        "es": "Surtido de entrantes italianos"
       }
     },
     {
@@ -102,10 +102,10 @@ window.BELVEDERE_SITE = {
       "price": "10.00",
       "description": {
         "de": "Geröstete Brotscheiben mit marinierten Tomaten",
-        "it": "Geröstete Brotscheiben mit marinierten Tomaten",
-        "fr": "Geröstete Brotscheiben mit marinierten Tomaten",
-        "en": "Geröstete Brotscheiben mit marinierten Tomaten",
-        "es": "Geröstete Brotscheiben mit marinierten Tomaten"
+        "it": "Pane tostato con pomodori marinati",
+        "fr": "Pain grillé aux tomates marinées",
+        "en": "Toasted bread with marinated tomatoes",
+        "es": "Pan tostado con tomates marinados"
       }
     },
     {
@@ -115,10 +115,10 @@ window.BELVEDERE_SITE = {
       "price": "17.50",
       "description": {
         "de": "Gratinierte Auberginen",
-        "it": "Gratinierte Auberginen",
-        "fr": "Gratinierte Auberginen",
-        "en": "Gratinierte Auberginen",
-        "es": "Gratinierte Auberginen"
+        "it": "Melanzane gratinate",
+        "fr": "Aubergines gratinées",
+        "en": "Aubergine gratin",
+        "es": "Berenjenas gratinadas"
       }
     },
     {
@@ -128,10 +128,10 @@ window.BELVEDERE_SITE = {
       "price": "25.00",
       "description": {
         "de": "Rinds-Carpaccio",
-        "it": "Rinds-Carpaccio",
-        "fr": "Rinds-Carpaccio",
-        "en": "Rinds-Carpaccio",
-        "es": "Rinds-Carpaccio"
+        "it": "Carpaccio di manzo",
+        "fr": "Carpaccio de bœuf",
+        "en": "Beef carpaccio",
+        "es": "Carpaccio de ternera"
       }
     },
     {
@@ -141,10 +141,10 @@ window.BELVEDERE_SITE = {
       "price": "9.50",
       "description": {
         "de": "Tomatencremesuppe",
-        "it": "Tomatencremesuppe",
-        "fr": "Tomatencremesuppe",
-        "en": "Tomatencremesuppe",
-        "es": "Tomatencremesuppe"
+        "it": "Crema di pomodoro",
+        "fr": "Velouté de tomates",
+        "en": "Cream of tomato soup",
+        "es": "Crema de tomate"
       }
     },
     {
@@ -154,10 +154,10 @@ window.BELVEDERE_SITE = {
       "price": "9.00",
       "description": {
         "de": "Rindsbouillon mit Ei und Grana Padana",
-        "it": "Rindsbouillon mit Ei und Grana Padana",
-        "fr": "Rindsbouillon mit Ei und Grana Padana",
-        "en": "Rindsbouillon mit Ei und Grana Padana",
-        "es": "Rindsbouillon mit Ei und Grana Padana"
+        "it": "Brodo di manzo con uovo e Grana Padano",
+        "fr": "Bouillon de bœuf à l’œuf et au Grana Padano",
+        "en": "Beef broth with egg and Grana Padano",
+        "es": "Caldo de ternera con huevo y Grana Padano"
       }
     },
     {
@@ -167,10 +167,10 @@ window.BELVEDERE_SITE = {
       "price": "8.50",
       "description": {
         "de": "Grüner Salat",
-        "it": "Grüner Salat",
-        "fr": "Grüner Salat",
-        "en": "Grüner Salat",
-        "es": "Grüner Salat"
+        "it": "Insalata verde",
+        "fr": "Salade verte",
+        "en": "Green salad",
+        "es": "Ensalada verde"
       }
     },
     {
@@ -180,10 +180,10 @@ window.BELVEDERE_SITE = {
       "price": "9.50",
       "description": {
         "de": "Gemischter Salat",
-        "it": "Gemischter Salat",
-        "fr": "Gemischter Salat",
-        "en": "Gemischter Salat",
-        "es": "Gemischter Salat"
+        "it": "Insalata mista",
+        "fr": "Salade mêlée",
+        "en": "Mixed salad",
+        "es": "Ensalada mixta"
       }
     },
     {
@@ -193,10 +193,10 @@ window.BELVEDERE_SITE = {
       "price": "15.00",
       "description": {
         "de": "Tomaten mit Mozzarella",
-        "it": "Tomaten mit Mozzarella",
-        "fr": "Tomaten mit Mozzarella",
-        "en": "Tomaten mit Mozzarella",
-        "es": "Tomaten mit Mozzarella"
+        "it": "Pomodori e mozzarella",
+        "fr": "Tomates et mozzarella",
+        "en": "Tomatoes and mozzarella",
+        "es": "Tomate y mozzarella"
       }
     },
     {
@@ -206,10 +206,10 @@ window.BELVEDERE_SITE = {
       "price": "13.50",
       "description": {
         "de": "Nüsslisalat mit Ei",
-        "it": "Nüsslisalat mit Ei",
-        "fr": "Nüsslisalat mit Ei",
-        "en": "Nüsslisalat mit Ei",
-        "es": "Nüsslisalat mit Ei"
+        "it": "Valeriana con uovo",
+        "fr": "Mâche à l’œuf",
+        "en": "Lamb’s lettuce with egg",
+        "es": "Canónigos con huevo"
       }
     },
     {
@@ -219,10 +219,10 @@ window.BELVEDERE_SITE = {
       "price": "15.50",
       "description": {
         "de": "Nüsslisalat mit Ei und Speck",
-        "it": "Nüsslisalat mit Ei und Speck",
-        "fr": "Nüsslisalat mit Ei und Speck",
-        "en": "Nüsslisalat mit Ei und Speck",
-        "es": "Nüsslisalat mit Ei und Speck"
+        "it": "Valeriana con uovo e pancetta",
+        "fr": "Mâche à l’œuf et aux lardons",
+        "en": "Lamb’s lettuce with egg and bacon",
+        "es": "Canónigos con huevo y beicon"
       }
     },
     {
@@ -232,10 +232,10 @@ window.BELVEDERE_SITE = {
       "price": "13.00",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Insalata di salsiccia e formaggio, semplice",
+        "fr": "Salade de cervelas et fromage, simple",
+        "en": "Sausage and cheese salad, plain",
+        "es": "Ensalada de salchicha y queso, sencilla"
       }
     },
     {
@@ -245,10 +245,10 @@ window.BELVEDERE_SITE = {
       "price": "17.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Insalata di salsiccia e formaggio, guarnita",
+        "fr": "Salade de cervelas et fromage, garnie",
+        "en": "Sausage and cheese salad with garnish",
+        "es": "Ensalada de salchicha y queso con guarnición"
       }
     },
     {
@@ -258,10 +258,10 @@ window.BELVEDERE_SITE = {
       "price": "19.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Insalata di salsiccia e formaggio con patatine fritte",
+        "fr": "Salade de cervelas et fromage avec frites",
+        "en": "Sausage and cheese salad with French fries",
+        "es": "Ensalada de salchicha y queso con patatas fritas"
       }
     },
     {
@@ -271,10 +271,10 @@ window.BELVEDERE_SITE = {
       "price": "18.50",
       "description": {
         "de": "Mit Tomatensauce",
-        "it": "Mit Tomatensauce",
-        "fr": "Mit Tomatensauce",
-        "en": "Mit Tomatensauce",
-        "es": "Mit Tomatensauce"
+        "it": "Con salsa di pomodoro",
+        "fr": "À la sauce tomate",
+        "en": "With tomato sauce",
+        "es": "Con salsa de tomate"
       }
     },
     {
@@ -284,10 +284,10 @@ window.BELVEDERE_SITE = {
       "price": "22.50",
       "description": {
         "de": "Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini",
-        "it": "Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini",
-        "fr": "Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini",
-        "en": "Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini",
-        "es": "Mit Olivenöl, Sardellen, Knoblauch, Tomaten und Peperoncini"
+        "it": "Con olio d’oliva, acciughe, aglio, pomodori e peperoncino",
+        "fr": "À l’huile d’olive, aux anchois, à l’ail, aux tomates et au piment",
+        "en": "With olive oil, anchovies, garlic, tomatoes and chilli",
+        "es": "Con aceite de oliva, anchoas, ajo, tomate y guindilla"
       }
     },
     {
@@ -297,10 +297,10 @@ window.BELVEDERE_SITE = {
       "price": "19.50",
       "description": {
         "de": "Teigwaren an scharfer Tomatensauce",
-        "it": "Teigwaren an scharfer Tomatensauce",
-        "fr": "Teigwaren an scharfer Tomatensauce",
-        "en": "Teigwaren an scharfer Tomatensauce",
-        "es": "Teigwaren an scharfer Tomatensauce"
+        "it": "Pasta con salsa di pomodoro piccante",
+        "fr": "Pâtes à la sauce tomate épicée",
+        "en": "Pasta with spicy tomato sauce",
+        "es": "Pasta con salsa de tomate picante"
       }
     },
     {
@@ -310,10 +310,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Teigwaren mit Bolognesesauce",
-        "it": "Teigwaren mit Bolognesesauce",
-        "fr": "Teigwaren mit Bolognesesauce",
-        "en": "Teigwaren mit Bolognesesauce",
-        "es": "Teigwaren mit Bolognesesauce"
+        "it": "Pasta con ragù alla bolognese",
+        "fr": "Pâtes à la sauce bolognaise",
+        "en": "Pasta with Bolognese sauce",
+        "es": "Pasta con salsa boloñesa"
       }
     },
     {
@@ -323,10 +323,10 @@ window.BELVEDERE_SITE = {
       "price": "25.50",
       "description": {
         "de": "Risotto mit Steinpilzen",
-        "it": "Risotto mit Steinpilzen",
-        "fr": "Risotto mit Steinpilzen",
-        "en": "Risotto mit Steinpilzen",
-        "es": "Risotto mit Steinpilzen"
+        "it": "Risotto ai porcini",
+        "fr": "Risotto aux cèpes",
+        "en": "Risotto with porcini mushrooms",
+        "es": "Risotto con boletus"
       }
     },
     {
@@ -336,10 +336,10 @@ window.BELVEDERE_SITE = {
       "price": "24.50",
       "description": {
         "de": "Hausgemachte Teigwaren mit Pilzsauce",
-        "it": "Hausgemachte Teigwaren mit Pilzsauce",
-        "fr": "Hausgemachte Teigwaren mit Pilzsauce",
-        "en": "Hausgemachte Teigwaren mit Pilzsauce",
-        "es": "Hausgemachte Teigwaren mit Pilzsauce"
+        "it": "Pasta fatta in casa con salsa ai funghi",
+        "fr": "Pâtes maison à la sauce aux champignons",
+        "en": "Homemade pasta with mushroom sauce",
+        "es": "Pasta casera con salsa de setas"
       }
     },
     {
@@ -349,10 +349,10 @@ window.BELVEDERE_SITE = {
       "price": "26.00",
       "description": {
         "de": "Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Grana Padana überbacken",
-        "it": "Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Grana Padana überbacken",
-        "fr": "Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Grana Padana überbacken",
-        "en": "Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Grana Padana überbacken",
-        "es": "Hausgemachte Teigwaren mit Mortadella und Spinat, mit Rahm und Grana Padana überbacken"
+        "it": "Pasta fatta in casa con mortadella e spinaci, gratinata con panna e Grana Padano",
+        "fr": "Pâtes maison à la mortadelle et aux épinards, gratinées à la crème et au Grana Padano",
+        "en": "Homemade pasta with mortadella and spinach, baked with cream and Grana Padano",
+        "es": "Pasta casera con mortadela y espinacas, gratinada con nata y Grana Padano"
       }
     },
     {
@@ -362,10 +362,10 @@ window.BELVEDERE_SITE = {
       "price": "23.50",
       "description": {
         "de": "Kartoffelgnocchi mit Bolognesesauce und Rahm",
-        "it": "Kartoffelgnocchi mit Bolognesesauce und Rahm",
-        "fr": "Kartoffelgnocchi mit Bolognesesauce und Rahm",
-        "en": "Kartoffelgnocchi mit Bolognesesauce und Rahm",
-        "es": "Kartoffelgnocchi mit Bolognesesauce und Rahm"
+        "it": "Gnocchi di patate con ragù alla bolognese e panna",
+        "fr": "Gnocchis de pommes de terre à la bolognaise et à la crème",
+        "en": "Potato gnocchi with Bolognese sauce and cream",
+        "es": "Ñoquis de patata con salsa boloñesa y nata"
       }
     },
     {
@@ -375,10 +375,10 @@ window.BELVEDERE_SITE = {
       "price": "26.50",
       "description": {
         "de": "Hausgemachte Teigwaren mit Crevetten, Cherrytomaten und Rucola",
-        "it": "Hausgemachte Teigwaren mit Crevetten, Cherrytomaten und Rucola",
-        "fr": "Hausgemachte Teigwaren mit Crevetten, Cherrytomaten und Rucola",
-        "en": "Hausgemachte Teigwaren mit Crevetten, Cherrytomaten und Rucola",
-        "es": "Hausgemachte Teigwaren mit Crevetten, Cherrytomaten und Rucola"
+        "it": "Pasta fatta in casa con gamberetti, pomodorini e rucola",
+        "fr": "Pâtes maison aux crevettes, tomates cerises et roquette",
+        "en": "Homemade pasta with prawns, cherry tomatoes and rocket",
+        "es": "Pasta casera con gambas, tomates cherry y rúcula"
       }
     },
     {
@@ -388,10 +388,10 @@ window.BELVEDERE_SITE = {
       "price": "36.00",
       "description": {
         "de": "Riesencrevetten an Proseccosauce",
-        "it": "Riesencrevetten an Proseccosauce",
-        "fr": "Riesencrevetten an Proseccosauce",
-        "en": "Riesencrevetten an Proseccosauce",
-        "es": "Riesencrevetten an Proseccosauce"
+        "it": "Gamberoni con salsa al Prosecco",
+        "fr": "Gambas à la sauce au Prosecco",
+        "en": "King prawns with Prosecco sauce",
+        "es": "Langostinos con salsa de Prosecco"
       }
     },
     {
@@ -401,10 +401,10 @@ window.BELVEDERE_SITE = {
       "price": "32.00",
       "description": {
         "de": "Lachs an Zitronensauce",
-        "it": "Lachs an Zitronensauce",
-        "fr": "Lachs an Zitronensauce",
-        "en": "Lachs an Zitronensauce",
-        "es": "Lachs an Zitronensauce"
+        "it": "Salmone con salsa al limone",
+        "fr": "Saumon à la sauce au citron",
+        "en": "Salmon with lemon sauce",
+        "es": "Salmón con salsa de limón"
       }
     },
     {
@@ -414,10 +414,10 @@ window.BELVEDERE_SITE = {
       "price": "33.00",
       "description": {
         "de": "Wolfsbarschfilets an Zitronensauce mit Tomaten",
-        "it": "Wolfsbarschfilets an Zitronensauce mit Tomaten",
-        "fr": "Wolfsbarschfilets an Zitronensauce mit Tomaten",
-        "en": "Wolfsbarschfilets an Zitronensauce mit Tomaten",
-        "es": "Wolfsbarschfilets an Zitronensauce mit Tomaten"
+        "it": "Filetti di branzino con salsa al limone e pomodori",
+        "fr": "Filets de bar à la sauce au citron et aux tomates",
+        "en": "Sea bass fillets with lemon sauce and tomatoes",
+        "es": "Filetes de lubina con salsa de limón y tomate"
       }
     },
     {
@@ -427,10 +427,10 @@ window.BELVEDERE_SITE = {
       "price": "28.50",
       "description": {
         "de": "Panierte Schweinsschnitzel",
-        "it": "Panierte Schweinsschnitzel",
-        "fr": "Panierte Schweinsschnitzel",
-        "en": "Panierte Schweinsschnitzel",
-        "es": "Panierte Schweinsschnitzel"
+        "it": "Scaloppine di maiale impanate",
+        "fr": "Escalopes de porc panées",
+        "en": "Breaded pork escalopes",
+        "es": "Escalopes de cerdo empanados"
       }
     },
     {
@@ -440,10 +440,10 @@ window.BELVEDERE_SITE = {
       "price": "32.50",
       "description": {
         "de": "Schweins-Cordon-bleu",
-        "it": "Schweins-Cordon-bleu",
-        "fr": "Schweins-Cordon-bleu",
-        "en": "Schweins-Cordon-bleu",
-        "es": "Schweins-Cordon-bleu"
+        "it": "Cordon bleu di maiale",
+        "fr": "Cordon-bleu de porc",
+        "en": "Pork cordon bleu",
+        "es": "Cordon bleu de cerdo"
       }
     },
     {
@@ -453,10 +453,10 @@ window.BELVEDERE_SITE = {
       "price": "33.50",
       "description": {
         "de": "Kalbsleber mit Zwiebelsauce",
-        "it": "Kalbsleber mit Zwiebelsauce",
-        "fr": "Kalbsleber mit Zwiebelsauce",
-        "en": "Kalbsleber mit Zwiebelsauce",
-        "es": "Kalbsleber mit Zwiebelsauce"
+        "it": "Fegato di vitello con salsa alle cipolle",
+        "fr": "Foie de veau à la sauce aux oignons",
+        "en": "Calf’s liver with onion sauce",
+        "es": "Hígado de ternera con salsa de cebolla"
       }
     },
     {
@@ -466,10 +466,10 @@ window.BELVEDERE_SITE = {
       "price": "52.00",
       "description": {
         "de": "Rindsfilet vom Grill",
-        "it": "Rindsfilet vom Grill",
-        "fr": "Rindsfilet vom Grill",
-        "en": "Rindsfilet vom Grill",
-        "es": "Rindsfilet vom Grill"
+        "it": "Filetto di manzo alla griglia",
+        "fr": "Filet de bœuf grillé",
+        "en": "Grilled beef fillet",
+        "es": "Solomillo de ternera a la parrilla"
       }
     },
     {
@@ -479,10 +479,10 @@ window.BELVEDERE_SITE = {
       "price": "39.50",
       "description": {
         "de": "Kalbsschnitzel vom Grill",
-        "it": "Kalbsschnitzel vom Grill",
-        "fr": "Kalbsschnitzel vom Grill",
-        "en": "Kalbsschnitzel vom Grill",
-        "es": "Kalbsschnitzel vom Grill"
+        "it": "Scaloppina di vitello alla griglia",
+        "fr": "Escalope de veau grillée",
+        "en": "Grilled veal escalope",
+        "es": "Escalope de ternera a la parrilla"
       }
     },
     {
@@ -492,10 +492,10 @@ window.BELVEDERE_SITE = {
       "price": "16.50",
       "description": {
         "de": "Tomatensauce, Mozzarella",
-        "it": "Tomatensauce, Mozzarella",
-        "fr": "Tomatensauce, Mozzarella",
-        "en": "Tomatensauce, Mozzarella",
-        "es": "Tomatensauce, Mozzarella"
+        "it": "salsa di pomodoro, mozzarella",
+        "fr": "sauce tomate, mozzarella",
+        "en": "tomato sauce, mozzarella",
+        "es": "salsa de tomate, mozzarella"
       }
     },
     {
@@ -505,10 +505,10 @@ window.BELVEDERE_SITE = {
       "price": "19.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta"
       }
     },
     {
@@ -518,10 +518,10 @@ window.BELVEDERE_SITE = {
       "price": "19.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Pilze",
-        "it": "Tomatensauce, Mozzarella, Pilze",
-        "fr": "Tomatensauce, Mozzarella, Pilze",
-        "en": "Tomatensauce, Mozzarella, Pilze",
-        "es": "Tomatensauce, Mozzarella, Pilze"
+        "it": "salsa di pomodoro, mozzarella, funghi",
+        "fr": "sauce tomate, mozzarella, champignons",
+        "en": "tomato sauce, mozzarella, mushrooms",
+        "es": "salsa de tomate, mozzarella, setas"
       }
     },
     {
@@ -531,10 +531,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken und Pilze",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken und Pilze",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken und Pilze",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken und Pilze",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken und Pilze"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, funghi",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, champignons",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, mushrooms",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, setas"
       }
     },
     {
@@ -544,10 +544,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Sardellen, Kapern",
-        "it": "Tomatensauce, Mozzarella, Sardellen, Kapern",
-        "fr": "Tomatensauce, Mozzarella, Sardellen, Kapern",
-        "en": "Tomatensauce, Mozzarella, Sardellen, Kapern",
-        "es": "Tomatensauce, Mozzarella, Sardellen, Kapern"
+        "it": "salsa di pomodoro, mozzarella, acciughe, capperi",
+        "fr": "sauce tomate, mozzarella, anchois, câpres",
+        "en": "tomato sauce, mozzarella, anchovies, capers",
+        "es": "salsa de tomate, mozzarella, anchoas, alcaparras"
       }
     },
     {
@@ -557,10 +557,10 @@ window.BELVEDERE_SITE = {
       "price": "23.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Grana Padana",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Grana Padana",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Grana Padana",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Grana Padana",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Grana Padana"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, funghi, Grana Padano",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, champignons, Grana Padano",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, mushrooms, Grana Padano",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, setas, Grana Padano"
       }
     },
     {
@@ -570,10 +570,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Spinat",
-        "it": "Tomatensauce, Mozzarella, Spinat",
-        "fr": "Tomatensauce, Mozzarella, Spinat",
-        "en": "Tomatensauce, Mozzarella, Spinat",
-        "es": "Tomatensauce, Mozzarella, Spinat"
+        "it": "salsa di pomodoro, mozzarella, spinaci",
+        "fr": "sauce tomate, mozzarella, épinards",
+        "en": "tomato sauce, mozzarella, spinach",
+        "es": "salsa de tomate, mozzarella, espinacas"
       }
     },
     {
@@ -583,10 +583,10 @@ window.BELVEDERE_SITE = {
       "price": "20.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, Salami",
-        "it": "Tomatensauce, Mozzarella, Salami",
-        "fr": "Tomatensauce, Mozzarella, Salami",
-        "en": "Tomatensauce, Mozzarella, Salami",
-        "es": "Tomatensauce, Mozzarella, Salami"
+        "it": "salsa di pomodoro, mozzarella, salame",
+        "fr": "sauce tomate, mozzarella, salami",
+        "en": "tomato sauce, mozzarella, salami",
+        "es": "salsa de tomate, mozzarella, salami"
       }
     },
     {
@@ -596,10 +596,10 @@ window.BELVEDERE_SITE = {
       "price": "24.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami",
-        "it": "Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami",
-        "fr": "Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami",
-        "en": "Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami",
-        "es": "Tomatensauce, Mozzarella, Anduja, Auberginen, scharfe Salami"
+        "it": "salsa di pomodoro, mozzarella, Anduja, melanzane, salame piccante",
+        "fr": "sauce tomate, mozzarella, Anduja, aubergines, salami piquant",
+        "en": "tomato sauce, mozzarella, Anduja, aubergines, spicy salami",
+        "es": "salsa de tomate, mozzarella, Anduja, berenjenas, salami picante"
       }
     },
     {
@@ -609,10 +609,10 @@ window.BELVEDERE_SITE = {
       "price": "24.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken, Spinat und Ei",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken, Spinat und Ei",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken, Spinat und Ei",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken, Spinat und Ei",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken, Spinat und Ei"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, spinaci, uovo",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, épinards, œuf",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, spinach, egg",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, espinacas, huevo"
       }
     },
     {
@@ -622,10 +622,10 @@ window.BELVEDERE_SITE = {
       "price": "22.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, scharfe Salami",
-        "it": "Tomatensauce, Mozzarella, scharfe Salami",
-        "fr": "Tomatensauce, Mozzarella, scharfe Salami",
-        "en": "Tomatensauce, Mozzarella, scharfe Salami",
-        "es": "Tomatensauce, Mozzarella, scharfe Salami"
+        "it": "salsa di pomodoro, mozzarella, salame piccante",
+        "fr": "sauce tomate, mozzarella, salami piquant",
+        "en": "tomato sauce, mozzarella, spicy salami",
+        "es": "salsa de tomate, mozzarella, salami picante"
       }
     },
     {
@@ -635,10 +635,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Gorgonzola",
-        "it": "Tomatensauce, Mozzarella, Gorgonzola",
-        "fr": "Tomatensauce, Mozzarella, Gorgonzola",
-        "en": "Tomatensauce, Mozzarella, Gorgonzola",
-        "es": "Tomatensauce, Mozzarella, Gorgonzola"
+        "it": "salsa di pomodoro, mozzarella, gorgonzola",
+        "fr": "sauce tomate, mozzarella, gorgonzola",
+        "en": "tomato sauce, mozzarella, gorgonzola",
+        "es": "salsa de tomate, mozzarella, gorgonzola"
       }
     },
     {
@@ -648,10 +648,10 @@ window.BELVEDERE_SITE = {
       "price": "22.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken, Ananas",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken, Ananas",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken, Ananas",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken, Ananas",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken, Ananas"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, ananas",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, ananas",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, pineapple",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, piña"
       }
     },
     {
@@ -661,10 +661,10 @@ window.BELVEDERE_SITE = {
       "price": "22.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Rucola, Grana Padana",
-        "it": "Tomatensauce, Mozzarella, Rucola, Grana Padana",
-        "fr": "Tomatensauce, Mozzarella, Rucola, Grana Padana",
-        "en": "Tomatensauce, Mozzarella, Rucola, Grana Padana",
-        "es": "Tomatensauce, Mozzarella, Rucola, Grana Padana"
+        "it": "salsa di pomodoro, mozzarella, rucola, Grana Padano",
+        "fr": "sauce tomate, mozzarella, roquette, Grana Padano",
+        "en": "tomato sauce, mozzarella, rocket, Grana Padano",
+        "es": "salsa de tomate, mozzarella, rúcula, Grana Padano"
       }
     },
     {
@@ -674,10 +674,10 @@ window.BELVEDERE_SITE = {
       "price": "24.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, Rohschinken",
-        "it": "Tomatensauce, Mozzarella, Rohschinken",
-        "fr": "Tomatensauce, Mozzarella, Rohschinken",
-        "en": "Tomatensauce, Mozzarella, Rohschinken",
-        "es": "Tomatensauce, Mozzarella, Rohschinken"
+        "it": "salsa di pomodoro, mozzarella, prosciutto crudo",
+        "fr": "sauce tomate, mozzarella, jambon cru",
+        "en": "tomato sauce, mozzarella, cured ham",
+        "es": "salsa de tomate, mozzarella, jamón curado"
       }
     },
     {
@@ -687,10 +687,10 @@ window.BELVEDERE_SITE = {
       "price": "27.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Rohschinken, Rucola, Grana Padana",
-        "it": "Tomatensauce, Mozzarella, Rohschinken, Rucola, Grana Padana",
-        "fr": "Tomatensauce, Mozzarella, Rohschinken, Rucola, Grana Padana",
-        "en": "Tomatensauce, Mozzarella, Rohschinken, Rucola, Grana Padana",
-        "es": "Tomatensauce, Mozzarella, Rohschinken, Rucola, Grana Padana"
+        "it": "salsa di pomodoro, mozzarella, prosciutto crudo, rucola, Grana Padano",
+        "fr": "sauce tomate, mozzarella, jambon cru, roquette, Grana Padano",
+        "en": "tomato sauce, mozzarella, cured ham, rocket, Grana Padano",
+        "es": "salsa de tomate, mozzarella, jamón curado, rúcula, Grana Padano"
       }
     },
     {
@@ -700,10 +700,10 @@ window.BELVEDERE_SITE = {
       "price": "21.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Thon",
-        "it": "Tomatensauce, Mozzarella, Thon",
-        "fr": "Tomatensauce, Mozzarella, Thon",
-        "en": "Tomatensauce, Mozzarella, Thon",
-        "es": "Tomatensauce, Mozzarella, Thon"
+        "it": "salsa di pomodoro, mozzarella, tonno",
+        "fr": "sauce tomate, mozzarella, thon",
+        "en": "tomato sauce, mozzarella, tuna",
+        "es": "salsa de tomate, mozzarella, atún"
       }
     },
     {
@@ -713,10 +713,10 @@ window.BELVEDERE_SITE = {
       "price": "25.50",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken, Speck, Zwiebeln, Knoblauch, Peperoncini",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken, Speck, Zwiebeln, Knoblauch, Peperoncini",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken, Speck, Zwiebeln, Knoblauch, Peperoncini",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken, Speck, Zwiebeln, Knoblauch, Peperoncini",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken, Speck, Zwiebeln, Knoblauch, Peperoncini"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, pancetta, cipolle, aglio, peperoncino",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, lardons, oignons, ail, piment",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, bacon, onions, garlic, chilli",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, beicon, cebolla, ajo, guindilla"
       }
     },
     {
@@ -726,10 +726,10 @@ window.BELVEDERE_SITE = {
       "price": "25.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Auberginen, Artischocken",
-        "it": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Auberginen, Artischocken",
-        "fr": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Auberginen, Artischocken",
-        "en": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Auberginen, Artischocken",
-        "es": "Tomatensauce, Mozzarella, Vorderschinken, Pilze, Auberginen, Artischocken"
+        "it": "salsa di pomodoro, mozzarella, prosciutto cotto di spalla, funghi, melanzane, carciofi",
+        "fr": "sauce tomate, mozzarella, jambon d’épaule cuit, champignons, aubergines, artichauts",
+        "en": "tomato sauce, mozzarella, cooked shoulder ham, mushrooms, aubergines, artichokes",
+        "es": "salsa de tomate, mozzarella, jamón cocido de paleta, setas, berenjenas, alcachofas"
       }
     },
     {
@@ -739,10 +739,10 @@ window.BELVEDERE_SITE = {
       "price": "25.00",
       "description": {
         "de": "Tomatensauce, Mozzarella, Steinpilze",
-        "it": "Tomatensauce, Mozzarella, Steinpilze",
-        "fr": "Tomatensauce, Mozzarella, Steinpilze",
-        "en": "Tomatensauce, Mozzarella, Steinpilze",
-        "es": "Tomatensauce, Mozzarella, Steinpilze"
+        "it": "salsa di pomodoro, mozzarella, porcini",
+        "fr": "sauce tomate, mozzarella, cèpes",
+        "en": "tomato sauce, mozzarella, porcini mushrooms",
+        "es": "salsa de tomate, mozzarella, boletus"
       }
     },
     {
@@ -752,10 +752,10 @@ window.BELVEDERE_SITE = {
       "price": "14.00",
       "description": {
         "de": "Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)",
-        "it": "Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)",
-        "fr": "Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)",
-        "en": "Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)",
-        "es": "Margherita, Prosciutto, Salami, Hawaii (bis 8 Jahre)"
+        "it": "Margherita, Prosciutto, Salami, Hawaii (fino a 8 anni)",
+        "fr": "Margherita, Prosciutto, Salami, Hawaii (jusqu’à 8 ans)",
+        "en": "Margherita, Prosciutto, Salami, Hawaii (up to 8 years)",
+        "es": "Margherita, Prosciutto, Salami, Hawaii (hasta 8 años)"
       }
     },
     {
@@ -765,10 +765,10 @@ window.BELVEDERE_SITE = {
       "price": "4.80",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Acqua minerale, bibita al limone, cola · Alla spina",
+        "fr": "Eau minérale, limonade, cola · Au verre",
+        "en": "Mineral water, lemon soft drink, cola · On tap",
+        "es": "Agua mineral, refresco de limón, cola · De dispensador"
       }
     },
     {
@@ -778,10 +778,10 @@ window.BELVEDERE_SITE = {
       "price": "6.30",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Acqua minerale, bibita al limone, cola · Alla spina",
+        "fr": "Eau minérale, limonade, cola · Au verre",
+        "en": "Mineral water, lemon soft drink, cola · On tap",
+        "es": "Agua mineral, refresco de limón, cola · De dispensador"
       }
     },
     {
@@ -791,10 +791,10 @@ window.BELVEDERE_SITE = {
       "price": "4.80",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Alla spina",
+        "fr": "Au verre",
+        "en": "On tap",
+        "es": "De dispensador"
       }
     },
     {
@@ -804,10 +804,10 @@ window.BELVEDERE_SITE = {
       "price": "6.30",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Alla spina",
+        "fr": "Au verre",
+        "en": "On tap",
+        "es": "De dispensador"
       }
     },
     {
@@ -817,10 +817,10 @@ window.BELVEDERE_SITE = {
       "price": "5.20",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Succo di mela e succo di mela con acqua frizzante della fattoria Senmatt · Alla spina",
+        "fr": "Jus de pomme et jus de pomme avec eau gazeuse de la ferme Senmatt · Au verre",
+        "en": "Apple juice and apple juice spritzer from Senmatt farm · On tap",
+        "es": "Zumo de manzana y zumo de manzana con agua con gas de la granja Senmatt · De dispensador"
       }
     },
     {
@@ -830,10 +830,10 @@ window.BELVEDERE_SITE = {
       "price": "6.60",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Succo di mela e succo di mela con acqua frizzante della fattoria Senmatt · Alla spina",
+        "fr": "Jus de pomme et jus de pomme avec eau gazeuse de la ferme Senmatt · Au verre",
+        "en": "Apple juice and apple juice spritzer from Senmatt farm · On tap",
+        "es": "Zumo de manzana y zumo de manzana con agua con gas de la granja Senmatt · De dispensador"
       }
     },
     {
@@ -843,10 +843,10 @@ window.BELVEDERE_SITE = {
       "price": "5.00",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Rivella rossa · Alla spina",
+        "fr": "Rivella rouge · Au verre",
+        "en": "Red Rivella · On tap",
+        "es": "Rivella roja · De dispensador"
       }
     },
     {
@@ -856,10 +856,10 @@ window.BELVEDERE_SITE = {
       "price": "6.50",
       "description": {
         "de": "Aperte / Offen",
-        "it": "Aperte / Offen",
-        "fr": "Aperte / Offen",
-        "en": "Aperte / Offen",
-        "es": "Aperte / Offen"
+        "it": "Rivella rossa · Alla spina",
+        "fr": "Rivella rouge · Au verre",
+        "en": "Red Rivella · On tap",
+        "es": "Rivella roja · De dispensador"
       }
     },
     {
@@ -869,10 +869,10 @@ window.BELVEDERE_SITE = {
       "price": "6.50",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "In bottiglia",
+        "fr": "En bouteille",
+        "en": "Bottled",
+        "es": "En botella"
       }
     },
     {
@@ -882,10 +882,10 @@ window.BELVEDERE_SITE = {
       "price": "12.00",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "In bottiglia",
+        "fr": "En bouteille",
+        "en": "Bottled",
+        "es": "En botella"
       }
     },
     {
@@ -895,10 +895,10 @@ window.BELVEDERE_SITE = {
       "price": "5.60",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "In bottiglia",
+        "fr": "En bouteille",
+        "en": "Bottled",
+        "es": "En botella"
       }
     },
     {
@@ -908,10 +908,10 @@ window.BELVEDERE_SITE = {
       "price": "5.60",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "Rivella rossa, Rivella blu · In bottiglia",
+        "fr": "Rivella rouge, Rivella bleu · En bouteille",
+        "en": "Red Rivella, blue Rivella · Bottled",
+        "es": "Rivella roja, Rivella azul · En botella"
       }
     },
     {
@@ -921,10 +921,10 @@ window.BELVEDERE_SITE = {
       "price": "5.40",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "In bottiglia",
+        "fr": "En bouteille",
+        "en": "Bottled",
+        "es": "En botella"
       }
     },
     {
@@ -934,10 +934,10 @@ window.BELVEDERE_SITE = {
       "price": "5.40",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "In bottiglia",
+        "fr": "En bouteille",
+        "en": "Bottled",
+        "es": "En botella"
       }
     },
     {
@@ -947,10 +947,10 @@ window.BELVEDERE_SITE = {
       "price": "6.00",
       "description": {
         "de": "Bottiglie / Flaschen",
-        "it": "Bottiglie / Flaschen",
-        "fr": "Bottiglie / Flaschen",
-        "en": "Bottiglie / Flaschen",
-        "es": "Bottiglie / Flaschen"
+        "it": "Red Bull in lattina · In bottiglia",
+        "fr": "Red Bull en canette · En bouteille",
+        "en": "Red Bull can · Bottled",
+        "es": "Red Bull en lata · En botella"
       }
     },
     {
@@ -960,10 +960,10 @@ window.BELVEDERE_SITE = {
       "price": "4.40",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -973,10 +973,10 @@ window.BELVEDERE_SITE = {
       "price": "5.20",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -986,10 +986,10 @@ window.BELVEDERE_SITE = {
       "price": "6.90",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -999,10 +999,10 @@ window.BELVEDERE_SITE = {
       "price": "4.40",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -1012,10 +1012,10 @@ window.BELVEDERE_SITE = {
       "price": "5.20",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -1025,10 +1025,10 @@ window.BELVEDERE_SITE = {
       "price": "6.90",
       "description": {
         "de": "Birra aperta / Offenbier",
-        "it": "Birra aperta / Offenbier",
-        "fr": "Birra aperta / Offenbier",
-        "en": "Birra aperta / Offenbier",
-        "es": "Birra aperta / Offenbier"
+        "it": "Birra alla spina",
+        "fr": "Bière pression",
+        "en": "Draught beer",
+        "es": "Cerveza de barril"
       }
     },
     {
@@ -1038,10 +1038,10 @@ window.BELVEDERE_SITE = {
       "price": "5.60",
       "description": {
         "de": "Birra in bottiglia / Flaschenbier",
-        "it": "Birra in bottiglia / Flaschenbier",
-        "fr": "Birra in bottiglia / Flaschenbier",
-        "en": "Birra in bottiglia / Flaschenbier",
-        "es": "Birra in bottiglia / Flaschenbier"
+        "it": "Birra in bottiglia",
+        "fr": "Bière en bouteille",
+        "en": "Bottled beer",
+        "es": "Cerveza en botella"
       }
     },
     {
@@ -1051,10 +1051,10 @@ window.BELVEDERE_SITE = {
       "price": "5.60",
       "description": {
         "de": "Birra in bottiglia / Flaschenbier",
-        "it": "Birra in bottiglia / Flaschenbier",
-        "fr": "Birra in bottiglia / Flaschenbier",
-        "en": "Birra in bottiglia / Flaschenbier",
-        "es": "Birra in bottiglia / Flaschenbier"
+        "it": "Birra analcolica · Birra in bottiglia",
+        "fr": "Bière sans alcool · Bière en bouteille",
+        "en": "Alcohol-free beer · Bottled beer",
+        "es": "Cerveza sin alcohol · Cerveza en botella"
       }
     },
     {
@@ -1064,10 +1064,10 @@ window.BELVEDERE_SITE = {
       "price": "7.00",
       "description": {
         "de": "Birra in bottiglia / Flaschenbier",
-        "it": "Birra in bottiglia / Flaschenbier",
-        "fr": "Birra in bottiglia / Flaschenbier",
-        "en": "Birra in bottiglia / Flaschenbier",
-        "es": "Birra in bottiglia / Flaschenbier"
+        "it": "Birra di frumento · Birra in bottiglia",
+        "fr": "Bière de blé · Bière en bouteille",
+        "en": "Wheat beer · Bottled beer",
+        "es": "Cerveza de trigo · Cerveza en botella"
       }
     },
     {
@@ -1077,10 +1077,10 @@ window.BELVEDERE_SITE = {
       "price": "7.00",
       "description": {
         "de": "Birra in bottiglia / Flaschenbier",
-        "it": "Birra in bottiglia / Flaschenbier",
-        "fr": "Birra in bottiglia / Flaschenbier",
-        "en": "Birra in bottiglia / Flaschenbier",
-        "es": "Birra in bottiglia / Flaschenbier"
+        "it": "Birra di frumento analcolica · Birra in bottiglia",
+        "fr": "Bière de blé sans alcool · Bière en bouteille",
+        "en": "Alcohol-free wheat beer · Bottled beer",
+        "es": "Cerveza de trigo sin alcohol · Cerveza en botella"
       }
     },
     {
@@ -1090,10 +1090,10 @@ window.BELVEDERE_SITE = {
       "price": "7.20",
       "description": {
         "de": "Birra in bottiglia / Flaschenbier",
-        "it": "Birra in bottiglia / Flaschenbier",
-        "fr": "Birra in bottiglia / Flaschenbier",
-        "en": "Birra in bottiglia / Flaschenbier",
-        "es": "Birra in bottiglia / Flaschenbier"
+        "it": "Birra in bottiglia",
+        "fr": "Bière en bouteille",
+        "en": "Bottled beer",
+        "es": "Cerveza en botella"
       }
     },
     {
@@ -1103,10 +1103,10 @@ window.BELVEDERE_SITE = {
       "price": "6.50",
       "description": {
         "de": "Senza alcool / Ohne Alkohol",
-        "it": "Senza alcool / Ohne Alkohol",
-        "fr": "Senza alcool / Ohne Alkohol",
-        "en": "Senza alcool / Ohne Alkohol",
-        "es": "Senza alcool / Ohne Alkohol"
+        "it": "Senza alcol",
+        "fr": "Sans alcool",
+        "en": "Alcohol-free",
+        "es": "Sin alcohol"
       }
     },
     {
@@ -1116,10 +1116,10 @@ window.BELVEDERE_SITE = {
       "price": "8.50",
       "description": {
         "de": "Senza alcool / Ohne Alkohol",
-        "it": "Senza alcool / Ohne Alkohol",
-        "fr": "Senza alcool / Ohne Alkohol",
-        "en": "Senza alcool / Ohne Alkohol",
-        "es": "Senza alcool / Ohne Alkohol"
+        "it": "Senza alcol",
+        "fr": "Sans alcool",
+        "en": "Alcohol-free",
+        "es": "Sin alcohol"
       }
     },
     {
@@ -1129,10 +1129,10 @@ window.BELVEDERE_SITE = {
       "price": "5.20",
       "description": {
         "de": "Senza alcool / Ohne Alkohol",
-        "it": "Senza alcool / Ohne Alkohol",
-        "fr": "Senza alcool / Ohne Alkohol",
-        "en": "Senza alcool / Ohne Alkohol",
-        "es": "Senza alcool / Ohne Alkohol"
+        "it": "Succo d’arancia Granini · Senza alcol",
+        "fr": "Jus d’orange Granini · Sans alcool",
+        "en": "Granini orange juice · Alcohol-free",
+        "es": "Zumo de naranja Granini · Sin alcohol"
       }
     },
     {
@@ -1142,10 +1142,10 @@ window.BELVEDERE_SITE = {
       "price": "9.50",
       "description": {
         "de": "11 % vol.",
-        "it": "11 % vol.",
-        "fr": "11 % vol.",
-        "en": "11 % vol.",
-        "es": "11 % vol."
+        "it": "Calice di Prosecco · 11 % vol.",
+        "fr": "Coupe de Prosecco · 11 % vol.",
+        "en": "Glass of Prosecco · 11 % vol.",
+        "es": "Copa de Prosecco · 11 % vol."
       }
     },
     {
@@ -1259,10 +1259,10 @@ window.BELVEDERE_SITE = {
       "price": "9.50",
       "description": {
         "de": "32 % vol.",
-        "it": "32 % vol.",
-        "fr": "32 % vol.",
-        "en": "32 % vol.",
-        "es": "32 % vol."
+        "it": "Amari assortiti · 32 % vol.",
+        "fr": "Amers assortis · 32 % vol.",
+        "en": "Assorted amaro liqueurs · 32 % vol.",
+        "es": "Licores amargos variados · 32 % vol."
       }
     },
     {
@@ -1441,10 +1441,10 @@ window.BELVEDERE_SITE = {
       "price": "4.80",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Espresso, caffè",
+        "fr": "Espresso, café",
+        "en": "Espresso, coffee",
+        "es": "Espresso, café"
       }
     },
     {
@@ -1454,10 +1454,10 @@ window.BELVEDERE_SITE = {
       "price": "5.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Caffellatte",
+        "fr": "Café au lait",
+        "en": "Coffee with milk",
+        "es": "Café con leche"
       }
     },
     {
@@ -1493,10 +1493,10 @@ window.BELVEDERE_SITE = {
       "price": "5.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Cioccolata calda",
+        "fr": "Chocolat chaud",
+        "en": "Hot chocolate",
+        "es": "Chocolate caliente"
       }
     },
     {
@@ -1506,10 +1506,10 @@ window.BELVEDERE_SITE = {
       "price": "4.80",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Tè assortiti",
+        "fr": "Assortiment de thés",
+        "en": "Selection of teas",
+        "es": "Selección de tés"
       }
     },
     {
@@ -1571,10 +1571,10 @@ window.BELVEDERE_SITE = {
       "price": "5.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Ovomaltina calda",
+        "fr": "Ovomaltine chaude",
+        "en": "Hot Ovomaltine",
+        "es": "Ovomaltine caliente"
       }
     },
     {
@@ -1584,10 +1584,10 @@ window.BELVEDERE_SITE = {
       "price": "7.50",
       "description": {
         "de": "",
-        "it": "",
-        "fr": "",
-        "en": "",
-        "es": ""
+        "it": "Tè al rum",
+        "fr": "Thé au rhum",
+        "en": "Tea with rum",
+        "es": "Té con ron"
       }
     },
     {
@@ -1597,10 +1597,10 @@ window.BELVEDERE_SITE = {
       "price": "77.50",
       "description": {
         "de": "Spumante & Prosecco",
-        "it": "Spumante & Prosecco",
-        "fr": "Spumante & Prosecco",
-        "en": "Spumante & Prosecco",
-        "es": "Spumante & Prosecco"
+        "it": "Spumante e Prosecco",
+        "fr": "Vins mousseux et Prosecco",
+        "en": "Sparkling wine & Prosecco",
+        "es": "Espumosos y Prosecco"
       }
     },
     {
@@ -1610,10 +1610,10 @@ window.BELVEDERE_SITE = {
       "price": "9.50",
       "description": {
         "de": "Spumante & Prosecco",
-        "it": "Spumante & Prosecco",
-        "fr": "Spumante & Prosecco",
-        "en": "Spumante & Prosecco",
-        "es": "Spumante & Prosecco"
+        "it": "Spumante e Prosecco",
+        "fr": "Vins mousseux et Prosecco",
+        "en": "Sparkling wine & Prosecco",
+        "es": "Espumosos y Prosecco"
       }
     },
     {
@@ -1623,10 +1623,10 @@ window.BELVEDERE_SITE = {
       "price": "65.00",
       "description": {
         "de": "Spumante & Prosecco",
-        "it": "Spumante & Prosecco",
-        "fr": "Spumante & Prosecco",
-        "en": "Spumante & Prosecco",
-        "es": "Spumante & Prosecco"
+        "it": "Spumante e Prosecco",
+        "fr": "Vins mousseux et Prosecco",
+        "en": "Sparkling wine & Prosecco",
+        "es": "Espumosos y Prosecco"
       }
     },
     {
@@ -1636,10 +1636,10 @@ window.BELVEDERE_SITE = {
       "price": "6.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1649,10 +1649,10 @@ window.BELVEDERE_SITE = {
       "price": "29.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1662,10 +1662,10 @@ window.BELVEDERE_SITE = {
       "price": "6.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1675,10 +1675,10 @@ window.BELVEDERE_SITE = {
       "price": "29.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1688,10 +1688,10 @@ window.BELVEDERE_SITE = {
       "price": "41.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1701,10 +1701,10 @@ window.BELVEDERE_SITE = {
       "price": "6.50",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1714,10 +1714,10 @@ window.BELVEDERE_SITE = {
       "price": "32.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1727,10 +1727,10 @@ window.BELVEDERE_SITE = {
       "price": "43.00",
       "description": {
         "de": "Weisswein",
-        "it": "Weisswein",
-        "fr": "Weisswein",
-        "en": "Weisswein",
-        "es": "Weisswein"
+        "it": "Vino bianco",
+        "fr": "Vin blanc",
+        "en": "White wine",
+        "es": "Vino blanco"
       }
     },
     {
@@ -1740,10 +1740,10 @@ window.BELVEDERE_SITE = {
       "price": "7.00",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1753,10 +1753,10 @@ window.BELVEDERE_SITE = {
       "price": "35.00",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1766,10 +1766,10 @@ window.BELVEDERE_SITE = {
       "price": "45.00",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1779,10 +1779,10 @@ window.BELVEDERE_SITE = {
       "price": "7.20",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1792,10 +1792,10 @@ window.BELVEDERE_SITE = {
       "price": "36.00",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1805,10 +1805,10 @@ window.BELVEDERE_SITE = {
       "price": "48.00",
       "description": {
         "de": "Roséwein",
-        "it": "Roséwein",
-        "fr": "Roséwein",
-        "en": "Roséwein",
-        "es": "Roséwein"
+        "it": "Vino rosato",
+        "fr": "Vin rosé",
+        "en": "Rosé wine",
+        "es": "Vino rosado"
       }
     },
     {
@@ -1818,10 +1818,10 @@ window.BELVEDERE_SITE = {
       "price": "6.30",
       "description": {
         "de": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "it": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "fr": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "en": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "es": "Rotwein · Cabernet Sauvignon, Merlot, Syrah"
+        "it": "Vino rosso · Cabernet Sauvignon, Merlot, Syrah",
+        "fr": "Vin rouge · Cabernet Sauvignon, Merlot, Syrah",
+        "en": "Red wine · Cabernet Sauvignon, Merlot, Syrah",
+        "es": "Vino tinto · Cabernet Sauvignon, Merlot, Syrah"
       }
     },
     {
@@ -1831,10 +1831,10 @@ window.BELVEDERE_SITE = {
       "price": "31.00",
       "description": {
         "de": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "it": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "fr": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "en": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "es": "Rotwein · Cabernet Sauvignon, Merlot, Syrah"
+        "it": "Vino rosso · Cabernet Sauvignon, Merlot, Syrah",
+        "fr": "Vin rouge · Cabernet Sauvignon, Merlot, Syrah",
+        "en": "Red wine · Cabernet Sauvignon, Merlot, Syrah",
+        "es": "Vino tinto · Cabernet Sauvignon, Merlot, Syrah"
       }
     },
     {
@@ -1844,10 +1844,10 @@ window.BELVEDERE_SITE = {
       "price": "42.50",
       "description": {
         "de": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "it": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "fr": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "en": "Rotwein · Cabernet Sauvignon, Merlot, Syrah",
-        "es": "Rotwein · Cabernet Sauvignon, Merlot, Syrah"
+        "it": "Vino rosso · Cabernet Sauvignon, Merlot, Syrah",
+        "fr": "Vin rouge · Cabernet Sauvignon, Merlot, Syrah",
+        "en": "Red wine · Cabernet Sauvignon, Merlot, Syrah",
+        "es": "Vino tinto · Cabernet Sauvignon, Merlot, Syrah"
       }
     },
     {
@@ -1857,10 +1857,10 @@ window.BELVEDERE_SITE = {
       "price": "6.00",
       "description": {
         "de": "Rotwein · Primitivo",
-        "it": "Rotwein · Primitivo",
-        "fr": "Rotwein · Primitivo",
-        "en": "Rotwein · Primitivo",
-        "es": "Rotwein · Primitivo"
+        "it": "Vino rosso · Primitivo",
+        "fr": "Vin rouge · Primitivo",
+        "en": "Red wine · Primitivo",
+        "es": "Vino tinto · Primitivo"
       }
     },
     {
@@ -1870,10 +1870,10 @@ window.BELVEDERE_SITE = {
       "price": "29.00",
       "description": {
         "de": "Rotwein · Primitivo",
-        "it": "Rotwein · Primitivo",
-        "fr": "Rotwein · Primitivo",
-        "en": "Rotwein · Primitivo",
-        "es": "Rotwein · Primitivo"
+        "it": "Vino rosso · Primitivo",
+        "fr": "Vin rouge · Primitivo",
+        "en": "Red wine · Primitivo",
+        "es": "Vino tinto · Primitivo"
       }
     },
     {
@@ -1883,10 +1883,10 @@ window.BELVEDERE_SITE = {
       "price": "41.00",
       "description": {
         "de": "Rotwein · Primitivo",
-        "it": "Rotwein · Primitivo",
-        "fr": "Rotwein · Primitivo",
-        "en": "Rotwein · Primitivo",
-        "es": "Rotwein · Primitivo"
+        "it": "Vino rosso · Primitivo",
+        "fr": "Vin rouge · Primitivo",
+        "en": "Red wine · Primitivo",
+        "es": "Vino tinto · Primitivo"
       }
     },
     {
@@ -1896,10 +1896,10 @@ window.BELVEDERE_SITE = {
       "price": "49.00",
       "description": {
         "de": "Piemonte · Tamborini-Dettling-Kaufmann · Traubensorte: Arneis",
-        "it": "Piemonte · Tamborini-Dettling-Kaufmann · Traubensorte: Arneis",
-        "fr": "Piemonte · Tamborini-Dettling-Kaufmann · Traubensorte: Arneis",
-        "en": "Piemonte · Tamborini-Dettling-Kaufmann · Traubensorte: Arneis",
-        "es": "Piemonte · Tamborini-Dettling-Kaufmann · Traubensorte: Arneis"
+        "it": "Piemonte · Tamborini-Dettling-Kaufmann · Vitigno: Arneis",
+        "fr": "Piémont · Tamborini-Dettling-Kaufmann · Cépage: Arneis",
+        "en": "Piedmont · Tamborini-Dettling-Kaufmann · Grape variety: Arneis",
+        "es": "Piamonte · Tamborini-Dettling-Kaufmann · Variedad de uva: Arneis"
       }
     },
     {
@@ -1909,10 +1909,10 @@ window.BELVEDERE_SITE = {
       "price": "48.00",
       "description": {
         "de": "Veneto · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc",
-        "it": "Veneto · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc",
-        "fr": "Veneto · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc",
-        "en": "Veneto · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc",
-        "es": "Veneto · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc"
+        "it": "Veneto · Tamborini-Dettling-Kaufmann · Vitigni: Chardonnay, Sauvignon Blanc",
+        "fr": "Vénétie · Tamborini-Dettling-Kaufmann · Cépages: Chardonnay, Sauvignon Blanc",
+        "en": "Veneto · Tamborini-Dettling-Kaufmann · Grape varieties: Chardonnay, Sauvignon Blanc",
+        "es": "Véneto · Tamborini-Dettling-Kaufmann · Variedades de uva: Chardonnay, Sauvignon Blanc"
       }
     },
     {
@@ -1922,10 +1922,10 @@ window.BELVEDERE_SITE = {
       "price": "45.00",
       "description": {
         "de": "Apulien · Tenute Girolamo · Traubensorte: Fiano",
-        "it": "Apulien · Tenute Girolamo · Traubensorte: Fiano",
-        "fr": "Apulien · Tenute Girolamo · Traubensorte: Fiano",
-        "en": "Apulien · Tenute Girolamo · Traubensorte: Fiano",
-        "es": "Apulien · Tenute Girolamo · Traubensorte: Fiano"
+        "it": "Puglia · Tenute Girolamo · Vitigno: Fiano",
+        "fr": "Pouilles · Tenute Girolamo · Cépage: Fiano",
+        "en": "Puglia · Tenute Girolamo · Grape variety: Fiano",
+        "es": "Apulia · Tenute Girolamo · Variedad de uva: Fiano"
       }
     },
     {
@@ -1935,10 +1935,10 @@ window.BELVEDERE_SITE = {
       "price": "41.00",
       "description": {
         "de": "Abruzzen · Farnese · Traubensorte: Chardonnay",
-        "it": "Abruzzen · Farnese · Traubensorte: Chardonnay",
-        "fr": "Abruzzen · Farnese · Traubensorte: Chardonnay",
-        "en": "Abruzzen · Farnese · Traubensorte: Chardonnay",
-        "es": "Abruzzen · Farnese · Traubensorte: Chardonnay"
+        "it": "Abruzzo · Farnese · Vitigno: Chardonnay",
+        "fr": "Abruzzes · Farnese · Cépage: Chardonnay",
+        "en": "Abruzzo · Farnese · Grape variety: Chardonnay",
+        "es": "Abruzos · Farnese · Variedad de uva: Chardonnay"
       }
     },
     {
@@ -1948,10 +1948,10 @@ window.BELVEDERE_SITE = {
       "price": "43.00",
       "description": {
         "de": "Abruzzen · Farnese · Traubensorte: Pecorino",
-        "it": "Abruzzen · Farnese · Traubensorte: Pecorino",
-        "fr": "Abruzzen · Farnese · Traubensorte: Pecorino",
-        "en": "Abruzzen · Farnese · Traubensorte: Pecorino",
-        "es": "Abruzzen · Farnese · Traubensorte: Pecorino"
+        "it": "Abruzzo · Farnese · Vitigno: Pecorino",
+        "fr": "Abruzzes · Farnese · Cépage: Pecorino",
+        "en": "Abruzzo · Farnese · Grape variety: Pecorino",
+        "es": "Abruzos · Farnese · Variedad de uva: Pecorino"
       }
     },
     {
@@ -1961,10 +1961,10 @@ window.BELVEDERE_SITE = {
       "price": "58.00",
       "description": {
         "de": "Schweiz – Chablais · Vignerons d’Yvorne · Traubensorte: Chasselas",
-        "it": "Schweiz – Chablais · Vignerons d’Yvorne · Traubensorte: Chasselas",
-        "fr": "Schweiz – Chablais · Vignerons d’Yvorne · Traubensorte: Chasselas",
-        "en": "Schweiz – Chablais · Vignerons d’Yvorne · Traubensorte: Chasselas",
-        "es": "Schweiz – Chablais · Vignerons d’Yvorne · Traubensorte: Chasselas"
+        "it": "Svizzera – Chablais · Vignerons d’Yvorne · Vitigno: Chasselas",
+        "fr": "Suisse – Chablais · Vignerons d’Yvorne · Cépage: Chasselas",
+        "en": "Switzerland – Chablais · Vignerons d’Yvorne · Grape variety: Chasselas",
+        "es": "Suiza – Chablais · Vignerons d’Yvorne · Variedad de uva: Chasselas"
       }
     },
     {
@@ -1974,10 +1974,10 @@ window.BELVEDERE_SITE = {
       "price": "78.00",
       "description": {
         "de": "Schweiz – Tessin · Guido Brivio · Traubensorte: Merlot",
-        "it": "Schweiz – Tessin · Guido Brivio · Traubensorte: Merlot",
-        "fr": "Schweiz – Tessin · Guido Brivio · Traubensorte: Merlot",
-        "en": "Schweiz – Tessin · Guido Brivio · Traubensorte: Merlot",
-        "es": "Schweiz – Tessin · Guido Brivio · Traubensorte: Merlot"
+        "it": "Svizzera – Ticino · Guido Brivio · Vitigno: Merlot",
+        "fr": "Suisse – Tessin · Guido Brivio · Cépage: Merlot",
+        "en": "Switzerland – Ticino · Guido Brivio · Grape variety: Merlot",
+        "es": "Suiza – Tesino · Guido Brivio · Variedad de uva: Merlot"
       }
     },
     {
@@ -1987,10 +1987,10 @@ window.BELVEDERE_SITE = {
       "price": "62.00",
       "description": {
         "de": "Schweiz – Tessin · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc, Viognier",
-        "it": "Schweiz – Tessin · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc, Viognier",
-        "fr": "Schweiz – Tessin · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc, Viognier",
-        "en": "Schweiz – Tessin · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc, Viognier",
-        "es": "Schweiz – Tessin · Tamborini-Dettling-Kaufmann · Traubensorten: Chardonnay, Sauvignon Blanc, Viognier"
+        "it": "Svizzera – Ticino · Tamborini-Dettling-Kaufmann · Vitigni: Chardonnay, Sauvignon Blanc, Viognier",
+        "fr": "Suisse – Tessin · Tamborini-Dettling-Kaufmann · Cépages: Chardonnay, Sauvignon Blanc, Viognier",
+        "en": "Switzerland – Ticino · Tamborini-Dettling-Kaufmann · Grape varieties: Chardonnay, Sauvignon Blanc, Viognier",
+        "es": "Suiza – Tesino · Tamborini-Dettling-Kaufmann · Variedades de uva: Chardonnay, Sauvignon Blanc, Viognier"
       }
     },
     {
@@ -2000,10 +2000,10 @@ window.BELVEDERE_SITE = {
       "price": "64.00",
       "description": {
         "de": "Abruzzen · Tenuta Ulisse · Traubensorte: Montepulciano",
-        "it": "Abruzzen · Tenuta Ulisse · Traubensorte: Montepulciano",
-        "fr": "Abruzzen · Tenuta Ulisse · Traubensorte: Montepulciano",
-        "en": "Abruzzen · Tenuta Ulisse · Traubensorte: Montepulciano",
-        "es": "Abruzzen · Tenuta Ulisse · Traubensorte: Montepulciano"
+        "it": "Abruzzo · Tenuta Ulisse · Vitigno: Montepulciano",
+        "fr": "Abruzzes · Tenuta Ulisse · Cépage: Montepulciano",
+        "en": "Abruzzo · Tenuta Ulisse · Grape variety: Montepulciano",
+        "es": "Abruzos · Tenuta Ulisse · Variedad de uva: Montepulciano"
       }
     },
     {
@@ -2013,10 +2013,10 @@ window.BELVEDERE_SITE = {
       "price": "52.00",
       "description": {
         "de": "Abruzzen · Cantine NAE · Traubensorten: Montepulciano, Merlot",
-        "it": "Abruzzen · Cantine NAE · Traubensorten: Montepulciano, Merlot",
-        "fr": "Abruzzen · Cantine NAE · Traubensorten: Montepulciano, Merlot",
-        "en": "Abruzzen · Cantine NAE · Traubensorten: Montepulciano, Merlot",
-        "es": "Abruzzen · Cantine NAE · Traubensorten: Montepulciano, Merlot"
+        "it": "Abruzzo · Cantine NAE · Vitigni: Montepulciano, Merlot",
+        "fr": "Abruzzes · Cantine NAE · Cépages: Montepulciano, Merlot",
+        "en": "Abruzzo · Cantine NAE · Grape varieties: Montepulciano, Merlot",
+        "es": "Abruzos · Cantine NAE · Variedades de uva: Montepulciano, Merlot"
       }
     },
     {
@@ -2026,10 +2026,10 @@ window.BELVEDERE_SITE = {
       "price": "89.00",
       "description": {
         "de": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "it": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "fr": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "en": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "es": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella"
+        "it": "Veneto · Monte del Frà · Vitigni: Corvina, Molinara, Rondinella",
+        "fr": "Vénétie · Monte del Frà · Cépages: Corvina, Molinara, Rondinella",
+        "en": "Veneto · Monte del Frà · Grape varieties: Corvina, Molinara, Rondinella",
+        "es": "Véneto · Monte del Frà · Variedades de uva: Corvina, Molinara, Rondinella"
       }
     },
     {
@@ -2039,10 +2039,10 @@ window.BELVEDERE_SITE = {
       "price": "58.00",
       "description": {
         "de": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "it": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "fr": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "en": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella",
-        "es": "Veneto · Monte del Frà · Traubensorten: Corvina, Molinara, Rondinella"
+        "it": "Veneto · Monte del Frà · Vitigni: Corvina, Molinara, Rondinella",
+        "fr": "Vénétie · Monte del Frà · Cépages: Corvina, Molinara, Rondinella",
+        "en": "Veneto · Monte del Frà · Grape varieties: Corvina, Molinara, Rondinella",
+        "es": "Véneto · Monte del Frà · Variedades de uva: Corvina, Molinara, Rondinella"
       }
     },
     {
@@ -2052,10 +2052,10 @@ window.BELVEDERE_SITE = {
       "price": "88.00",
       "description": {
         "de": "Piemonte · Alberto Voerzio · Traubensorte: Nebbiolo",
-        "it": "Piemonte · Alberto Voerzio · Traubensorte: Nebbiolo",
-        "fr": "Piemonte · Alberto Voerzio · Traubensorte: Nebbiolo",
-        "en": "Piemonte · Alberto Voerzio · Traubensorte: Nebbiolo",
-        "es": "Piemonte · Alberto Voerzio · Traubensorte: Nebbiolo"
+        "it": "Piemonte · Alberto Voerzio · Vitigno: Nebbiolo",
+        "fr": "Piémont · Alberto Voerzio · Cépage: Nebbiolo",
+        "en": "Piedmont · Alberto Voerzio · Grape variety: Nebbiolo",
+        "es": "Piamonte · Alberto Voerzio · Variedad de uva: Nebbiolo"
       }
     },
     {
@@ -2065,10 +2065,10 @@ window.BELVEDERE_SITE = {
       "price": "48.00",
       "description": {
         "de": "Sardinien · Tenuta Soletta · Traubensorte: Cannonau",
-        "it": "Sardinien · Tenuta Soletta · Traubensorte: Cannonau",
-        "fr": "Sardinien · Tenuta Soletta · Traubensorte: Cannonau",
-        "en": "Sardinien · Tenuta Soletta · Traubensorte: Cannonau",
-        "es": "Sardinien · Tenuta Soletta · Traubensorte: Cannonau"
+        "it": "Sardegna · Tenuta Soletta · Vitigno: Cannonau",
+        "fr": "Sardaigne · Tenuta Soletta · Cépage: Cannonau",
+        "en": "Sardinia · Tenuta Soletta · Grape variety: Cannonau",
+        "es": "Cerdeña · Tenuta Soletta · Variedad de uva: Cannonau"
       }
     },
     {
@@ -2078,10 +2078,10 @@ window.BELVEDERE_SITE = {
       "price": "72.00",
       "description": {
         "de": "Toscana · Tamborini-Dettling-Kaufmann · Traubensorten: Cabernet Sauvignon, Cabernet Franc, Merlot",
-        "it": "Toscana · Tamborini-Dettling-Kaufmann · Traubensorten: Cabernet Sauvignon, Cabernet Franc, Merlot",
-        "fr": "Toscana · Tamborini-Dettling-Kaufmann · Traubensorten: Cabernet Sauvignon, Cabernet Franc, Merlot",
-        "en": "Toscana · Tamborini-Dettling-Kaufmann · Traubensorten: Cabernet Sauvignon, Cabernet Franc, Merlot",
-        "es": "Toscana · Tamborini-Dettling-Kaufmann · Traubensorten: Cabernet Sauvignon, Cabernet Franc, Merlot"
+        "it": "Toscana · Tamborini-Dettling-Kaufmann · Vitigni: Cabernet Sauvignon, Cabernet Franc, Merlot",
+        "fr": "Toscane · Tamborini-Dettling-Kaufmann · Cépages: Cabernet Sauvignon, Cabernet Franc, Merlot",
+        "en": "Tuscany · Tamborini-Dettling-Kaufmann · Grape varieties: Cabernet Sauvignon, Cabernet Franc, Merlot",
+        "es": "Toscana · Tamborini-Dettling-Kaufmann · Variedades de uva: Cabernet Sauvignon, Cabernet Franc, Merlot"
       }
     },
     {
@@ -2091,10 +2091,10 @@ window.BELVEDERE_SITE = {
       "price": "49.00",
       "description": {
         "de": "Toscana · Barbanera · Traubensorten: Sangiovese, Merlot",
-        "it": "Toscana · Barbanera · Traubensorten: Sangiovese, Merlot",
-        "fr": "Toscana · Barbanera · Traubensorten: Sangiovese, Merlot",
-        "en": "Toscana · Barbanera · Traubensorten: Sangiovese, Merlot",
-        "es": "Toscana · Barbanera · Traubensorten: Sangiovese, Merlot"
+        "it": "Toscana · Barbanera · Vitigni: Sangiovese, Merlot",
+        "fr": "Toscane · Barbanera · Cépages: Sangiovese, Merlot",
+        "en": "Tuscany · Barbanera · Grape varieties: Sangiovese, Merlot",
+        "es": "Toscana · Barbanera · Variedades de uva: Sangiovese, Merlot"
       }
     },
     {
@@ -2104,10 +2104,10 @@ window.BELVEDERE_SITE = {
       "price": "72.00",
       "description": {
         "de": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "it": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "fr": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "en": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "es": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Sangiovese"
+        "it": "Toscana · Fattorie dei Dolfi · Vitigni: Cabernet Sauvignon, Sangiovese",
+        "fr": "Toscane · Fattorie dei Dolfi · Cépages: Cabernet Sauvignon, Sangiovese",
+        "en": "Tuscany · Fattorie dei Dolfi · Grape varieties: Cabernet Sauvignon, Sangiovese",
+        "es": "Toscana · Fattorie dei Dolfi · Variedades de uva: Cabernet Sauvignon, Sangiovese"
       }
     },
     {
@@ -2117,10 +2117,10 @@ window.BELVEDERE_SITE = {
       "price": "98.00",
       "description": {
         "de": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Merlot",
-        "it": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Merlot",
-        "fr": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Merlot",
-        "en": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Merlot",
-        "es": "Toscana · Fattorie dei Dolfi · Traubensorten: Cabernet Sauvignon, Merlot"
+        "it": "Toscana · Fattorie dei Dolfi · Vitigni: Cabernet Sauvignon, Merlot",
+        "fr": "Toscane · Fattorie dei Dolfi · Cépages: Cabernet Sauvignon, Merlot",
+        "en": "Tuscany · Fattorie dei Dolfi · Grape varieties: Cabernet Sauvignon, Merlot",
+        "es": "Toscana · Fattorie dei Dolfi · Variedades de uva: Cabernet Sauvignon, Merlot"
       }
     },
     {
@@ -2130,10 +2130,10 @@ window.BELVEDERE_SITE = {
       "price": "98.00",
       "description": {
         "de": "Toscana · Mazzei · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "it": "Toscana · Mazzei · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "fr": "Toscana · Mazzei · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "en": "Toscana · Mazzei · Traubensorten: Cabernet Sauvignon, Sangiovese",
-        "es": "Toscana · Mazzei · Traubensorten: Cabernet Sauvignon, Sangiovese"
+        "it": "Toscana · Mazzei · Vitigni: Cabernet Sauvignon, Sangiovese",
+        "fr": "Toscane · Mazzei · Cépages: Cabernet Sauvignon, Sangiovese",
+        "en": "Tuscany · Mazzei · Grape varieties: Cabernet Sauvignon, Sangiovese",
+        "es": "Toscana · Mazzei · Variedades de uva: Cabernet Sauvignon, Sangiovese"
       }
     },
     {
@@ -2143,10 +2143,10 @@ window.BELVEDERE_SITE = {
       "price": "105.00",
       "description": {
         "de": "Toscana · Angelo Gaja · Traubensorten: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
-        "it": "Toscana · Angelo Gaja · Traubensorten: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
-        "fr": "Toscana · Angelo Gaja · Traubensorten: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
-        "en": "Toscana · Angelo Gaja · Traubensorten: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
-        "es": "Toscana · Angelo Gaja · Traubensorten: Cabernet Franc, Cabernet Sauvignon, Petit Verdot"
+        "it": "Toscana · Angelo Gaja · Vitigni: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
+        "fr": "Toscane · Angelo Gaja · Cépages: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
+        "en": "Tuscany · Angelo Gaja · Grape varieties: Cabernet Franc, Cabernet Sauvignon, Petit Verdot",
+        "es": "Toscana · Angelo Gaja · Variedades de uva: Cabernet Franc, Cabernet Sauvignon, Petit Verdot"
       }
     },
     {
@@ -2156,10 +2156,10 @@ window.BELVEDERE_SITE = {
       "price": "88.00",
       "description": {
         "de": "Toscana · Angelo Gaja · Traubensorten: Syrah, Sangiovese, Merlot",
-        "it": "Toscana · Angelo Gaja · Traubensorten: Syrah, Sangiovese, Merlot",
-        "fr": "Toscana · Angelo Gaja · Traubensorten: Syrah, Sangiovese, Merlot",
-        "en": "Toscana · Angelo Gaja · Traubensorten: Syrah, Sangiovese, Merlot",
-        "es": "Toscana · Angelo Gaja · Traubensorten: Syrah, Sangiovese, Merlot"
+        "it": "Toscana · Angelo Gaja · Vitigni: Syrah, Sangiovese, Merlot",
+        "fr": "Toscane · Angelo Gaja · Cépages: Syrah, Sangiovese, Merlot",
+        "en": "Tuscany · Angelo Gaja · Grape varieties: Syrah, Sangiovese, Merlot",
+        "es": "Toscana · Angelo Gaja · Variedades de uva: Syrah, Sangiovese, Merlot"
       }
     },
     {
@@ -2169,10 +2169,10 @@ window.BELVEDERE_SITE = {
       "price": "95.00",
       "description": {
         "de": "Toscana · Angelo Gaja · Traubensorten: Nebbiolo, Barbera",
-        "it": "Toscana · Angelo Gaja · Traubensorten: Nebbiolo, Barbera",
-        "fr": "Toscana · Angelo Gaja · Traubensorten: Nebbiolo, Barbera",
-        "en": "Toscana · Angelo Gaja · Traubensorten: Nebbiolo, Barbera",
-        "es": "Toscana · Angelo Gaja · Traubensorten: Nebbiolo, Barbera"
+        "it": "Toscana · Angelo Gaja · Vitigni: Nebbiolo, Barbera",
+        "fr": "Toscane · Angelo Gaja · Cépages: Nebbiolo, Barbera",
+        "en": "Tuscany · Angelo Gaja · Grape varieties: Nebbiolo, Barbera",
+        "es": "Toscana · Angelo Gaja · Variedades de uva: Nebbiolo, Barbera"
       }
     },
     {
@@ -2182,10 +2182,10 @@ window.BELVEDERE_SITE = {
       "price": "380.00",
       "description": {
         "de": "Toscana · Tenuta San Guido · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "it": "Toscana · Tenuta San Guido · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "fr": "Toscana · Tenuta San Guido · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "en": "Toscana · Tenuta San Guido · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "es": "Toscana · Tenuta San Guido · Traubensorten: Cabernet Sauvignon, Cabernet Franc"
+        "it": "Toscana · Tenuta San Guido · Vitigni: Cabernet Sauvignon, Cabernet Franc",
+        "fr": "Toscane · Tenuta San Guido · Cépages: Cabernet Sauvignon, Cabernet Franc",
+        "en": "Tuscany · Tenuta San Guido · Grape varieties: Cabernet Sauvignon, Cabernet Franc",
+        "es": "Toscana · Tenuta San Guido · Variedades de uva: Cabernet Sauvignon, Cabernet Franc"
       }
     },
     {
@@ -2195,10 +2195,10 @@ window.BELVEDERE_SITE = {
       "price": "1600.00",
       "description": {
         "de": "Toscana · Tenuta del Ornellaia · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "it": "Toscana · Tenuta del Ornellaia · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "fr": "Toscana · Tenuta del Ornellaia · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "en": "Toscana · Tenuta del Ornellaia · Traubensorten: Cabernet Sauvignon, Cabernet Franc",
-        "es": "Toscana · Tenuta del Ornellaia · Traubensorten: Cabernet Sauvignon, Cabernet Franc"
+        "it": "Toscana · Tenuta del Ornellaia · Vitigni: Cabernet Sauvignon, Cabernet Franc",
+        "fr": "Toscane · Tenuta del Ornellaia · Cépages: Cabernet Sauvignon, Cabernet Franc",
+        "en": "Tuscany · Tenuta del Ornellaia · Grape varieties: Cabernet Sauvignon, Cabernet Franc",
+        "es": "Toscana · Tenuta del Ornellaia · Variedades de uva: Cabernet Sauvignon, Cabernet Franc"
       }
     },
     {
@@ -2208,10 +2208,10 @@ window.BELVEDERE_SITE = {
       "price": "69.00",
       "description": {
         "de": "Apulien · Tenute Girolamo · Traubensorten: Negroamaro, Primitivo",
-        "it": "Apulien · Tenute Girolamo · Traubensorten: Negroamaro, Primitivo",
-        "fr": "Apulien · Tenute Girolamo · Traubensorten: Negroamaro, Primitivo",
-        "en": "Apulien · Tenute Girolamo · Traubensorten: Negroamaro, Primitivo",
-        "es": "Apulien · Tenute Girolamo · Traubensorten: Negroamaro, Primitivo"
+        "it": "Puglia · Tenute Girolamo · Vitigni: Negroamaro, Primitivo",
+        "fr": "Pouilles · Tenute Girolamo · Cépages: Negroamaro, Primitivo",
+        "en": "Puglia · Tenute Girolamo · Grape varieties: Negroamaro, Primitivo",
+        "es": "Apulia · Tenute Girolamo · Variedades de uva: Negroamaro, Primitivo"
       }
     },
     {
@@ -2221,10 +2221,10 @@ window.BELVEDERE_SITE = {
       "price": "58.00",
       "description": {
         "de": "Apulien · Silentium · Traubensorte: Primitivo",
-        "it": "Apulien · Silentium · Traubensorte: Primitivo",
-        "fr": "Apulien · Silentium · Traubensorte: Primitivo",
-        "en": "Apulien · Silentium · Traubensorte: Primitivo",
-        "es": "Apulien · Silentium · Traubensorte: Primitivo"
+        "it": "Puglia · Silentium · Vitigno: Primitivo",
+        "fr": "Pouilles · Silentium · Cépage: Primitivo",
+        "en": "Puglia · Silentium · Grape variety: Primitivo",
+        "es": "Apulia · Silentium · Variedad de uva: Primitivo"
       }
     },
     {
@@ -2234,10 +2234,10 @@ window.BELVEDERE_SITE = {
       "price": "42.50",
       "description": {
         "de": "Apulien · Mondo del Vino · Traubensorten: Cabernet Sauvignon, Merlot, Syrah",
-        "it": "Apulien · Mondo del Vino · Traubensorten: Cabernet Sauvignon, Merlot, Syrah",
-        "fr": "Apulien · Mondo del Vino · Traubensorten: Cabernet Sauvignon, Merlot, Syrah",
-        "en": "Apulien · Mondo del Vino · Traubensorten: Cabernet Sauvignon, Merlot, Syrah",
-        "es": "Apulien · Mondo del Vino · Traubensorten: Cabernet Sauvignon, Merlot, Syrah"
+        "it": "Puglia · Mondo del Vino · Vitigni: Cabernet Sauvignon, Merlot, Syrah",
+        "fr": "Pouilles · Mondo del Vino · Cépages: Cabernet Sauvignon, Merlot, Syrah",
+        "en": "Puglia · Mondo del Vino · Grape varieties: Cabernet Sauvignon, Merlot, Syrah",
+        "es": "Apulia · Mondo del Vino · Variedades de uva: Cabernet Sauvignon, Merlot, Syrah"
       }
     },
     {
@@ -2247,10 +2247,10 @@ window.BELVEDERE_SITE = {
       "price": "125.00",
       "description": {
         "de": "Sicilia · Duca di Salaparuta · Traubensorte: Nero d’Avola",
-        "it": "Sicilia · Duca di Salaparuta · Traubensorte: Nero d’Avola",
-        "fr": "Sicilia · Duca di Salaparuta · Traubensorte: Nero d’Avola",
-        "en": "Sicilia · Duca di Salaparuta · Traubensorte: Nero d’Avola",
-        "es": "Sicilia · Duca di Salaparuta · Traubensorte: Nero d’Avola"
+        "it": "Sicilia · Duca di Salaparuta · Vitigno: Nero d’Avola",
+        "fr": "Sicile · Duca di Salaparuta · Cépage: Nero d’Avola",
+        "en": "Sicily · Duca di Salaparuta · Grape variety: Nero d’Avola",
+        "es": "Sicilia · Duca di Salaparuta · Variedad de uva: Nero d’Avola"
       }
     },
     {
@@ -2260,10 +2260,10 @@ window.BELVEDERE_SITE = {
       "price": "48.00",
       "description": {
         "de": "Sicilia · Farnese · Traubensorte: Nero d’Avola",
-        "it": "Sicilia · Farnese · Traubensorte: Nero d’Avola",
-        "fr": "Sicilia · Farnese · Traubensorte: Nero d’Avola",
-        "en": "Sicilia · Farnese · Traubensorte: Nero d’Avola",
-        "es": "Sicilia · Farnese · Traubensorte: Nero d’Avola"
+        "it": "Sicilia · Farnese · Vitigno: Nero d’Avola",
+        "fr": "Sicile · Farnese · Cépage: Nero d’Avola",
+        "en": "Sicily · Farnese · Grape variety: Nero d’Avola",
+        "es": "Sicilia · Farnese · Variedad de uva: Nero d’Avola"
       }
     },
     {
@@ -2273,10 +2273,10 @@ window.BELVEDERE_SITE = {
       "price": "62.00",
       "description": {
         "de": "Schweiz – Tessin · Tamborini · Traubensorte: Merlot",
-        "it": "Schweiz – Tessin · Tamborini · Traubensorte: Merlot",
-        "fr": "Schweiz – Tessin · Tamborini · Traubensorte: Merlot",
-        "en": "Schweiz – Tessin · Tamborini · Traubensorte: Merlot",
-        "es": "Schweiz – Tessin · Tamborini · Traubensorte: Merlot"
+        "it": "Svizzera – Ticino · Tamborini · Vitigno: Merlot",
+        "fr": "Suisse – Tessin · Tamborini · Cépage: Merlot",
+        "en": "Switzerland – Ticino · Tamborini · Grape variety: Merlot",
+        "es": "Suiza – Tesino · Tamborini · Variedad de uva: Merlot"
       }
     },
     {
@@ -2286,10 +2286,10 @@ window.BELVEDERE_SITE = {
       "price": "55.00",
       "description": {
         "de": "Schweiz – Wallis · Adrian & Diego Mathier · Traubensorte: Pinot Noir",
-        "it": "Schweiz – Wallis · Adrian & Diego Mathier · Traubensorte: Pinot Noir",
-        "fr": "Schweiz – Wallis · Adrian & Diego Mathier · Traubensorte: Pinot Noir",
-        "en": "Schweiz – Wallis · Adrian & Diego Mathier · Traubensorte: Pinot Noir",
-        "es": "Schweiz – Wallis · Adrian & Diego Mathier · Traubensorte: Pinot Noir"
+        "it": "Svizzera – Vallese · Adrian & Diego Mathier · Vitigno: Pinot Noir",
+        "fr": "Suisse – Valais · Adrian & Diego Mathier · Cépage: Pinot Noir",
+        "en": "Switzerland – Valais · Adrian & Diego Mathier · Grape variety: Pinot Noir",
+        "es": "Suiza – Valais · Adrian & Diego Mathier · Variedad de uva: Pinot Noir"
       }
     }
   ],
@@ -2321,10 +2321,10 @@ window.BELVEDERE_SITE = {
         "price": "14.50",
         "description": {
           "de": "Nüsslisalat mit Grana und Baumnüssen",
-          "it": "Nüsslisalat mit Grana und Baumnüssen",
-          "fr": "Nüsslisalat mit Grana und Baumnüssen",
-          "en": "Nüsslisalat mit Grana und Baumnüssen",
-          "es": "Nüsslisalat mit Grana und Baumnüssen"
+          "it": "Valeriana con Grana e noci",
+          "fr": "Mâche au Grana et aux noix",
+          "en": "Lamb’s lettuce with Grana cheese and walnuts",
+          "es": "Canónigos con queso Grana y nueces"
         }
       },
       {
@@ -2334,10 +2334,10 @@ window.BELVEDERE_SITE = {
         "price": "10.50",
         "description": {
           "de": "Kürbiscremesuppe mit Brotcroutons",
-          "it": "Kürbiscremesuppe mit Brotcroutons",
-          "fr": "Kürbiscremesuppe mit Brotcroutons",
-          "en": "Kürbiscremesuppe mit Brotcroutons",
-          "es": "Kürbiscremesuppe mit Brotcroutons"
+          "it": "Crema di zucca con crostini di pane",
+          "fr": "Velouté de courge aux croûtons",
+          "en": "Cream of pumpkin soup with bread croutons",
+          "es": "Crema de calabaza con picatostes"
         }
       },
       {
@@ -2347,10 +2347,10 @@ window.BELVEDERE_SITE = {
         "price": "25.50",
         "description": {
           "de": "Kürbistortelli mit Cherrytomaten und Koriander",
-          "it": "Kürbistortelli mit Cherrytomaten und Koriander",
-          "fr": "Kürbistortelli mit Cherrytomaten und Koriander",
-          "en": "Kürbistortelli mit Cherrytomaten und Koriander",
-          "es": "Kürbistortelli mit Cherrytomaten und Koriander"
+          "it": "Tortelli di zucca con pomodorini e coriandolo",
+          "fr": "Tortelli à la courge, tomates cerises et coriandre",
+          "en": "Pumpkin tortelli with cherry tomatoes and coriander",
+          "es": "Tortelli de calabaza con tomates cherry y cilantro"
         }
       },
       {
@@ -2360,10 +2360,10 @@ window.BELVEDERE_SITE = {
         "price": "25.50",
         "description": {
           "de": "Girasoli mit Baumnuss-Mascarpone-Füllung an Gorgonzolasauce mit Baumnüssen",
-          "it": "Girasoli mit Baumnuss-Mascarpone-Füllung an Gorgonzolasauce mit Baumnüssen",
-          "fr": "Girasoli mit Baumnuss-Mascarpone-Füllung an Gorgonzolasauce mit Baumnüssen",
-          "en": "Girasoli mit Baumnuss-Mascarpone-Füllung an Gorgonzolasauce mit Baumnüssen",
-          "es": "Girasoli mit Baumnuss-Mascarpone-Füllung an Gorgonzolasauce mit Baumnüssen"
+          "it": "Girasoli ripieni di noci e mascarpone, con salsa al gorgonzola e noci",
+          "fr": "Girasoli farcis aux noix et au mascarpone, sauce au gorgonzola et noix",
+          "en": "Girasoli filled with walnuts and mascarpone, with gorgonzola sauce and walnuts",
+          "es": "Girasoli rellenos de nueces y mascarpone, con salsa de gorgonzola y nueces"
         }
       },
       {
@@ -2373,10 +2373,10 @@ window.BELVEDERE_SITE = {
         "price": "29.50",
         "description": {
           "de": "Trüffelfagottini an Trüffelsauce",
-          "it": "Trüffelfagottini an Trüffelsauce",
-          "fr": "Trüffelfagottini an Trüffelsauce",
-          "en": "Trüffelfagottini an Trüffelsauce",
-          "es": "Trüffelfagottini an Trüffelsauce"
+          "it": "Fagottini al tartufo con salsa al tartufo",
+          "fr": "Fagottini à la truffe, sauce à la truffe",
+          "en": "Truffle fagottini with truffle sauce",
+          "es": "Fagottini de trufa con salsa de trufa"
         }
       },
       {
@@ -2385,11 +2385,11 @@ window.BELVEDERE_SITE = {
         "name": "Controfiletto di cinghiale con salsa ai porcini",
         "price": "36.50",
         "description": {
-          "de": "Wildschwein-Entrecôte an Steinpilzsauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "it": "Wildschwein-Entrecôte an Steinpilzsauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "fr": "Wildschwein-Entrecôte an Steinpilzsauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "en": "Wildschwein-Entrecôte an Steinpilzsauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "es": "Wildschwein-Entrecôte an Steinpilzsauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl"
+          "de": "Wildschwein-Entrecôte an Steinpilzsauce, dazu Spätzli und Rosenkohl",
+          "it": "Controfiletto di cinghiale con salsa ai porcini, spätzli e cavolini di Bruxelles",
+          "fr": "Entrecôte de sanglier à la sauce aux cèpes, spätzli et choux de Bruxelles",
+          "en": "Wild boar sirloin with porcini sauce, spätzli and Brussels sprouts",
+          "es": "Entrecot de jabalí con salsa de boletus, spätzli y coles de Bruselas"
         }
       },
       {
@@ -2398,11 +2398,11 @@ window.BELVEDERE_SITE = {
         "name": "Scaloppine di capriolo con salsa ai finferli",
         "price": "39.50",
         "description": {
-          "de": "Rehschnitzel an Eierschwämmlisauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "it": "Rehschnitzel an Eierschwämmlisauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "fr": "Rehschnitzel an Eierschwämmlisauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "en": "Rehschnitzel an Eierschwämmlisauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl",
-          "es": "Rehschnitzel an Eierschwämmlisauce Servito con spätzli e cavolini di Bruxelles Dazu Spätzli und Rosenkohl"
+          "de": "Rehschnitzel an Eierschwämmlisauce, dazu Spätzli und Rosenkohl",
+          "it": "Scaloppine di capriolo con salsa ai finferli, spätzli e cavolini di Bruxelles",
+          "fr": "Escalopes de chevreuil à la sauce aux chanterelles, spätzli et choux de Bruxelles",
+          "en": "Roe deer escalopes with chanterelle sauce, spätzli and Brussels sprouts",
+          "es": "Escalopes de corzo con salsa de rebozuelos, spätzli y coles de Bruselas"
         }
       },
       {
@@ -2411,11 +2411,11 @@ window.BELVEDERE_SITE = {
         "name": "Pizza Autunno",
         "price": "25.50",
         "description": {
-          "de": "Herbstpizza Crema di carciofi, mortadella, noci e mozzarella Artischockencreme, Mortadella, Baumnüsse und Mozzarella",
-          "it": "Herbstpizza Crema di carciofi, mortadella, noci e mozzarella Artischockencreme, Mortadella, Baumnüsse und Mozzarella",
-          "fr": "Herbstpizza Crema di carciofi, mortadella, noci e mozzarella Artischockencreme, Mortadella, Baumnüsse und Mozzarella",
-          "en": "Herbstpizza Crema di carciofi, mortadella, noci e mozzarella Artischockencreme, Mortadella, Baumnüsse und Mozzarella",
-          "es": "Herbstpizza Crema di carciofi, mortadella, noci e mozzarella Artischockencreme, Mortadella, Baumnüsse und Mozzarella"
+          "de": "Herbstpizza: Artischockencreme, Mortadella, Baumnüsse und Mozzarella",
+          "it": "Pizza d’autunno: crema di carciofi, mortadella, noci e mozzarella",
+          "fr": "Pizza d’automne : crème d’artichauts, mortadelle, noix et mozzarella",
+          "en": "Autumn pizza: artichoke cream, mortadella, walnuts and mozzarella",
+          "es": "Pizza de otoño: crema de alcachofas, mortadela, nueces y mozzarella"
         }
       },
       {
@@ -2425,10 +2425,10 @@ window.BELVEDERE_SITE = {
         "price": "11.00",
         "description": {
           "de": "Vermicelles mit Rahm",
-          "it": "Vermicelles mit Rahm",
-          "fr": "Vermicelles mit Rahm",
-          "en": "Vermicelles mit Rahm",
-          "es": "Vermicelles mit Rahm"
+          "it": "Vermicelles di castagne con panna",
+          "fr": "Vermicelles de marrons à la crème",
+          "en": "Chestnut vermicelles with cream",
+          "es": "Vermicelles de castaña con nata"
         }
       },
       {
@@ -2438,10 +2438,10 @@ window.BELVEDERE_SITE = {
         "price": "14.50",
         "description": {
           "de": "Vermicelles mit Vanilleeis und Rahm",
-          "it": "Vermicelles mit Vanilleeis und Rahm",
-          "fr": "Vermicelles mit Vanilleeis und Rahm",
-          "en": "Vermicelles mit Vanilleeis und Rahm",
-          "es": "Vermicelles mit Vanilleeis und Rahm"
+          "it": "Vermicelles di castagne con gelato alla vaniglia e panna",
+          "fr": "Vermicelles de marrons avec glace à la vanille et crème",
+          "en": "Chestnut vermicelles with vanilla ice cream and cream",
+          "es": "Vermicelles de castaña con helado de vainilla y nata"
         }
       }
     ]
