@@ -18,3 +18,6 @@ window.BELVEDERE_CONFIG = {
     dishes: []
   }
 };
+
+// Ambientación: 'halloween' o 'normal'.
+window.BELVEDERE_CONFIG.season = 'halloween';

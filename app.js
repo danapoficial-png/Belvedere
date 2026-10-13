@@ -129,6 +129,7 @@
       const summary=document.createElement('p');summary.dataset.specialMenuSummary='';summary.className='special-menu-summary';panel.append(summary);
       const details=document.createElement('p');details.className='special-menu-meta';details.dataset.specialMenuMeta='';panel.append(details);
     }
+    const noteKey={paste:'pastaNote',pizze:'pizzaNote',carne:'sidesNote'}[category.id];if(noteKey){const note=document.createElement('p');note.className='menu-dietary-note';note.dataset.i18n=noteKey;panel.append(note);}
     const entries=category.special?site.special.menu:site.menu.filter(d=>d.category===category.id);
     entries.forEach((dish,index)=>{
       const row=document.createElement('article');row.className='dish';

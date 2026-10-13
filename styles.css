@@ -421,3 +421,13 @@ html.motion-paused .reveal { opacity: 1 !important; transform: none !important; 
   h2 { font-size: 2.125rem; }
 }
 .menu-tabs .special-menu-tab{background:#f2cd7e24;border-left:3px solid #b58036}.menu-tabs .special-menu-tab .tab-number{color:#a57727;opacity:1;font-size:1.1rem}.menu-recommendation{font-size:.875rem;font-weight:600;letter-spacing:.06em;color:#77551e;margin-bottom:13px}.special-menu-summary{white-space:pre-line;padding:20px 0 8px;line-height:1.7}.special-menu-meta{font-size:.95rem;font-weight:500;padding:8px 0 18px}.menu-special-reserve{margin-top:25px}.menu-tabs button>span:not(.tab-number){min-width:0;overflow-wrap:anywhere}@media(max-width:700px){.menu-tabs .special-menu-tab{border-left:0;border-top:3px solid #b58036}}
+
+/* Seasonal recommendation stays prominent independently of the decoration toggle. */
+.special-menu-tab {border:1px solid #b97739!important;background:linear-gradient(120deg,rgba(185,119,57,.17),rgba(185,119,57,.04));border-radius:10px;padding:16px!important;}
+.menu-recommendation {color:#b97739;letter-spacing:.12em;font-weight:600;}
+.menu-dietary-note {padding:14px 18px;border-left:2px solid #b97739;background:rgba(185,119,57,.07);font-size:.9rem;margin:0 0 24px;}
+.menu-origin {margin:32px 0 0;padding:20px;border-top:1px solid var(--line);font-size:.9rem;line-height:1.8;}
+.menu-origin summary {cursor:pointer;font-weight:600;}
+.menu-origin h3 {font-size:1rem;margin-top:20px;}
+#allergyHelp {font-size:.8rem;line-height:1.6;margin-top:8px;}
+.dish-info {min-width:0;} .dish-info h4 {overflow-wrap:anywhere;} .dish-price {flex-shrink:0;}

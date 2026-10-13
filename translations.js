@@ -4,6 +4,13 @@
   const languages = ['de','it','fr','en','es'];
   const dictionary = Object.fromEntries(languages.map(language => [language, {}]));
   const rows = `
+allergyHelp|Bitte nennen Sie nur Allergien oder Ernährungswünsche, die wir für Ihre Mahlzeit berücksichtigen sollen. Wir verwenden diese Angaben zur Bearbeitung Ihrer Anfrage und Vorbereitung Ihres Besuchs.|Indicate solo allergie o esigenze alimentari da considerare per il pasto. Usiamo questi dati per gestire la richiesta e preparare la visita.|Indiquez uniquement les allergies ou besoins alimentaires utiles à votre repas. Nous utilisons ces informations pour traiter votre demande et préparer votre visite.|Please mention only allergies or dietary needs relevant to your meal. We use this information to handle your request and prepare for your visit.|Indica solo las alergias o necesidades alimentarias que debamos tener en cuenta para tu comida. Usamos estos datos para atender tu solicitud y preparar tu visita.
+pastaNote|Auch glutenfreie Teigwaren erhältlich.|Disponibile anche pasta senza glutine.|Pâtes sans gluten également disponibles.|Gluten-free pasta also available.|También hay pasta sin gluten.
+pizzaNote|Glutenfreie Pizza erhältlich – Aufpreis CHF 3.00.|Pizza senza glutine disponibile – supplemento CHF 3.00.|Pizza sans gluten disponible – supplément CHF 3.00.|Gluten-free pizza available – CHF 3.00 surcharge.|Pizza sin gluten disponible – suplemento de CHF 3.00.
+sidesNote|Beilagen: Pommes frites, Rösti, Nudeln, Risotto, Polenta.|Contorni: patatine fritte, rösti, pasta, risotto, polenta.|Garnitures : frites, rösti, pâtes, risotto, polenta.|Sides: French fries, rösti, pasta, risotto, polenta.|Guarniciones: patatas fritas, rösti, pasta, risotto y polenta.
+originHeading|Herkunft & Hinweise|Provenienza e informazioni|Origine et informations|Origin & information|Procedencia e información
+menuSourceNote|Gerichte und Beschreibungen entsprechen der Originalkarte des Restaurants.|Piatti e descrizioni corrispondono alla carta originale del ristorante.|Les plats et descriptions suivent la carte originale du restaurant.|Dishes and descriptions follow the restaurant’s original menu.|Los platos y las descripciones siguen la carta original del restaurante.
+
 skip|Zum Inhalt|Vai al contenuto|Aller au contenu|Skip to content|Ir al contenido
 navigation|Hauptnavigation|Navigazione principale|Navigation principale|Main navigation|Navegación principal
 navAbout|La casa|La casa|La maison|La casa|La casa
@@ -59,6 +66,7 @@ whatsappOrder|Über WhatsApp bestellen|Ordina su WhatsApp|Commander sur WhatsApp
 reserveOrigin|Wir freuen uns auf Sie.|Vi aspettiamo.|Au plaisir de vous accueillir.|We look forward to welcoming you.|Te esperamos.
 reserveTitle|Ihr Platz.<br><em>Unser Vergnügen.</em>|Il vostro tavolo.<br><em>Il nostro piacere.</em>|Votre table.<br><em>Notre plaisir.</em>|Your table.<br><em>Our pleasure.</em>|Tu mesa.<br><em>Un placer para nosotros.</em>
 reserveText|Ein Abend zu zweit oder eine grosse Runde? Fragen Sie Ihren Tisch an. Wir bestätigen Ihre Reservation persönlich.|Una serata in due o una bella tavolata? Richiedete il vostro tavolo. Confermeremo personalmente la prenotazione.|Un dîner à deux ou une grande tablée ? Demandez votre table. Nous vous confirmerons personnellement la réservation.|Dinner for two or a table for everyone? Request your table. We’ll confirm your reservation personally.|¿Una cena para dos o una mesa para todos? Solicita tu reserva. Te la confirmaremos personalmente.
+phoneReserve|GERNE AUCH TELEFONISCH|ANCHE PER TELEFONO|ÉGALEMENT PAR TÉLÉPHONE|YOU CAN ALSO CALL US|TAMBIÉN POR TELÉFONO
 hoursTitle|Öffnungszeiten|Orari di apertura|Horaires d’ouverture|Opening hours|Horarios de apertura
 monday|Montag|Lunedì|Lundi|Monday|Lunes
 closed|Geschlossen|Chiuso|Fermé|Closed|Cerrado
