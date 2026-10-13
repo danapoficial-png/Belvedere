@@ -1,7 +1,7 @@
-/* Carta de Belvedere, descripciones en cinco idiomas. */
+/* Contenido editable de Belvedere. */
 window.BELVEDERE_SITE = {
   "schemaVersion": 2,
-  "revision": "belvedere-herbst-2026-10-13-i18n",
+  "revision": "edit-mv6zxcm0qlqasw",
   "defaultLanguage": "de",
   "media": {
     "hero": "assets/hero.webp",
@@ -74,13 +74,165 @@ window.BELVEDERE_SITE = {
   "notice": {
     "visible": true,
     "text": {
-      "de": "Aufgrund technischer Probleme sind derzeit keine Zahlungen mit PostFinance-Karten möglich. Bitte nutzen Sie andere Karten oder Barzahlung.",
-      "it": "A causa di problemi tecnici, al momento non è possibile pagare con carte PostFinance. Vi preghiamo di utilizzare altre carte o contanti.",
-      "fr": "En raison de problèmes techniques, les cartes PostFinance ne sont actuellement pas acceptées. Merci d’utiliser une autre carte ou de régler en espèces.",
-      "en": "Due to technical issues, we currently cannot accept PostFinance cards. Please use another card or pay in cash.",
-      "es": "Debido a problemas técnicos, actualmente no se aceptan tarjetas PostFinance. Puedes pagar con otra tarjeta o en efectivo."
+      "de": "🎃 Unser Restaurant ist zurzeit passend zu Halloween dekoriert. Wir freuen uns auf Ihren Besuch!",
+      "it": "🎃 Il nostro ristorante è attualmente decorato per Halloween. Vi aspettiamo!",
+      "fr": "🎃 Notre restaurant est actuellement décoré pour Halloween. Au plaisir de vous accueillir !",
+      "en": "🎃 Our restaurant is currently decorated for Halloween. We look forward to welcoming you!",
+      "es": "🎃 Nuestro restaurante está decorado para Halloween. ¡Los esperamos!"
     }
   },
+  "categories": [
+    {
+      "id": "antipasti",
+      "label": {
+        "de": "Vorspeisen",
+        "it": "Antipasti",
+        "fr": "Entrées",
+        "en": "Starters",
+        "es": "Entrantes"
+      }
+    },
+    {
+      "id": "zuppe",
+      "label": {
+        "de": "Suppen",
+        "it": "Zuppe",
+        "fr": "Soupes",
+        "en": "Soups",
+        "es": "Sopas"
+      }
+    },
+    {
+      "id": "insalate",
+      "label": {
+        "de": "Salate",
+        "it": "Insalate",
+        "fr": "Salades",
+        "en": "Salads",
+        "es": "Ensaladas"
+      }
+    },
+    {
+      "id": "paste",
+      "label": {
+        "de": "Pasta & Risotto",
+        "it": "Pasta e risotto",
+        "fr": "Pâtes et risotto",
+        "en": "Pasta & risotto",
+        "es": "Pasta y risotto"
+      }
+    },
+    {
+      "id": "carne",
+      "label": {
+        "de": "Fisch & Fleisch",
+        "it": "Pesce e carne",
+        "fr": "Poisson et viande",
+        "en": "Fish & meat",
+        "es": "Pescado y carne"
+      }
+    },
+    {
+      "id": "pizze",
+      "label": {
+        "de": "Pizzas",
+        "it": "Pizze",
+        "fr": "Pizzas",
+        "en": "Pizzas",
+        "es": "Pizzas"
+      }
+    },
+    {
+      "id": "getraenke",
+      "label": {
+        "de": "Getränke",
+        "it": "Bevande",
+        "fr": "Boissons",
+        "en": "Drinks",
+        "es": "Bebidas"
+      }
+    },
+    {
+      "id": "birra",
+      "label": {
+        "de": "Bier",
+        "it": "Birra",
+        "fr": "Bières",
+        "en": "Beer",
+        "es": "Cervezas"
+      }
+    },
+    {
+      "id": "aperitivi",
+      "label": {
+        "de": "Aperitifs",
+        "it": "Aperitivi",
+        "fr": "Apéritifs",
+        "en": "Aperitifs",
+        "es": "Aperitivos"
+      }
+    },
+    {
+      "id": "digestivi",
+      "label": {
+        "de": "Spirituosen & Liköre",
+        "it": "Digestivi e liquori",
+        "fr": "Spiritueux et liqueurs",
+        "en": "Spirits & liqueurs",
+        "es": "Licores y digestivos"
+      }
+    },
+    {
+      "id": "longdrinks",
+      "label": {
+        "de": "Longdrinks",
+        "it": "Longdrinks",
+        "fr": "Longdrinks",
+        "en": "Longdrinks",
+        "es": "Longdrinks"
+      }
+    },
+    {
+      "id": "caffe",
+      "label": {
+        "de": "Kaffee & Tee",
+        "it": "Caffè e tè",
+        "fr": "Café et thé",
+        "en": "Coffee & tea",
+        "es": "Café y té"
+      }
+    },
+    {
+      "id": "offene-weine",
+      "label": {
+        "de": "Prosecco & offene Weine",
+        "it": "Prosecco e vini al calice",
+        "fr": "Prosecco et vins au verre",
+        "en": "Prosecco & wines by the glass",
+        "es": "Prosecco y vinos por copa"
+      }
+    },
+    {
+      "id": "weissweine",
+      "label": {
+        "de": "Weissweine · Flaschen",
+        "it": "Vini bianchi · Bottiglie",
+        "fr": "Vins blancs · Bouteilles",
+        "en": "White wines · Bottles",
+        "es": "Vinos blancos · Botellas"
+      }
+    },
+    {
+      "id": "rotweine",
+      "label": {
+        "de": "Rotweine · Flaschen",
+        "it": "Vini rossi · Bottiglie",
+        "fr": "Vins rouges · Bouteilles",
+        "en": "Red wines · Bottles",
+        "es": "Vinos tintos · Botellas"
+      }
+    }
+  ],
   "menu": [
     {
       "id": "antipasti-001",
@@ -2665,158 +2817,6 @@ window.BELVEDERE_SITE = {
         "fr": "Les petits détails",
         "en": "The little details",
         "es": "Los pequeños detalles"
-      }
-    }
-  ],
-  "categories": [
-    {
-      "id": "antipasti",
-      "label": {
-        "de": "Vorspeisen",
-        "it": "Antipasti",
-        "fr": "Entrées",
-        "en": "Starters",
-        "es": "Entrantes"
-      }
-    },
-    {
-      "id": "zuppe",
-      "label": {
-        "de": "Suppen",
-        "it": "Zuppe",
-        "fr": "Soupes",
-        "en": "Soups",
-        "es": "Sopas"
-      }
-    },
-    {
-      "id": "insalate",
-      "label": {
-        "de": "Salate",
-        "it": "Insalate",
-        "fr": "Salades",
-        "en": "Salads",
-        "es": "Ensaladas"
-      }
-    },
-    {
-      "id": "paste",
-      "label": {
-        "de": "Pasta & Risotto",
-        "it": "Pasta e risotto",
-        "fr": "Pâtes et risotto",
-        "en": "Pasta & risotto",
-        "es": "Pasta y risotto"
-      }
-    },
-    {
-      "id": "carne",
-      "label": {
-        "de": "Fisch & Fleisch",
-        "it": "Pesce e carne",
-        "fr": "Poisson et viande",
-        "en": "Fish & meat",
-        "es": "Pescado y carne"
-      }
-    },
-    {
-      "id": "pizze",
-      "label": {
-        "de": "Pizzas",
-        "it": "Pizze",
-        "fr": "Pizzas",
-        "en": "Pizzas",
-        "es": "Pizzas"
-      }
-    },
-    {
-      "id": "getraenke",
-      "label": {
-        "de": "Getränke",
-        "it": "Bevande",
-        "fr": "Boissons",
-        "en": "Drinks",
-        "es": "Bebidas"
-      }
-    },
-    {
-      "id": "birra",
-      "label": {
-        "de": "Bier",
-        "it": "Birra",
-        "fr": "Bières",
-        "en": "Beer",
-        "es": "Cervezas"
-      }
-    },
-    {
-      "id": "aperitivi",
-      "label": {
-        "de": "Aperitifs",
-        "it": "Aperitivi",
-        "fr": "Apéritifs",
-        "en": "Aperitifs",
-        "es": "Aperitivos"
-      }
-    },
-    {
-      "id": "digestivi",
-      "label": {
-        "de": "Spirituosen & Liköre",
-        "it": "Digestivi e liquori",
-        "fr": "Spiritueux et liqueurs",
-        "en": "Spirits & liqueurs",
-        "es": "Licores y digestivos"
-      }
-    },
-    {
-      "id": "longdrinks",
-      "label": {
-        "de": "Longdrinks",
-        "it": "Longdrinks",
-        "fr": "Longdrinks",
-        "en": "Longdrinks",
-        "es": "Longdrinks"
-      }
-    },
-    {
-      "id": "caffe",
-      "label": {
-        "de": "Kaffee & Tee",
-        "it": "Caffè e tè",
-        "fr": "Café et thé",
-        "en": "Coffee & tea",
-        "es": "Café y té"
-      }
-    },
-    {
-      "id": "offene-weine",
-      "label": {
-        "de": "Prosecco & offene Weine",
-        "it": "Prosecco e vini al calice",
-        "fr": "Prosecco et vins au verre",
-        "en": "Prosecco & wines by the glass",
-        "es": "Prosecco y vinos por copa"
-      }
-    },
-    {
-      "id": "weissweine",
-      "label": {
-        "de": "Weissweine · Flaschen",
-        "it": "Vini bianchi · Bottiglie",
-        "fr": "Vins blancs · Bouteilles",
-        "en": "White wines · Bottles",
-        "es": "Vinos blancos · Botellas"
-      }
-    },
-    {
-      "id": "rotweine",
-      "label": {
-        "de": "Rotweine · Flaschen",
-        "it": "Vini rossi · Bottiglie",
-        "fr": "Vins rouges · Bouteilles",
-        "en": "Red wines · Bottles",
-        "es": "Vinos tintos · Botellas"
       }
     }
   ]
